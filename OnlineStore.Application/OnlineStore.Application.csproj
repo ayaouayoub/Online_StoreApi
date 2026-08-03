@@ -14,8 +14,4 @@
     <ProjectReference Include="..\OnlineStore.Domain\OnlineStore.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handlers\User\Queries\" />
-  </ItemGroup>
-
 </Project>

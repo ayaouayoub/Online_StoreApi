@@ -18,4 +18,8 @@
     <ProjectReference Include="..\OnlineStore.Infrastructure\OnlineStore.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\User\Requests\" />
+  </ItemGroup>
+
 </Project>

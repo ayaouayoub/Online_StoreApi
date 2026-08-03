@@ -18,7 +18,10 @@ namespace OnlineStore.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+            });
 
             builder.Services.AddEndpointsApiExplorer();
 
@@ -50,11 +53,11 @@ namespace OnlineStore.Api
                 });
             });
 
-            builder.Services.AddSwaggerGen();
-
             builder.Services.AddInfrastructure();
 
             builder.Services.AddScoped<LoginHandler>();
+
+            builder.Services.AddScoped<GetUserHandler>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -75,6 +78,27 @@ namespace OnlineStore.Api
                     ValidateLifetime = true,
 
                     ClockSkew = TimeSpan.Zero
+                };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        Console.WriteLine($"Authorization: {context.Request.Headers.Authorization}");
+                        return Task.CompletedTask;
+                    },
+
+                    OnAuthenticationFailed = context =>
+                    {
+                        Console.WriteLine(context.Exception);
+                        return Task.CompletedTask;
+                    },
+
+                    OnTokenValidated = context =>
+                    {
+                        Console.WriteLine("Token Valid");
+                        return Task.CompletedTask;
+                    }
                 };
             });
 
@@ -102,11 +126,6 @@ namespace OnlineStore.Api
 
             builder.Host.UseSerilog();
 
-            builder.Services.AddControllers().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-            });
-
             var app = builder.Build();
 
             app.UseGlobalExceptionHandling();
@@ -118,6 +137,8 @@ namespace OnlineStore.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

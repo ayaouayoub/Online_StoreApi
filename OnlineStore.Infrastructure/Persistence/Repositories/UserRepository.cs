@@ -110,7 +110,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                 (
                     id: (int)reader["PermissionId"],
                     code: (string)reader["Code"],
-                    name: (string)reader["Name"]
+                    name: (string)reader["PermissionName"]
                 )
             );
         }

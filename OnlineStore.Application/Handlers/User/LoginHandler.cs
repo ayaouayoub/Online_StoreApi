@@ -9,6 +9,7 @@ using OnlineStore.Application.Interfaces;
 using OnlineStore.Application.Handlers.User.Commands;
 using OnlineStore.Application.Exceptions;
 using OnlineStore.Domain.Enums;
+using OnlineStore.Application.Handlers.User.Mappings;
 
 namespace OnlineStore.Application.Handlers.User
 {
@@ -38,22 +39,7 @@ namespace OnlineStore.Application.Handlers.User
             return new LoginResponseDto
             {
                 Token = _jwt.Generate(user),
-
-                User = new UserDto
-                {
-                    Id = user.Id,
-                    Username = user.Username,
-                    IsActive = user.IsActive,
-                    CreatedAt = user.CreatedAt,
-                    Name = user.Name,
-                    RoleType = (RoleType)user.RoleId,
-                    Permissions = [.. user.Permissions.Select(p => new PermissionDto
-                    {
-                        Id = p.Id,
-                        Name = p.Name,
-                        Code = p.Code
-                    })],
-                }
+                User = user.ToDto()
             };
         }
     }

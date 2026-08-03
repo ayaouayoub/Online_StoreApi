@@ -6,6 +6,8 @@ using OnlineStore.Infrastructure.Authentication;
 using OnlineStore.Infrastructure.Persistence.Connection;
 using OnlineStore.Infrastructure.Persistence.Repositories;
 using OnlineStore.Infrastructure.Services.Security;
+using Microsoft.AspNetCore.Authorization;
+using OnlineStore.Infrastructure.Authorization;
 
 namespace OnlineStore.Infrastructure
 {
@@ -24,6 +26,10 @@ namespace OnlineStore.Infrastructure
             services.AddScoped<ICurrentUser, CurrentUserAccessor>();
 
             services.AddScoped<IDbConnectionFactory, SqlConnectionFactory>();
+
+            services.AddScoped<IAuthorizationHandler, ActiveUserAuthorizationHandler>();
+
+            services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
 
             return services;
         }
