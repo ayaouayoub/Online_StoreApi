@@ -66,7 +66,21 @@ namespace OnlineStore.Domain.Entities
             );
         }
 
-        public static User Load(int id, string name, string username, string passwordHash, Role role, bool isActive, DateTime createdAt)
+        public static User Load(int id, string name, string username, string passwordHash, int roleId, bool isActive, DateTime createdAt)
+        {
+            return new User(
+                id,
+                name,
+                username,
+                passwordHash,
+                roleId,
+                null,
+                isActive,
+                createdAt
+            );
+        }
+
+        public static User LoadWithRole(int id, string name, string username, string passwordHash, Role role, bool isActive, DateTime createdAt)
         {
             return new User(
                 id,

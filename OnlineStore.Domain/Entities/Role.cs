@@ -11,12 +11,12 @@
             Name = name;
         }
 
-        public Role Create(string name)
+        public static Role Create(string name)
         {
             return new Role(0, name);
         }
 
-        public Role Load(int id, string name)
+        public static Role Load(int id, string name)
         {
             return new Role(id, name);
         }
