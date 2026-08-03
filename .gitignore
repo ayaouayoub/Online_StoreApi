@@ -1,0 +1,25 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# User files
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Publish
+publish/
+
+# NuGet packages
+packages/
