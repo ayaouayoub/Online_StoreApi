@@ -4,7 +4,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
 {
     public interface IProductRepository
     {
-        Task<int> GetByIdAsync(Product product);
+        Task<Product?> GetByIdAsync(int id);
         Task<int> CreateProductAsync(Product product);
     }
 }

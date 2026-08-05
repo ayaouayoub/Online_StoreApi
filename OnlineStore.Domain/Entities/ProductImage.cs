@@ -7,9 +7,9 @@ namespace OnlineStore.Domain.Entities
     {
         public int Id { get; }
         public string Url { get; private set; } = null!;
-        public int ImageOrder {  get; private set; }
+        public short ImageOrder {  get; private set; }
 
-        private ProductImage(int id, string url, int imageOrder)
+        private ProductImage(int id, string url, short imageOrder)
         {
             _ValidateUrl(url);
             _ValidateOrder(imageOrder);
@@ -18,12 +18,12 @@ namespace OnlineStore.Domain.Entities
             ImageOrder = imageOrder;
         }
 
-        public static ProductImage Create(string url, int imageOrder)
+        public static ProductImage Create(string url, short imageOrder)
         {
             return new ProductImage(-1, url, imageOrder);
         }
 
-        public static ProductImage Load(int id, string url, int imageOrder)
+        public static ProductImage Load(int id, string url, short imageOrder)
         {
             return new ProductImage(id, url, imageOrder);
         }
@@ -35,7 +35,7 @@ namespace OnlineStore.Domain.Entities
             Url = url;
         }
 
-        public void ChangeOrder(int order)
+        public void ChangeOrder(short order)
         {
             if (ImageOrder == order) return;
             _ValidateOrder(order);
@@ -47,7 +47,7 @@ namespace OnlineStore.Domain.Entities
             if (string.IsNullOrWhiteSpace(url)) throw new DomainException("Url cannot be null or empty");
         }
 
-        private static void _ValidateOrder(int order)
+        private static void _ValidateOrder(short order)
         {
             if (order < 0) throw new DomainException("order number cannot be negative.");
         }

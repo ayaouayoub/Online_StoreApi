@@ -9,6 +9,6 @@ namespace OnlineStore.Application.Handlers.Product.Commands
     public sealed record CreateProductImageCommand
     (
         string Url,
-        int ImageOrder
+        short ImageOrder
     );
 }

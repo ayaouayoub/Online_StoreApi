@@ -11,6 +11,7 @@ using OnlineStore.Application.Handlers.Product.Commands;
 using OnlineStore.Application.Interfaces.Services;
 using OnlineStore.Api.Controllers.Product.Mappings;
 using OnlineStore.Api.Services;
+using OnlineStore.Application.Handlers.Product.Queries;
 
 namespace OnlineStore.Api.Controllers.Product
 {
@@ -21,12 +22,14 @@ namespace OnlineStore.Api.Controllers.Product
         private readonly CreateProductHandler _createProductHandler;
         private readonly IImageStorageService _imageStorageService;
         private readonly FileUrlGenerator _fileUrlGenerator;
+        private readonly GetProductHandler _getProductHandler;
 
-        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator)
+        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler)
         {
             _createProductHandler = createProductHandler;
             _imageStorageService = imageStorageService;
             _fileUrlGenerator = fileUrlGenerator;
+            _getProductHandler = getProductHandler;
         }
 
         [Authorize(Policy = Permissions.Products.Create)]
@@ -49,7 +52,7 @@ namespace OnlineStore.Api.Controllers.Product
 
             List<CreateProductImageCommand> images = [];
 
-            int order = 1;
+            short order = 1;
 
             if (request.Images is not null)
             {
@@ -77,17 +80,12 @@ namespace OnlineStore.Api.Controllers.Product
 
         [Authorize(Policy = Permissions.Products.View)]
         [HttpGet("{id:int}")]
-        public IActionResult GetById(int id)
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductDto>> GetById(int id)
         {
-            throw new NotImplementedException();
-        }
-
-
-        [HttpPost("test")]
-        [Consumes("multipart/form-data")]
-        public IActionResult Upload([FromForm] IEnumerable<IFormFile> images)
-        {
-            return Ok();
+            ProductDto dto = await _getProductHandler.ExecuteAsync(new GetProductQuery(id));
+            return Ok(dto.WithFullImageUrls(_fileUrlGenerator));
         }
     }
 }

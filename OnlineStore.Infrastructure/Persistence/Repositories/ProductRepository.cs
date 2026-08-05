@@ -58,9 +58,58 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             return table;
         }
 
-        public Task<int> GetByIdAsync(Product product)
+        public async Task<Product?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_GetProductByID", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ProductId", id);
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            if (!await reader.ReadAsync())
+                return null;
+
+            Category category = Category.Load
+            (
+                (int)reader["CategoryId"],
+                (string)reader["CategoryName"],
+                reader["CategoryDescription"] == DBNull.Value ? null : (string)reader["CategoryDescription"],
+                reader["ParentCategoryId"] == DBNull.Value ? null : (int?)reader["ParentCategoryId"],
+                (int)reader["DisplayOrder"],
+                (bool)reader["IsActive"],
+                (DateTime)reader["CreatedAt"]
+            );
+
+            Product product = Product.Load
+            (
+                (int)reader["ProductId"],
+                (string)reader["ProductName"],
+                reader["Description"] == DBNull.Value ? null : (string)reader["Description"],
+                (decimal)reader["Price"],
+                (int)reader["QuantityInStock"],
+                reader["ImageURL"] == DBNull.Value ? null : (string)reader["ImageURL"],
+                category.Id,
+                category
+            );
+
+            await reader.NextResultAsync();
+
+            while (await reader.ReadAsync())
+            {
+                product.AddImage(ProductImage.Load
+                (
+                    (int)reader["ProductImageId"],
+                    (string)reader["ImageURL"],
+                    (short)reader["ImageOrder"]
+                ));
+            }
+
+            return product;
         }
     }
 }
