@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using OnlineStore.Api.Middlewares;
 using OnlineStore.Api.Services;
+using OnlineStore.Application.Handlers.Category;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
@@ -66,6 +67,8 @@ namespace OnlineStore.Api
             builder.Services.AddScoped<FileUrlGenerator>();
 
             builder.Services.AddScoped<GetProductHandler>();
+
+            builder.Services.AddScoped<GetCategoryHandler>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

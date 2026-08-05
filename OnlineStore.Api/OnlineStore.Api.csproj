@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Category\Requests\" />
     <Folder Include="Controllers\User\Requests\" />
     <Folder Include="wwwroot\images\products\" />
   </ItemGroup>

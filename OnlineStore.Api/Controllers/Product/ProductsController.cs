@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Application.Dtos;
-using OnlineStore.Application.Handlers.User.Queries;
-using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Api.Controllers.Product.Requests;
@@ -35,7 +32,7 @@ namespace OnlineStore.Api.Controllers.Product
         [Authorize(Policy = Permissions.Products.Create)]
         [HttpPost]
         [Consumes("multipart/form-data")]
-        [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -78,10 +75,12 @@ namespace OnlineStore.Api.Controllers.Product
             return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto.WithFullImageUrls(_fileUrlGenerator));
         }
 
-        [Authorize(Policy = Permissions.Products.View)]
+        [AllowAnonymous]
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ProductDto>> GetById(int id)
         {
             ProductDto dto = await _getProductHandler.ExecuteAsync(new GetProductQuery(id));
