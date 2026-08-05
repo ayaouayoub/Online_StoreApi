@@ -8,6 +8,8 @@ using OnlineStore.Infrastructure.Persistence.Repositories;
 using OnlineStore.Infrastructure.Services.Security;
 using Microsoft.AspNetCore.Authorization;
 using OnlineStore.Infrastructure.Authorization;
+using OnlineStore.Infrastructure.Services.Storage;
+using OnlineStore.Application.Interfaces.Services;
 
 namespace OnlineStore.Infrastructure
 {
@@ -16,8 +18,6 @@ namespace OnlineStore.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-
-            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<IEncryptionService, BCryptEncryptionService>();
 
@@ -30,6 +30,16 @@ namespace OnlineStore.Infrastructure
             services.AddScoped<IAuthorizationHandler, ActiveUserAuthorizationHandler>();
 
             services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddHttpContextAccessor();
+
+            services.AddScoped<IImageStorageService, LocalImageStorageService>();
 
             return services;
         }

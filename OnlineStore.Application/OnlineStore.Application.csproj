@@ -12,6 +12,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineStore.Domain\OnlineStore.Domain.csproj" />
+	<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\Category\Commands\" />
+    <Folder Include="Handlers\Category\Queries\" />
+    <Folder Include="Handlers\Product\Queries\" />
   </ItemGroup>
 
 </Project>

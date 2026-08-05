@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\User\Requests\" />
+    <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 
 </Project>

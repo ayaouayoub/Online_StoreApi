@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using OnlineStore.Api.Middlewares;
+using OnlineStore.Api.Services;
+using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
 using OnlineStore.Infrastructure;
@@ -58,6 +60,10 @@ namespace OnlineStore.Api
             builder.Services.AddScoped<LoginHandler>();
 
             builder.Services.AddScoped<GetUserHandler>();
+
+            builder.Services.AddScoped<CreateProductHandler>();
+
+            builder.Services.AddScoped<FileUrlGenerator>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -135,6 +141,8 @@ namespace OnlineStore.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 

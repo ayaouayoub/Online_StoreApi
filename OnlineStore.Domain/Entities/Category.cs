@@ -33,7 +33,7 @@ namespace OnlineStore.Domain.Entities
             return new Category(-1, name, description, parent?.Id, parent, displayOrder, true, DateTime.UtcNow);
         }
 
-        public static Category Load(int id, string name, string description, int parentId, int displayOrder, bool isActive, DateTime createdAt)
+        public static Category Load(int id, string name, string description, int? parentId, int displayOrder, bool isActive, DateTime createdAt)
         {
             return new Category(id, name, description, parentId, null, displayOrder, isActive, createdAt);
         }
