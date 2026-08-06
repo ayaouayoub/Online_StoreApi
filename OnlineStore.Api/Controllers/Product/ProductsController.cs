@@ -20,13 +20,15 @@ namespace OnlineStore.Api.Controllers.Product
         private readonly IImageStorageService _imageStorageService;
         private readonly FileUrlGenerator _fileUrlGenerator;
         private readonly GetProductHandler _getProductHandler;
+        private readonly GetProductsHandler _getProductsHandler;
 
-        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler)
+        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler, GetProductsHandler getProductsHandler)
         {
             _createProductHandler = createProductHandler;
             _imageStorageService = imageStorageService;
             _fileUrlGenerator = fileUrlGenerator;
             _getProductHandler = getProductHandler;
+            _getProductsHandler = getProductsHandler;
         }
 
         [Authorize(Policy = Permissions.Products.Create)]
@@ -85,6 +87,31 @@ namespace OnlineStore.Api.Controllers.Product
         {
             ProductDto dto = await _getProductHandler.ExecuteAsync(new GetProductQuery(id));
             return Ok(dto.WithFullImageUrls(_fileUrlGenerator));
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        [ProducesResponseType(typeof(PagedResultDto<ProductDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<PagedResultDto<ProductDto>>> GetProducts([FromQuery] GetProductsRequest request)
+        {
+            var resultDto = await _getProductsHandler.ExecuteAsync(new GetProductsQuery
+            {
+                CategoryId = request.CategoryId,
+                Descending = request.Descending,
+                MaxPrice = request.MaxPrice,
+                MinPrice = request.MinPrice,
+                Page = request.Page,
+                PageSize = request.PageSize,
+                Search = request.Search,
+                SortBy = request.SortBy
+            });
+
+            foreach (ProductDto item in resultDto.Items)
+            {
+                item.MainImageUrl = _fileUrlGenerator.GetUrl(item.MainImageUrl);
+            }
+
+            return Ok(resultDto);
         }
     }
 }

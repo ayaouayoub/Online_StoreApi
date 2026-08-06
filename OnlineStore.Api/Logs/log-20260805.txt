@@ -609,3 +609,31 @@ System.InvalidCastException: Unable to cast object of type 'System.Int16' to typ
 2026-08-05 17:42:11.235 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api) in 285.5893ms
 2026-08-05 17:42:11.244 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api)'
 2026-08-05 17:42:11.252 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 3230.7085ms
+2026-08-05 17:53:57.970 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-05 17:53:59.106 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-05 17:53:59.119 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-05 17:53:59.897 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-05 17:53:59.902 +02:00 [INF] Hosting environment: Development
+2026-08-05 17:53:59.905 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-05 17:54:00.234 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-05 17:54:01.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1140.2971ms
+2026-08-05 17:54:01.480 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-05 17:54:01.503 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-05 17:54:01.516 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 36.9727ms
+2026-08-05 17:54:01.661 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 158.4036ms
+2026-08-05 17:54:01.948 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-05 17:54:02.316 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 368.4761ms
+2026-08-05 17:54:15.808 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1 - null null
+2026-08-05 17:54:16.101 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api)'
+2026-08-05 17:54:16.200 +02:00 [INF] Route matched with {action = "GetById", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-05 17:54:17.848 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-05 17:54:17.988 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api) in 1764.5559ms
+2026-08-05 17:54:17.993 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api)'
+2026-08-05 17:54:18.004 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 2196.0398ms
+2026-08-05 17:54:28.557 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/categories/1 - null null
+2026-08-05 17:54:28.595 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.GetById (OnlineStore.Api)'
+2026-08-05 17:54:28.633 +02:00 [INF] Route matched with {action = "GetById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-05 17:54:28.672 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.CategoryDto'.
+2026-08-05 17:54:28.677 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.GetById (OnlineStore.Api) in 35.6063ms
+2026-08-05 17:54:28.683 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.GetById (OnlineStore.Api)'
+2026-08-05 17:54:28.687 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/categories/1 - 200 null application/json; charset=utf-8 129.9338ms
