@@ -155,27 +155,25 @@ namespace OnlineStore.Domain.Entities
 
         public void SetPermissions(IEnumerable<Permission> permissions)
         {
-            if (_IsSuperAdmin())
-            {
-                throw new DomainException("Cannot add permissions to super admin");
-            }
-
-            ArgumentNullException.ThrowIfNull(permissions);
-
             _permissions.Clear();
 
             foreach (var permission in permissions)
-                _permissions.Add(permission);
+                AddPermission(permission);
         }
 
         public void AddPermission(Permission permission)
         {
-            if (_IsSuperAdmin())
-            {
-                throw new DomainException("Cannot add permissions to super admin");
-            }
-
             ArgumentNullException.ThrowIfNull(permission);
+
+            if (_IsSuperAdmin())
+                throw new DomainException("Cannot add permissions to super admin.");
+
+            if (_IsCustomer())
+                throw new DomainException("Cannot add permissions to customer.");
+
+            if (_permissions.Any(p => p.Id == permission.Id))
+                return;
+
             _permissions.Add(permission);
         }
 
@@ -200,6 +198,11 @@ namespace OnlineStore.Domain.Entities
         private bool _IsSuperAdmin()
         {
             return RoleId == (int)RoleType.SuperAdmin;
+        }
+
+        private bool _IsCustomer()
+        {
+            return RoleId == (int)RoleType.Customer;
         }
     }
 }
