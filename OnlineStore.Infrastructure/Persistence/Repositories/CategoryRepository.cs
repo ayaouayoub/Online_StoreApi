@@ -3,6 +3,7 @@ using System.Data;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
+using OnlineStore.Application.Dtos;
 
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
@@ -44,6 +45,39 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             }
 
             return category;
+        }
+
+        public async Task<IReadOnlyList<CategorySummaryDto>> GetCategoriesAsync()
+        {
+            List<CategorySummaryDto> categories = [];
+
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_GetCategories", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
+            {
+                categories.Add(new CategorySummaryDto
+                {
+                    Id = (int)reader["CategoryId"],
+                    Name = (string)reader["CategoryName"],
+
+                    Parent = reader["ParentId"] == DBNull.Value ? null
+                        : new LookupDto
+                        {
+                            Id = (int)reader["ParentId"],
+                            Name = (string)reader["ParentName"]
+                        }
+                });
+            }
+
+            return categories;
         }
     }
 }

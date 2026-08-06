@@ -12,10 +12,12 @@ namespace OnlineStore.Api.Controllers.Category
     public class CategoriesController : ControllerBase
     {
         private readonly GetCategoryHandler _getCategoryHandler;
+        private readonly GetCategoriesHandler _getCategoriesHandler;
 
-        public CategoriesController(GetCategoryHandler getCategoryHandler)
+        public CategoriesController(GetCategoryHandler getCategoryHandler, GetCategoriesHandler getCategoriesHandler)
         {
             _getCategoryHandler = getCategoryHandler;
+            _getCategoriesHandler = getCategoriesHandler;
         }
 
         [AllowAnonymous]
@@ -28,6 +30,18 @@ namespace OnlineStore.Api.Controllers.Category
         {
             CategoryDto dto = await _getCategoryHandler.ExecuteAsync(new GetCategoryQuery(id));
             return Ok(dto);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [ProducesResponseType(typeof(IReadOnlyList<CategorySummaryDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IReadOnlyList<CategorySummaryDto>>> GetCategories()
+        {
+            var categories = await _getCategoriesHandler.ExecuteAsync(new GetCategoriesQuery());
+
+            return Ok(categories);
         }
     }
 }

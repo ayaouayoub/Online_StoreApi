@@ -92,6 +92,7 @@ namespace OnlineStore.Api.Controllers.Product
         [HttpGet]
         [ProducesResponseType(typeof(PagedResultDto<ProductDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<PagedResultDto<ProductDto>>> GetProducts([FromQuery] GetProductsRequest request)
         {
             var resultDto = await _getProductsHandler.ExecuteAsync(new GetProductsQuery
