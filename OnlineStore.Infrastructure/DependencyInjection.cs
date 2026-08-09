@@ -41,6 +41,10 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IImageStorageService, LocalImageStorageService>();
 
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
             return services;
         }
     }

@@ -1,0 +1,182 @@
+2026-08-09 11:18:49.396 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 11:18:50.443 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-09 11:18:50.447 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-09 11:18:50.745 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 11:18:50.763 +02:00 [INF] Hosting environment: Development
+2026-08-09 11:18:50.845 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-09 11:18:54.718 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger - null null
+2026-08-09 11:18:55.289 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger - 301 0 null 594.8132ms
+2026-08-09 11:18:55.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-09 11:18:55.571 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 255.001ms
+2026-08-09 11:18:55.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - null null
+2026-08-09 11:18:55.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - null null
+2026-08-09 11:18:55.680 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-09 11:18:55.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-09 11:18:55.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 190.4932ms
+2026-08-09 11:18:55.910 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-08-09 11:18:55.990 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-08-09 11:18:56.021 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 341.6416ms
+2026-08-09 11:18:56.018 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - 200 152034 text/css 339.2322ms
+2026-08-09 11:18:56.005 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-08-09 11:18:56.039 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-09 11:18:56.082 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 403.2844ms
+2026-08-09 11:18:56.305 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 266.7783ms
+2026-08-09 11:18:56.634 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-09 11:18:56.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 361.4824ms
+2026-08-09 11:19:12.412 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 51
+2026-08-09 11:19:12.863 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:19:12.949 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-09 11:19:15.555 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-09 11:19:15.613 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2644.7956ms
+2026-08-09 11:19:15.620 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:19:15.626 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3214.9792ms
+2026-08-09 11:19:58.946 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:19:59.213 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:19:59.235 +02:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.OrderDto]] Create(OnlineStore.Api.Controllers.Order.Requests.CreateOrderRequest) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-09 11:21:09.324 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 11:21:10.006 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-09 11:21:10.009 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-09 11:21:10.579 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 11:21:10.679 +02:00 [INF] Hosting environment: Development
+2026-08-09 11:21:10.682 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-09 11:21:10.851 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-09 11:21:11.624 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 800.3039ms
+2026-08-09 11:21:11.892 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-09 11:21:11.910 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-09 11:21:11.962 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 69.9019ms
+2026-08-09 11:21:12.297 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 387.2166ms
+2026-08-09 11:21:12.603 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-09 11:21:13.006 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 403.5695ms
+2026-08-09 11:21:33.321 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:21:34.872 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:21:34.967 +02:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.OrderDto]] Create(OnlineStore.Api.Controllers.Order.Requests.CreateOrderRequest) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-09 11:22:18.649 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 11:22:19.814 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-09 11:22:19.819 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-09 11:22:20.740 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 11:22:20.853 +02:00 [INF] Hosting environment: Development
+2026-08-09 11:22:21.091 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-09 11:22:21.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-09 11:22:22.908 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1751.7361ms
+2026-08-09 11:22:23.438 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-09 11:22:23.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-09 11:22:24.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 1104.7288ms
+2026-08-09 11:22:25.782 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2301.2646ms
+2026-08-09 11:22:25.917 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-09 11:22:26.183 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 266.7709ms
+2026-08-09 11:22:39.935 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:22:41.637 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:22:41.737 +02:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.OrderDto]] Create(OnlineStore.Api.Controllers.Order.Requests.CreateOrderRequest) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-09 11:22:42.147 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api) in 393.4114ms
+2026-08-09 11:22:42.160 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:22:42.531 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders - 403 null application/json; charset=utf-8 2596.7214ms
+2026-08-09 11:23:35.951 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 55
+2026-08-09 11:23:36.098 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:23:36.114 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-09 11:23:37.250 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-09 11:23:37.273 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 1150.1041ms
+2026-08-09 11:23:37.283 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:23:37.286 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 1334.4889ms
+2026-08-09 11:24:21.064 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 55
+2026-08-09 11:24:21.132 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:24:21.139 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-09 11:24:21.673 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-09 11:24:21.677 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 511.7811ms
+2026-08-09 11:24:21.682 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:24:21.691 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 627.7483ms
+2026-08-09 11:25:16.334 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 55
+2026-08-09 11:25:16.418 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:25:16.426 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-09 11:25:16.931 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-09 11:25:16.937 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 494.4738ms
+2026-08-09 11:25:16.956 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 11:25:16.960 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 630.8902ms
+2026-08-09 11:25:30.044 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:25:30.458 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders - 400 null application/json; charset=utf-8 418.6632ms
+2026-08-09 11:29:49.876 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 11:29:50.739 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-09 11:29:50.744 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-09 11:29:51.355 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 11:29:51.360 +02:00 [INF] Hosting environment: Development
+2026-08-09 11:29:51.626 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-09 11:29:51.915 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-09 11:29:52.970 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1088.2938ms
+2026-08-09 11:29:53.103 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-09 11:29:53.104 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-09 11:29:53.235 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 131.1316ms
+2026-08-09 11:29:53.377 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 273.221ms
+2026-08-09 11:29:53.591 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-09 11:29:53.992 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 401.202ms
+2026-08-09 11:30:11.760 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:30:13.559 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:30:13.671 +02:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.OrderDto]] Create(OnlineStore.Api.Controllers.Order.Requests.CreateOrderRequest) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-09 11:30:14.559 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api) in 869.4666ms
+2026-08-09 11:30:14.564 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:30:14.955 +02:00 [ERR] Unhandled exception while processing POST /api/orders
+Microsoft.Data.SqlClient.SqlException (0x80131904): Insufficient stock or product not found.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteReaderAsync>b__283_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.OrderRepository.CreateAsync(Order order) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\OrderRepository.cs:line 47
+   at OnlineStore.Infrastructure.Persistence.Repositories.OrderRepository.CreateAsync(Order order) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\OrderRepository.cs:line 51
+   at OnlineStore.Infrastructure.Persistence.Repositories.OrderRepository.CreateAsync(Order order) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\OrderRepository.cs:line 51
+   at OnlineStore.Application.Handlers.Order.CreateOrderHandler.ExecuteAsync(CreateOrderCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Order\CreateOrderHandler.cs:line 44
+   at OnlineStore.Api.Controllers.Order.OrdersController.Create(CreateOrderRequest request) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Order\OrdersController.cs:line 41
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:1b3f1220-7a37-4d63-8f54-0f33c97b2bf9
+Error Number:50004,State:1,Class:16
+2026-08-09 11:30:15.163 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders - 500 null application/json; charset=utf-8 3403.1124ms
+2026-08-09 11:38:04.581 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders - application/json 75
+2026-08-09 11:38:04.711 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:38:04.716 +02:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.OrderDto]] Create(OnlineStore.Api.Controllers.Order.Requests.CreateOrderRequest) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-09 11:38:04.846 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.OrderDto'.
+2026-08-09 11:38:04.917 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api) in 190.4592ms
+2026-08-09 11:38:04.922 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.Create (OnlineStore.Api)'
+2026-08-09 11:38:05.181 +02:00 [ERR] Unhandled exception while processing POST /api/orders
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-09 11:38:05.252 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders - 500 null application/json; charset=utf-8 672.3554ms

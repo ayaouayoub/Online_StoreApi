@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
+using OnlineStore.Domain.Enums;
 
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
