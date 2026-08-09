@@ -26,7 +26,7 @@ namespace OnlineStore.Application.Handlers.Order
 
         public async Task<OrderDto> ExecuteAsync(CreateOrderCommand command)
         {
-            var customer = await _customerRepository.GetByUserIdAsync(_currentUser.UserId) ?? throw new ForbiddenException("Only customers can create orders.");
+            var result = await _customerRepository.GetByUserIdAsync(_currentUser.UserId) ?? throw new ForbiddenException("Only customers can create orders.");
 
             var orderItems = new List<OrderItem>();
 
@@ -39,7 +39,7 @@ namespace OnlineStore.Application.Handlers.Order
                 orderItems.Add(OrderItem.Create(product, item.Quantity));
             }
 
-            var order = Domain.Entities.Order.Create(customer, orderItems);
+            var order = Domain.Entities.Order.Create(result.Customer, orderItems);
 
             int orderId = await _orderRepository.CreateAsync(order);
 

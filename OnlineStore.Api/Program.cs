@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using OnlineStore.Api.Middlewares;
 using OnlineStore.Api.Services;
 using OnlineStore.Application.Handlers.Category;
+using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.User;
@@ -78,6 +79,8 @@ namespace OnlineStore.Api
             builder.Services.AddScoped<CreateOrderHandler>();
 
             builder.Services.AddScoped<GetOrderHandler>();
+
+            builder.Services.AddScoped<GetCustomerHandler>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

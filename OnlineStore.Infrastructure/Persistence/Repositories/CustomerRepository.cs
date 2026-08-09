@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+using OnlineStore.Application.Handlers.Customer.Models;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
@@ -16,7 +16,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<Customer?> GetByIdAsync(int id)
+        public async Task<CustomerDetails?> GetByIdAsync(int id)
         {
             await using var connection = _connectionFactory.CreateConnection();
 
@@ -36,7 +36,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             return MapCustomer(reader);
         }
 
-        public async Task<Customer?> GetByUserIdAsync(int userId)
+        public async Task<CustomerDetails?> GetByUserIdAsync(int userId)
         {
             await using var connection = _connectionFactory.CreateConnection();
 
@@ -56,16 +56,24 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             return MapCustomer(reader);
         }
 
-        private static Customer MapCustomer(SqlDataReader reader)
+        private static CustomerDetails MapCustomer(SqlDataReader reader)
         {
-            return Customer.Load
+            var customer = Customer.Load
             (
                 Id: reader.GetInt32(reader.GetOrdinal("CustomerId")),
                 email: reader.GetString(reader.GetOrdinal("Email")),
                 address: reader.GetString(reader.GetOrdinal("Address")),
                 UserId: reader.GetInt32(reader.GetOrdinal("UserId")),
-                phone: reader.IsDBNull(reader.GetOrdinal("Phone")) ? null : reader.GetString( reader.GetOrdinal("Phone"))
+                phone: reader.IsDBNull(reader.GetOrdinal("Phone")) ? null : reader.GetString(reader.GetOrdinal("Phone"))
             );
+            return new CustomerDetails
+            {
+                Customer = customer,
+                UserId = reader.GetInt32(reader.GetOrdinal("User_UserId")),
+                Username = reader.GetString(reader.GetOrdinal("User_Name")),
+                Name = reader.GetString(reader.GetOrdinal("User_Username")),
+                IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive"))
+            };
         }
     }
 }

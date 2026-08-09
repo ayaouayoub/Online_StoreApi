@@ -240,3 +240,38 @@ OnlineStore.Infrastructure.Authorization.PermissionRequirement
 2026-08-09 12:36:48.081 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.GetById (OnlineStore.Api) in 245.2541ms
 2026-08-09 12:36:48.090 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetById (OnlineStore.Api)'
 2026-08-09 12:36:48.099 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/orders/1 - 200 null application/json; charset=utf-8 2187.0946ms
+2026-08-09 13:19:24.986 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 13:19:25.848 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-09 13:19:25.883 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-09 13:19:26.980 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 13:19:27.106 +02:00 [INF] Hosting environment: Development
+2026-08-09 13:19:27.108 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-09 13:19:27.604 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-09 13:19:29.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1533.0411ms
+2026-08-09 13:19:29.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-09 13:19:29.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-09 13:19:29.289 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 122.3111ms
+2026-08-09 13:19:29.448 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 281.1829ms
+2026-08-09 13:19:31.169 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-09 13:19:31.465 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 295.9845ms
+2026-08-09 13:19:44.740 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 51
+2026-08-09 13:19:44.995 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 13:19:45.108 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-09 13:19:47.276 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-09 13:19:47.362 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2238.2675ms
+2026-08-09 13:19:47.369 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-09 13:19:47.375 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 2635.2478ms
+2026-08-09 13:19:58.554 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/customers/2 - null null
+2026-08-09 13:19:58.611 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+OnlineStore.Infrastructure.Authorization.ActiveUserRequirement
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-09 13:19:58.642 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-09 13:19:58.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/customers/2 - 401 0 null 90.795ms
+2026-08-09 13:56:15.682 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/customers/2 - null null
+2026-08-09 13:56:15.903 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.GetUserById (OnlineStore.Api)'
+2026-08-09 13:56:15.921 +02:00 [INF] Route matched with {action = "GetUserById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.UserDto]] GetUserById(Int32) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-09 13:56:16.001 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.CustomerDto'.
+2026-08-09 13:56:16.018 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.GetUserById (OnlineStore.Api) in 89.5261ms
+2026-08-09 13:56:16.029 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.GetUserById (OnlineStore.Api)'
+2026-08-09 13:56:16.037 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/customers/2 - 200 null application/json; charset=utf-8 354.9661ms

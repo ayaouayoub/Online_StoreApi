@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OnlineStore.Domain.Entities;
+﻿using OnlineStore.Application.Handlers.Customer.Models;
 
 namespace OnlineStore.Application.Interfaces.Repositories
 {
     public interface ICustomerRepository
     {
-        Task<Customer?> GetByIdAsync(int id);
-        Task<Customer?> GetByUserIdAsync(int id);
+        Task<CustomerDetails?> GetByIdAsync(int id);
+        Task<CustomerDetails?> GetByUserIdAsync(int id);
     }
 }
