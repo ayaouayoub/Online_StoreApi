@@ -13,10 +13,12 @@ namespace OnlineStore.Api.Controllers.User
     public class UsersController : ControllerBase
     {
         private readonly GetUserHandler _getUserHandler;
+        private readonly GetCurrentUserHandler _getCurrentUserHandler;
 
-        public UsersController(GetUserHandler getUserHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler)
         {
             _getUserHandler = getUserHandler;
+            _getCurrentUserHandler = getCurrentUserHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -30,6 +32,17 @@ namespace OnlineStore.Api.Controllers.User
         public async Task<ActionResult<UserDto>> GetUserById(int id)
         {
             return Ok(await _getUserHandler.ExecuteAsync(new GetUserByIdQuery(id)));
+        }
+
+        [Authorize]
+        [HttpGet("me")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<UserDto> Me()
+        {
+            return Ok(_getCurrentUserHandler.Execute());
         }
     }
 }
