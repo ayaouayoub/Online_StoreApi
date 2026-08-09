@@ -5,6 +5,8 @@ using OnlineStore.Api.Controllers.Order.Requests;
 using OnlineStore.Application.Dtos;
 using OnlineStore.Application.Handlers.Order.Commands;
 using OnlineStore.Application.Handlers.Order;
+using OnlineStore.Application.Handlers.Order.Queries;
+using OnlineStore.Application.Security;
 
 namespace OnlineStore.Api.Controllers.Order
 {
@@ -13,10 +15,11 @@ namespace OnlineStore.Api.Controllers.Order
     public class OrdersController : ControllerBase
     {
         private readonly CreateOrderHandler _createOrderHandler;
-
-        public OrdersController(CreateOrderHandler createOrderHandler)
+        private readonly GetOrderHandler _getOrderHandler;
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler)
         {
             _createOrderHandler = createOrderHandler;
+            _getOrderHandler = getOrderHandler;
         }
 
         [HttpPost]
@@ -43,10 +46,17 @@ namespace OnlineStore.Api.Controllers.Order
             return CreatedAtAction(nameof(GetById), new { id = order.Id }, order);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "GetOrderById")]
+        [Authorize(Policy = Permissions.Orders.View)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<OrderDto>> GetById(int id)
         {
-            throw new NotImplementedException();
+            return Ok(await _getOrderHandler.ExecuteAsync(new GetOrderQuery(id)));
         }
     }
 }

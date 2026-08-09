@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
+using OnlineStore.Domain.Enums;
 
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
@@ -75,6 +76,55 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             }
 
             return table;
+        }
+
+        public async Task<Order?> GetByIdAsync(int id)
+        {
+            await using var connection = _connectionFactory.CreateConnection();
+
+            await using var command = new SqlCommand("dbo.usp_GetOrderById", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = id;
+
+            await connection.OpenAsync();
+
+            await using var reader = await command.ExecuteReaderAsync();
+
+            if (!await reader.ReadAsync()) return null;
+
+            int customerId = reader.GetInt32(reader.GetOrdinal("CustomerId"));
+
+            DateTime createdAt = reader.GetDateTime(reader.GetOrdinal("OrderDate"));
+
+            OrderStatus status = (OrderStatus)reader.GetByte(reader.GetOrdinal("Status"));
+
+            var order = Order.Load
+            (
+                id,
+                status,
+                createdAt,
+                customerId
+            );
+
+            await reader.NextResultAsync();
+
+            while (await reader.ReadAsync())
+            {
+                int productId = reader.GetInt32(reader.GetOrdinal("ProductId"));
+
+                string productName = reader.GetString(reader.GetOrdinal("ProductName"));
+
+                int quantity = reader.GetInt32(reader.GetOrdinal("Quantity"));
+
+                decimal unitPrice = reader.GetDecimal(reader.GetOrdinal("UnitPrice"));
+
+                order.AddItem(OrderItem.Load(id, productId, quantity, unitPrice, productName));
+            }
+
+            return order;
         }
     }
 }

@@ -10,5 +10,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
     public interface IOrderRepository
     {
         Task<int> CreateAsync(Order order);
+        Task<Order?> GetByIdAsync(int id);
     }
 }
