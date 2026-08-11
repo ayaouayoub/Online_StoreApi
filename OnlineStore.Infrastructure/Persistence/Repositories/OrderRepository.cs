@@ -38,7 +38,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             var itemsTable = CreateItemsTable(order);
 
-            var itemsParameter = command.Parameters.Add("@Items",SqlDbType.Structured);
+            var itemsParameter = command.Parameters.Add("@Items", SqlDbType.Structured);
 
             itemsParameter.TypeName = "dbo.OrderItemType";
             itemsParameter.Value = itemsTable;
@@ -47,7 +47,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             var result = await command.ExecuteScalarAsync();
 
-            if (result is null || result == DBNull.Value)throw new InvalidOperationException("Failed to create order.");
+            if (result is null || result == DBNull.Value) throw new InvalidOperationException("Failed to create order.");
 
             return Convert.ToInt32(result);
         }
@@ -125,6 +125,65 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             }
 
             return order;
+        }
+
+        public async Task CreateFailedPaymentAndCancelOrderAsync(Payment payment, int orderId)
+        {
+            await using var connection = _connectionFactory.CreateConnection();
+
+            await using var command = new SqlCommand("usp_CreateFailedPaymentAndCancelOrder", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = orderId;
+
+            var amountParameter = command.Parameters.Add("@Amount", SqlDbType.Decimal);
+
+            amountParameter.Precision = 18;
+            amountParameter.Scale = 2;
+            amountParameter.Value = payment.Money.Amount;
+
+            command.Parameters.Add("@PaymentMethodId", SqlDbType.Int).Value = payment.PaymentMethodId;
+
+            command.Parameters.Add("@Currency", SqlDbType.NVarChar, 10).Value = payment.Money.Currency.Code;
+
+            command.Parameters.Add("@TransactionId", SqlDbType.NVarChar, 255).Value = (object?)payment.TransactionId ?? DBNull.Value;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
+        }
+
+
+        public async Task CreatePaymentAndMarkAsPaidAsync(Payment payment, Order order)
+        {
+            await using var connection = _connectionFactory.CreateConnection();
+
+            await using var command = new SqlCommand("usp_CreatePaymentAndMarkOrderAsPaid", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = payment.OrderId;
+
+            var amountParameter = command.Parameters.Add("@Amount", SqlDbType.Decimal);
+
+            amountParameter.Precision = 18;
+            amountParameter.Scale = 2;
+            amountParameter.Value = payment.Money.Amount;
+
+            command.Parameters.Add("@PaymentMethodId", SqlDbType.Int).Value = payment.PaymentMethodId;
+
+            command.Parameters.Add("@Currency", SqlDbType.NVarChar, 10).Value = payment.Money.Currency.Code;
+
+            command.Parameters.Add("@Status", SqlDbType.TinyInt).Value = (byte)payment.Status;
+
+            command.Parameters.Add("@TransactionId", SqlDbType.NVarChar, 255).Value = payment.TransactionId!;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteScalarAsync();
         }
     }
 }

@@ -11,6 +11,7 @@ using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
+using OnlineStore.Domain.Enums;
 using OnlineStore.Infrastructure;
 using OnlineStore.Infrastructure.Authorization;
 using Serilog;
@@ -84,6 +85,8 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<GetCurrentUserHandler>();
 
+            builder.Services.AddScoped<PayOrderHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -143,6 +146,18 @@ namespace OnlineStore.Api
                         policy.AddRequirements(
                             new ActiveUserRequirement(),
                             new PermissionRequirement(permission));
+                    });
+                }
+
+                foreach (RoleType role in Enum.GetValues<RoleType>())
+                {
+                    options.AddPolicy(role.ToString(), policy =>
+                    {
+                        policy.RequireAuthenticatedUser();
+                        policy.RequireRole(role.ToString());
+
+                        policy.AddRequirements(
+                            new ActiveUserRequirement());
                     });
                 }
             });

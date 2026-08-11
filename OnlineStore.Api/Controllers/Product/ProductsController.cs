@@ -5,10 +5,10 @@ using OnlineStore.Application.Security;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Api.Controllers.Product.Requests;
 using OnlineStore.Application.Handlers.Product.Commands;
-using OnlineStore.Application.Interfaces.Services;
 using OnlineStore.Api.Controllers.Product.Mappings;
 using OnlineStore.Api.Services;
 using OnlineStore.Application.Handlers.Product.Queries;
+using OnlineStore.Application.Interfaces.Services.Images;
 
 namespace OnlineStore.Api.Controllers.Product
 {

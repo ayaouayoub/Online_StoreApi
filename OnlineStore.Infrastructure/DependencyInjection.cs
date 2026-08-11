@@ -9,7 +9,9 @@ using OnlineStore.Infrastructure.Services.Security;
 using Microsoft.AspNetCore.Authorization;
 using OnlineStore.Infrastructure.Authorization;
 using OnlineStore.Infrastructure.Services.Storage;
-using OnlineStore.Application.Interfaces.Services;
+using OnlineStore.Application.Interfaces.Services.Images;
+using OnlineStore.Application.Interfaces.Services.Payments;
+using OnlineStore.Infrastructure.Services.Payments;
 
 namespace OnlineStore.Infrastructure
 {
@@ -44,6 +46,14 @@ namespace OnlineStore.Infrastructure
             services.AddScoped<IOrderRepository, OrderRepository>();
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddScoped<IPaymentGateway, StripePaymentGateway>();
+
+            services.AddScoped<IPaymentGateway, PayPalPaymentGateway>();
+
+            services.AddScoped<IPaymentGatewayFactory, PaymentGatewayFactory>();
+
+            services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
 
             return services;
         }

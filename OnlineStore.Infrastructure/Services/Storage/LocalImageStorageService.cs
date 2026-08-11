@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using OnlineStore.Application.Interfaces.Services;
+using OnlineStore.Application.Interfaces.Services.Images;
 
 namespace OnlineStore.Infrastructure.Services.Storage
 {

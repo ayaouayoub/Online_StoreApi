@@ -26,7 +26,7 @@ namespace OnlineStore.Application.Handlers.Order
 
         public async Task<OrderDto> ExecuteAsync(CreateOrderCommand command)
         {
-            var result = await _customerRepository.GetByUserIdAsync(_currentUser.UserId) ?? throw new ForbiddenException("Only customers can create orders.");
+            var result = await _customerRepository.GetByUserIdAsync(_currentUser.UserId) ?? throw new ForbiddenException("Customer profile not found.");
 
             var orderItems = new List<OrderItem>();
 

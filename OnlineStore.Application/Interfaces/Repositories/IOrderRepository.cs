@@ -11,5 +11,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
     {
         Task<int> CreateAsync(Order order);
         Task<Order?> GetByIdAsync(int id);
+        Task CreateFailedPaymentAndCancelOrderAsync(Payment payment, int id);
+        Task CreatePaymentAndMarkAsPaidAsync(Payment payment, Order order);
     }
 }

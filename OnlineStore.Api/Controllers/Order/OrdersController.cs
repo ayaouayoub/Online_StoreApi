@@ -16,14 +16,16 @@ namespace OnlineStore.Api.Controllers.Order
     {
         private readonly CreateOrderHandler _createOrderHandler;
         private readonly GetOrderHandler _getOrderHandler;
-        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler)
+        private readonly PayOrderHandler _payOrderHandler;
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler)
         {
             _createOrderHandler = createOrderHandler;
             _getOrderHandler = getOrderHandler;
+            _payOrderHandler = payOrderHandler;
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Policy = "Customer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -44,6 +46,23 @@ namespace OnlineStore.Api.Controllers.Order
             var order = await _createOrderHandler.ExecuteAsync(command);
 
             return CreatedAtAction(nameof(GetById), new { id = order.Id }, order);
+        }
+
+        [HttpPost("{orderId:int}/pay")]
+        [Authorize(Policy = "Customer")]
+        [ProducesResponseType(typeof(OrderDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<OrderDto>> Pay(int orderId, [FromBody] PayOrderRequest request) 
+        { 
+            return Ok(await _payOrderHandler.ExecuteAsync(new PayOrderCommand
+            (
+                OrderId: orderId,
+                PaymentMethodId: request.PaymentMethodId,
+                Provider: request.Provider
+            ))); 
         }
 
         [HttpGet("{id:int}", Name = "GetOrderById")]

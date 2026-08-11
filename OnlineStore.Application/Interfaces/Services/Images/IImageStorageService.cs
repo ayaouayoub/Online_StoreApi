@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace OnlineStore.Application.Interfaces.Services
+namespace OnlineStore.Application.Interfaces.Services.Images
 {
     public interface IImageStorageService
     {
