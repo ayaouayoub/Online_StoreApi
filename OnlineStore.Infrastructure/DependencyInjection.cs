@@ -63,6 +63,10 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IAuthorizationHandler, ShippingViewAuthorizationHandler>();
 
+            services.AddScoped<IAuthorizationHandler, CustomerViewAuthorizationHandler>();
+
+            services.AddScoped<IRoleRepository, RoleRepository>();
+
             return services;
         }
     }

@@ -96,6 +96,8 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<DeliverOrderHandler>();
 
+            builder.Services.AddScoped<RegisterCustomerHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -154,6 +156,17 @@ namespace OnlineStore.Api
                     (
                         new ActiveUserRequirement(),
                         new ShippingViewRequirement()
+                    );
+                });
+
+                options.AddPolicy(Policies.CustomerView, policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+
+                    policy.AddRequirements
+                    (
+                        new ActiveUserRequirement(),
+                        new CustomerViewRequirement()
                     );
                 });
 

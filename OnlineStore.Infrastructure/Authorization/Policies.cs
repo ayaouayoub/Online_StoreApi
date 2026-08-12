@@ -10,5 +10,6 @@ namespace OnlineStore.Infrastructure.Authorization
     {
         public const string Authenticated = "Authenticated";
         public const string ShippingView = "ShippingView";
+        public const string CustomerView = "CustomerView";
     }
 }

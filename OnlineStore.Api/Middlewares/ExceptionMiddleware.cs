@@ -56,6 +56,15 @@ namespace OnlineStore.Api.Middlewares
                     message = ex.Message
                 });
             }
+            catch (ConflictException ex)
+            {
+                context.Response.StatusCode = StatusCodes.Status409Conflict;
+
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    message = ex.Message
+                });
+            }
             catch (Exception ex)
             {
                 _logger.LogError
