@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Api.Controllers.Order.Requests;
 using OnlineStore.Application.Dtos;
@@ -9,8 +8,6 @@ using OnlineStore.Application.Handlers.Order.Queries;
 using OnlineStore.Application.Security;
 using OnlineStore.Application.Handlers.Shipping.Commands;
 using OnlineStore.Application.Handlers.Shipping;
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Threading.Tasks;
 using OnlineStore.Application.Handlers.Shipping.Queries;
 using OnlineStore.Infrastructure.Authorization;
 
@@ -26,8 +23,9 @@ namespace OnlineStore.Api.Controllers.Order
         private readonly CreateShippingHandler _createShippingHandler;
         private readonly GetOrderShippingHandler _getOrderShippingHandler;
         private readonly ShipOrderHandler _shipOrderHandler;
+        private readonly DeliverOrderHandler _deliverOrderHandler;
 
-        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler, ShipOrderHandler shipOrderHandler)
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler, ShipOrderHandler shipOrderHandler, DeliverOrderHandler deliverOrderHandler)
         {
             _createOrderHandler = createOrderHandler;
             _getOrderHandler = getOrderHandler;
@@ -35,6 +33,7 @@ namespace OnlineStore.Api.Controllers.Order
             _createShippingHandler = createShippingHandler;
             _getOrderShippingHandler = getOrderShippingHandler;
             _shipOrderHandler = shipOrderHandler;
+            _deliverOrderHandler = deliverOrderHandler;
         }
 
         [HttpPost]
@@ -126,6 +125,20 @@ namespace OnlineStore.Api.Controllers.Order
         public async Task<IActionResult> ShipOrder(int orderId)
         {
             await _shipOrderHandler.ExecuteAsync(new ShipOrderCommand(orderId));
+            return NoContent();
+        }
+
+        [HttpPost("{orderId:int}/shipping/deliver")]
+        [Authorize(Policy = Permissions.Shipping.Update)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeliverOrder(int orderId)
+        {
+            await _deliverOrderHandler.ExecuteAsync(new DeliverOrderCommand(orderId));
             return NoContent();
         }
 

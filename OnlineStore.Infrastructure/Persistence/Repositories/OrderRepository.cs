@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
@@ -196,14 +195,40 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             command.Parameters.Add("@OrderId", SqlDbType.Int).Value = orderId;
 
+            command.Parameters.Add("@CurrentShippingStatus", SqlDbType.SmallInt).Value = (short)ShippingStatus.Preparing;
+
+            command.Parameters.Add("@NewShippingStatus", SqlDbType.SmallInt).Value = (short)ShippingStatus.Shipped;
+
+            command.Parameters.Add("@CurrentOrderStatus", SqlDbType.TinyInt).Value = (byte)OrderStatus.Processing;
+
+            command.Parameters.Add("@NewOrderStatus", SqlDbType.TinyInt).Value = (byte)OrderStatus.Shipped;
+
             await connection.OpenAsync();
 
             await command.ExecuteNonQueryAsync();
         }
 
-        public Task DeliverAsync(int orderId)
+        public async Task DeliverAsync(int orderId)
         {
-            throw new NotImplementedException();
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("dbo.usp_DeliverOrder", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = orderId;
+
+            command.Parameters.Add("@CurrentShippingStatus", SqlDbType.SmallInt).Value = (short)ShippingStatus.Shipped;
+
+            command.Parameters.Add("@NewShippingStatus", SqlDbType.SmallInt).Value = (short)ShippingStatus.Delivered;
+
+            command.Parameters.Add("@CurrentOrderStatus", SqlDbType.TinyInt).Value = (byte)OrderStatus.Shipped;
+
+            command.Parameters.Add("@NewOrderStatus", SqlDbType.TinyInt).Value = (byte)OrderStatus.Delivered;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
         }
     }
 }

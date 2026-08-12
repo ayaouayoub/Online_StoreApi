@@ -179,3 +179,133 @@ OnlineStore.Infrastructure.Authorization.PermissionRequirement
 2026-08-12 13:45:49.461 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.ShipOrder (OnlineStore.Api) in 144.7298ms
 2026-08-12 13:45:49.469 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.ShipOrder (OnlineStore.Api)'
 2026-08-12 13:45:49.477 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders/2/shipping/ship - 204 null null 270.1484ms
+2026-08-12 14:06:46.133 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-12 14:06:47.289 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-12 14:06:47.303 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-12 14:06:47.679 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-12 14:06:47.685 +02:00 [INF] Hosting environment: Development
+2026-08-12 14:06:47.687 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-12 14:06:48.819 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-12 14:06:50.566 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1768.3926ms
+2026-08-12 14:06:50.704 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-12 14:06:50.704 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-12 14:06:50.971 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 265.3878ms
+2026-08-12 14:06:51.176 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 472.6178ms
+2026-08-12 14:06:52.268 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 51
+2026-08-12 14:06:53.396 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-12 14:06:53.602 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-12 14:06:55.609 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-12 14:06:56.271 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 662.2234ms
+2026-08-12 14:06:57.538 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-12 14:06:57.605 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 3979.8862ms
+2026-08-12 14:06:57.612 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-12 14:06:57.619 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 5351.1644ms
+2026-08-12 14:06:59.755 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-12 14:06:59.890 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 135.6407ms
+2026-08-12 14:07:00.226 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-12 14:07:00.228 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-12 14:07:00.308 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 82.3766ms
+2026-08-12 14:07:00.401 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 173.4605ms
+2026-08-12 14:07:00.579 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-12 14:07:01.010 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 431.3181ms
+2026-08-12 14:07:16.801 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders/1/shipping/deliver - null 0
+2026-08-12 14:07:16.944 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:07:16.961 +02:00 [INF] Route matched with {action = "DeliverOrder", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeliverOrder(Int32) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-12 14:07:17.331 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api) in 362.4113ms
+2026-08-12 14:07:17.338 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:07:17.715 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders/1/shipping/deliver - 400 null application/json; charset=utf-8 915.8507ms
+2026-08-12 14:07:33.249 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - null 0
+2026-08-12 14:07:33.418 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:07:33.426 +02:00 [INF] Route matched with {action = "DeliverOrder", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeliverOrder(Int32) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-12 14:07:33.780 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api) in 347.6666ms
+2026-08-12 14:07:33.789 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:07:34.056 +02:00 [ERR] Unhandled exception while processing POST /api/orders/2/shipping/deliver
+Microsoft.Data.SqlClient.SqlException (0x80131904): Procedure or function usp_DeliverOrder has too many arguments specified.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.OrderRepository.DeliverAsync(Int32 orderId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\OrderRepository.cs:line 231
+   at OnlineStore.Application.Handlers.Order.DeliverOrderHandler.ExecuteAsync(DeliverOrderCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Order\DeliverOrderHandler.cs:line 37
+   at OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder(Int32 orderId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Order\OrdersController.cs:line 141
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:1fa75264-8dd1-4275-aab1-722585440df6
+Error Number:8144,State:2,Class:16
+2026-08-12 14:07:34.328 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - 500 null application/json; charset=utf-8 1078.2823ms
+2026-08-12 14:10:17.583 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - null 0
+2026-08-12 14:10:17.655 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:10:17.660 +02:00 [INF] Route matched with {action = "DeliverOrder", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeliverOrder(Int32) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-12 14:10:18.055 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api) in 388.9793ms
+2026-08-12 14:10:18.061 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:10:18.319 +02:00 [ERR] Unhandled exception while processing POST /api/orders/2/shipping/deliver
+Microsoft.Data.SqlClient.SqlException (0x80131904): Shipping does not exist or cannot be delivered.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.OrderRepository.DeliverAsync(Int32 orderId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\OrderRepository.cs:line 231
+   at OnlineStore.Application.Handlers.Order.DeliverOrderHandler.ExecuteAsync(DeliverOrderCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Order\DeliverOrderHandler.cs:line 37
+   at OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder(Int32 orderId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Order\OrdersController.cs:line 141
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:1fa75264-8dd1-4275-aab1-722585440df6
+Error Number:50040,State:1,Class:16
+2026-08-12 14:10:18.409 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - 500 null application/json; charset=utf-8 830.4579ms
+2026-08-12 14:13:13.094 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-12 14:13:14.631 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-12 14:13:14.647 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-12 14:13:15.547 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-12 14:13:15.613 +02:00 [INF] Hosting environment: Development
+2026-08-12 14:13:15.624 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-12 14:13:15.839 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-12 14:13:18.007 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 2195.3149ms
+2026-08-12 14:13:21.180 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - null 0
+2026-08-12 14:13:23.553 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:13:23.647 +02:00 [INF] Route matched with {action = "DeliverOrder", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeliverOrder(Int32) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-12 14:13:23.861 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-12 14:13:23.877 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api) in 214.4158ms
+2026-08-12 14:13:23.882 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.DeliverOrder (OnlineStore.Api)'
+2026-08-12 14:13:23.895 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/orders/2/shipping/deliver - 204 null null 2715.5388ms
