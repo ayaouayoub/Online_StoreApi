@@ -34,7 +34,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             if (!await reader.ReadAsync()) return null;
 
-            return MapCustomerDeatils(reader);
+            return MapCustomerDetails(reader);
         }
 
         public async Task<CustomerDetails?> GetByUserIdAsync(int userId)
@@ -54,7 +54,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             if (!await reader.ReadAsync()) return null;
 
-            return MapCustomerDeatils(reader);
+            return MapCustomerDetails(reader);
         }
 
         public async Task<CustomerDetails> RegisterAsync(User user, Customer customer)
@@ -85,7 +85,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             if (!await reader.ReadAsync()) throw new DomainException("Failed to register customer.");
 
-            return MapCustomerDeatils(reader);
+            return MapCustomerDetails(reader);
         }
 
         public async Task<Customer?> GetByEmailAsync(string email)
@@ -119,7 +119,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             );
         }
 
-        private static CustomerDetails MapCustomerDeatils(SqlDataReader reader)
+        private static CustomerDetails MapCustomerDetails(SqlDataReader reader)
         {
             return new CustomerDetails
             {
