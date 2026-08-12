@@ -23,6 +23,7 @@ namespace OnlineStore.Domain.Entities
 
         private Order(int id, int customerId, Customer? customer, OrderStatus status, DateTime? createdAt = null)
         {
+            if (id < 0) throw new DomainException("Invalid order id.");
             if (customer is not null && customerId != customer.Id) throw new DomainException("Customer id mismatch");
             Id = id;
             CustomerId = customerId;

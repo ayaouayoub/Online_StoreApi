@@ -25,14 +25,16 @@ namespace OnlineStore.Api.Controllers.Order
         private readonly PayOrderHandler _payOrderHandler;
         private readonly CreateShippingHandler _createShippingHandler;
         private readonly GetOrderShippingHandler _getOrderShippingHandler;
+        private readonly ShipOrderHandler _shipOrderHandler;
 
-        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler)
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler, ShipOrderHandler shipOrderHandler)
         {
             _createOrderHandler = createOrderHandler;
             _getOrderHandler = getOrderHandler;
             _payOrderHandler = payOrderHandler;
             _createShippingHandler = createShippingHandler;
             _getOrderShippingHandler = getOrderShippingHandler;
+            _shipOrderHandler = shipOrderHandler;
         }
 
         [HttpPost]
@@ -111,6 +113,20 @@ namespace OnlineStore.Api.Controllers.Order
             );
 
             return CreatedAtAction(nameof(GetOrderShipping), new { orderId }, shipping);
+        }
+
+        [HttpPost("{orderId:int}/shipping/ship")]
+        [Authorize(Policy = Permissions.Shipping.Update)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ShipOrder(int orderId)
+        {
+            await _shipOrderHandler.ExecuteAsync(new ShipOrderCommand(orderId));
+            return NoContent();
         }
 
         [HttpGet("{orderId:int}/shipping")]

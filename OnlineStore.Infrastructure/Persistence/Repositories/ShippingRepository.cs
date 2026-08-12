@@ -89,15 +89,5 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                 actualDeliveryDate: reader.IsDBNull(actualDate) ? null : reader.GetDateTime(actualDate)
             );
         }
-
-        public Task ShipAsync(int orderId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeliverAsync(int orderId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

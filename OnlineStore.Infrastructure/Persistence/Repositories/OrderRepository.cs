@@ -185,5 +185,25 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             await command.ExecuteScalarAsync();
         }
+
+        public async Task ShipAsync(int orderId)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("dbo.usp_ShipOrder", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = orderId;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
+        }
+
+        public Task DeliverAsync(int orderId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
