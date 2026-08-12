@@ -9,6 +9,7 @@ using OnlineStore.Application.Handlers.Category;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Product;
+using OnlineStore.Application.Handlers.Shipping;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
 using OnlineStore.Domain.Enums;
@@ -87,6 +88,10 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<PayOrderHandler>();
 
+            builder.Services.AddScoped<CreateShippingHandler>();
+
+            builder.Services.AddScoped<GetOrderShippingHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -137,15 +142,28 @@ namespace OnlineStore.Api
                     .AddRequirements(new ActiveUserRequirement())
                     .Build();
 
+                options.AddPolicy(Policies.ShippingView, policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+
+                    policy.AddRequirements
+                    (
+                        new ActiveUserRequirement(),
+                        new ShippingViewRequirement()
+                    );
+                });
+
                 foreach (string permission in Permissions.GetAll())
                 {
                     options.AddPolicy(permission, policy =>
                     {
                         policy.RequireAuthenticatedUser();
 
-                        policy.AddRequirements(
+                        policy.AddRequirements
+                        (
                             new ActiveUserRequirement(),
-                            new PermissionRequirement(permission));
+                            new PermissionRequirement(permission)
+                        );
                     });
                 }
 
@@ -156,8 +174,10 @@ namespace OnlineStore.Api
                         policy.RequireAuthenticatedUser();
                         policy.RequireRole(role.ToString());
 
-                        policy.AddRequirements(
-                            new ActiveUserRequirement());
+                        policy.AddRequirements
+                        (
+                            new ActiveUserRequirement()
+                        );
                     });
                 }
             });

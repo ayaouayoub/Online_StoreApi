@@ -7,6 +7,12 @@ using OnlineStore.Application.Handlers.Order.Commands;
 using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Order.Queries;
 using OnlineStore.Application.Security;
+using OnlineStore.Application.Handlers.Shipping.Commands;
+using OnlineStore.Application.Handlers.Shipping;
+using Microsoft.AspNetCore.Http.HttpResults;
+using System.Threading.Tasks;
+using OnlineStore.Application.Handlers.Shipping.Queries;
+using OnlineStore.Infrastructure.Authorization;
 
 namespace OnlineStore.Api.Controllers.Order
 {
@@ -17,11 +23,16 @@ namespace OnlineStore.Api.Controllers.Order
         private readonly CreateOrderHandler _createOrderHandler;
         private readonly GetOrderHandler _getOrderHandler;
         private readonly PayOrderHandler _payOrderHandler;
-        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler)
+        private readonly CreateShippingHandler _createShippingHandler;
+        private readonly GetOrderShippingHandler _getOrderShippingHandler;
+
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler)
         {
             _createOrderHandler = createOrderHandler;
             _getOrderHandler = getOrderHandler;
             _payOrderHandler = payOrderHandler;
+            _createShippingHandler = createShippingHandler;
+            _getOrderShippingHandler = getOrderShippingHandler;
         }
 
         [HttpPost]
@@ -77,5 +88,42 @@ namespace OnlineStore.Api.Controllers.Order
         {
             return Ok(await _getOrderHandler.ExecuteAsync(new GetOrderQuery(id)));
         }
+
+        [HttpPost("{orderId:int}/shipping")]
+        [Authorize(Policy = Permissions.Shipping.Create)]
+        [ProducesResponseType(typeof(ShippingDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ShippingDto>> CreateShipping(int orderId, [FromBody] CreateShippingRequest request)
+        {
+            var shipping = await _createShippingHandler.ExecuteAsync
+            (
+               new CreateShippingCommand
+               (
+                    OrderId: orderId,
+                    CarrierName: request.CarrierName,
+                    TrackingNumber: request.TrackingNumber,
+                    EstimatedDeliveryDate: request.EstimatedDeliveryDate
+               )
+            );
+
+            return CreatedAtAction(nameof(GetOrderShipping), new { orderId }, shipping);
+        }
+
+        [HttpGet("{orderId:int}/shipping")]
+        [Authorize(Policy = Policies.ShippingView)]
+        [ProducesResponseType(typeof(ShippingDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ShippingDto>> GetOrderShipping(int orderId)
+        {
+            return Ok(await _getOrderShippingHandler.ExecuteAsync(new GetOrderShippingQuery(orderId)));
+        } 
     }
 }

@@ -55,6 +55,14 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
 
+            services.AddScoped<IShippingRepository, ShippingRepository>();
+
+            services.AddScoped<IAuthorizationHandler, ActiveUserAuthorizationHandler>();
+
+            services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
+
+            services.AddScoped<IAuthorizationHandler, ShippingViewAuthorizationHandler>();
+
             return services;
         }
     }
