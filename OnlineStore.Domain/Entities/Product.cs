@@ -62,11 +62,11 @@ namespace OnlineStore.Domain.Entities
             Price = price;
         }
 
-        public void ChangeQuantityInStock(int quantityInStock)
+        public void ChangeQuantityInStock(int quantityChange)
         {
-            if (QuantityInStock == quantityInStock) return;
-            _ValidateQuantityInStock(quantityInStock);
-            QuantityInStock = quantityInStock;
+            var newQuantity = QuantityInStock + quantityChange;
+            if (newQuantity < 0) throw new DomainException("Quantity in stock cannot be negative.");
+            QuantityInStock = newQuantity;
         }
 
         public void ChangeCategory(Category category)

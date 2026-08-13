@@ -189,5 +189,20 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                 PageSize = query.PageSize
             };
         }
+
+        public async Task UpdateStockAsync(int productId, int quantityChange)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_UpdateProductStock", connection) { CommandType = CommandType.StoredProcedure };
+
+            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = productId;
+
+            command.Parameters.Add("@QuantityChange", SqlDbType.Int).Value = quantityChange;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
+        }
     }
 }

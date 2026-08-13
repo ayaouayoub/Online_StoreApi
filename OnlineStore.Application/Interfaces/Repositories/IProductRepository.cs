@@ -9,5 +9,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<Product?> GetByIdAsync(int id);
         Task<int> CreateProductAsync(Product product);
         Task<PagedResult<Product>> GetProductsAsync(GetProductsQuery query);
+        Task UpdateStockAsync(int productId, int quantityChange);
     }
 }

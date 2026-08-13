@@ -21,14 +21,16 @@ namespace OnlineStore.Api.Controllers.Product
         private readonly FileUrlGenerator _fileUrlGenerator;
         private readonly GetProductHandler _getProductHandler;
         private readonly GetProductsHandler _getProductsHandler;
+        private readonly UpdateStockHandler _updateStockHandler;
 
-        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler, GetProductsHandler getProductsHandler)
+        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler, GetProductsHandler getProductsHandler, UpdateStockHandler updateStockHandler)
         {
             _createProductHandler = createProductHandler;
             _imageStorageService = imageStorageService;
             _fileUrlGenerator = fileUrlGenerator;
             _getProductHandler = getProductHandler;
             _getProductsHandler = getProductsHandler;
+            _updateStockHandler = updateStockHandler;
         }
 
         [Authorize(Policy = Permissions.Products.Create)]
@@ -113,6 +115,23 @@ namespace OnlineStore.Api.Controllers.Product
             }
 
             return Ok(resultDto);
+        }
+
+        [HttpPatch("{id:int}/stock")]
+        [Authorize(Policy = Permissions.Products.Update)]
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ProductDto>> UpdateStock(int id, [FromBody] UpdateStockRequest request)
+        {
+            return Ok(await _updateStockHandler.ExecuteAsync(new UpdateStockCommand
+            (
+                ProductId: id,
+                QuantityChange: request.QuantityChange
+            )));
         }
     }
 }
