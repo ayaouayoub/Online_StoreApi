@@ -25,5 +25,23 @@ namespace OnlineStore.Application.Handlers.User.Mappings
             };
         }
 
+        public static UserDto ToDto(this Domain.Entities.User user, int newUserId)
+        {
+            return new UserDto
+            {
+                Id = newUserId,
+                Name = user.Name,
+                CreatedAt = user.CreatedAt,
+                IsActive = user.IsActive,
+                Permissions = [.. user.Permissions.Select(p => new PermissionDto
+                {
+                    Id = p.Id,
+                    Code = p.Code,
+                    Name = p.Name
+                })],
+                RoleType = (RoleType)user.RoleId,
+                Username = user.Username
+            };
+        }
     }
 }

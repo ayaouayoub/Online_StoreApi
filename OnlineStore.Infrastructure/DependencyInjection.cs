@@ -67,6 +67,8 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IRoleRepository, RoleRepository>();
 
+            services.AddScoped<IPermissionRepository, PermissionRepository>();
+
             return services;
         }
     }

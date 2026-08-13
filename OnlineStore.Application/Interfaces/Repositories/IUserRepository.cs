@@ -6,5 +6,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
     {
         Task<User?> GetByIdAsync(int id);
         Task<User?> GetByUsernameAsync(string username);
+        Task<int> CreateUserAsync(User user);
     }
 }

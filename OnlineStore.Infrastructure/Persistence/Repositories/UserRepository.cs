@@ -73,18 +73,29 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             using SqlDataReader reader = await command.ExecuteReaderAsync();
 
-            if (await reader.ReadAsync())
+            while (await reader.ReadAsync())
             {
-                user = User.Load
-                (
-                    id: (int)reader["UserId"],
-                    name: (string)reader["Name"],
-                    username: (string)reader["Username"],
-                    passwordHash: (string)reader["PasswordHash"],
-                    roleId: (int)reader["RoleId"],
-                    isActive: (bool)reader["IsActive"],
-                    createdAt: (DateTime)reader["CreatedAt"]
-                );
+                if (user is null)
+                {
+                    Role role = Role.Load
+                    (
+                        id: (int)reader["RoleId"],
+                        name: (string)reader["RoleName"]
+                    );
+
+                    user = User.LoadWithRole
+                    (
+                        id: (int)reader["UserId"],
+                        name: (string)reader["Name"],
+                        username: (string)reader["Username"],
+                        passwordHash: (string)reader["PasswordHash"],
+                        role: role,
+                        isActive: (bool)reader["IsActive"],
+                        createdAt: (DateTime)reader["CreatedAt"]
+                    );
+                }
+
+                AddPermissionIfExists(reader, user);
             }
 
             return user;
@@ -107,6 +118,48 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                     name: (string)reader["PermissionName"]
                 )
             );
+        }
+
+        public async Task<int> CreateUserAsync(User user)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("usp_CreateUser", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = user.Name;
+
+            command.Parameters.Add("@Username", SqlDbType.NVarChar, 100).Value = user.Username;
+
+            command.Parameters.Add("@PasswordHash", SqlDbType.NVarChar, 256).Value = user.PasswordHash;
+
+            command.Parameters.Add("@RoleId", SqlDbType.Int).Value = user.RoleId;
+
+            AddPermissionIdsParameter(user.Permissions, command);
+
+            await connection.OpenAsync();
+
+            await using SqlDataReader reader = await command.ExecuteReaderAsync(CommandBehavior.SingleRow);
+
+            if (!await reader.ReadAsync()) throw new InvalidOperationException("Failed to create user.");
+
+            return reader.GetInt32(reader.GetOrdinal("UserId"));
+        }
+
+        private static void AddPermissionIdsParameter(IReadOnlyCollection<Permission> permissions, SqlCommand command)
+        {
+            var table = new DataTable();
+
+            table.Columns.Add("PermissionId", typeof(int));
+
+            foreach (var permission in permissions.GroupBy(p => p.Id).Select(g => g.First())) table.Rows.Add(permission.Id);
+
+            var parameter = command.Parameters.Add("@PermissionIds", SqlDbType.Structured);
+
+            parameter.TypeName = "dbo.PermissionIdTable";
+            parameter.Value = table;
         }
     }
 }
