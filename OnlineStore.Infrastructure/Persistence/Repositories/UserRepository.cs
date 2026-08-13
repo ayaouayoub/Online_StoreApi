@@ -154,7 +154,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             table.Columns.Add("PermissionId", typeof(int));
 
-            foreach (var permission in permissions.GroupBy(p => p.Id).Select(g => g.First())) table.Rows.Add(permission.Id);
+            foreach (var permission in permissions) table.Rows.Add(permission.Id);
 
             var parameter = command.Parameters.Add("@PermissionIds", SqlDbType.Structured);
 

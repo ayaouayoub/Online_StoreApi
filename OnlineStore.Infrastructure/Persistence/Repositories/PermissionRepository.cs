@@ -30,8 +30,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             await connection.OpenAsync();
 
-            await using SqlDataReader reader =
-                await command.ExecuteReaderAsync();
+            await using SqlDataReader reader = await command.ExecuteReaderAsync();
 
             List<Permission> permissions = [];
 
