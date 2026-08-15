@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Api.Controllers.User.Requests;
+using OnlineStore.Application.Common.Models;
 using OnlineStore.Application.Dtos;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Handlers.User.Commands;
@@ -17,12 +18,14 @@ namespace OnlineStore.Api.Controllers.User
         private readonly GetUserHandler _getUserHandler;
         private readonly GetCurrentUserHandler _getCurrentUserHandler;
         private readonly CreateUserHandler _createUserHandler;
+        private readonly GetUsersHandler _getUsersHandler;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
             _createUserHandler = createUserHandler;
+            _getUsersHandler = getUsersHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -68,6 +71,17 @@ namespace OnlineStore.Api.Controllers.User
                 PermissionIds = request.PermissionIds
             });
             return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, user);
+        }
+
+        [Authorize(Policy = Permissions.Users.View)]
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<PagedResult<UserDto>>> GetUsers([FromQuery] GetUsersQuery query)
+        {
+            return Ok(await _getUsersHandler.ExecuteAsync(query));
         }
     }
 }
