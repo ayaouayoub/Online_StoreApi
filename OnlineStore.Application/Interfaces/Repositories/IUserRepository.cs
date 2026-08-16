@@ -13,5 +13,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<PagedResult<UserDto>> GetUsersAsync(GetUsersQuery query);
         Task<bool> DeactivateUserAsync(int id);
         Task<bool> ActivateUserAsync(int id);
+        Task<bool> ChangeMyPasswordAsync(int userId, string passwordHash);
     }
 }

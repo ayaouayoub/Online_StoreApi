@@ -299,5 +299,23 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             return affectedRows > 0;
         }
+
+        public async Task<bool> ChangeMyPasswordAsync(int userId, string passwordHash)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_ChangeMyPassword", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@UserId", userId);
+            command.Parameters.AddWithValue("@PasswordHash", passwordHash);
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
     }
 }

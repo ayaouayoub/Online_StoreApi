@@ -21,8 +21,9 @@ namespace OnlineStore.Api.Controllers.User
         private readonly GetUsersHandler _getUsersHandler;
         private readonly DeactivateUserHandler _deactivateUserHandler;
         private readonly ActivateUserHandler _activateUserHandler;
+        private readonly ChangeMyPasswordHandler _changeMyPasswordHandler;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
@@ -30,6 +31,7 @@ namespace OnlineStore.Api.Controllers.User
             _getUsersHandler = getUsersHandler;
             _deactivateUserHandler = deactivateUserHandler;
             _activateUserHandler = activateUserHandler;
+            _changeMyPasswordHandler = changeMyPasswordHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -112,6 +114,18 @@ namespace OnlineStore.Api.Controllers.User
         public async Task<IActionResult> ActivateUser(int id)
         {
             await _activateUserHandler.ExecuteAsync(new ActivateUserCommand(id));
+            return NoContent();
+        }
+
+        [Authorize]
+        [HttpPatch("me/password")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ChangenMyPassword(ChangeMyPasswordRequest request)
+        {
+            await _changeMyPasswordHandler.ExecuteAsync(new ChangeMyPasswordCommand(request.CurrentPassword, request.NewPassword));
             return NoContent();
         }
     }
