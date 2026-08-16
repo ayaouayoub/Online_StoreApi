@@ -19,13 +19,17 @@ namespace OnlineStore.Api.Controllers.User
         private readonly GetCurrentUserHandler _getCurrentUserHandler;
         private readonly CreateUserHandler _createUserHandler;
         private readonly GetUsersHandler _getUsersHandler;
+        private readonly DeactivateUserHandler _deactivateUserHandler;
+        private readonly ActivateUserHandler _activateUserHandler;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
             _createUserHandler = createUserHandler;
             _getUsersHandler = getUsersHandler;
+            _deactivateUserHandler = deactivateUserHandler;
+            _activateUserHandler = activateUserHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -82,6 +86,33 @@ namespace OnlineStore.Api.Controllers.User
         public async Task<ActionResult<PagedResult<UserDto>>> GetUsers([FromQuery] GetUsersQuery query)
         {
             return Ok(await _getUsersHandler.ExecuteAsync(query));
+        }
+
+
+        [Authorize(Policy = Permissions.Users.Delete)]
+        [HttpPatch("{id:int}/deactivate")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeactivateUser(int id)
+        {
+            await _deactivateUserHandler.ExecuteAsync(new DeactivateUserCommand(id));
+            return NoContent();
+        }
+
+        [Authorize(Policy = Permissions.Users.Update)]
+        [HttpPatch("{id:int}/activate")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ActivateUser(int id)
+        {
+            await _activateUserHandler.ExecuteAsync(new ActivateUserCommand(id));
+            return NoContent();
         }
     }
 }

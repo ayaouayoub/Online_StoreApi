@@ -11,5 +11,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<User?> GetByUsernameAsync(string username);
         Task<int> CreateUserAsync(User user);
         Task<PagedResult<UserDto>> GetUsersAsync(GetUsersQuery query);
+        Task<bool> DeactivateUserAsync(int id);
+        Task<bool> ActivateUserAsync(int id);
     }
 }

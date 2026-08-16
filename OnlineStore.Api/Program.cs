@@ -104,6 +104,10 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<GetUsersHandler>();
 
+            builder.Services.AddScoped<DeactivateUserHandler>();
+
+            builder.Services.AddScoped<ActivateUserHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

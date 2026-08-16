@@ -265,5 +265,39 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             parameter.TypeName = "dbo.PermissionIdTable";
             parameter.Value = table;
         }
+
+        public async Task<bool> DeactivateUserAsync(int id)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_DeactivateUser", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@UserId", id);
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
+
+        public async Task<bool> ActivateUserAsync(int id)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_ActivateUser", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@UserId", id);
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
     }
 }
