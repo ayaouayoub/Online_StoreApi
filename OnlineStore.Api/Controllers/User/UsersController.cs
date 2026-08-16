@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Api.Controllers.User.Requests;
 using OnlineStore.Application.Common.Models;
@@ -7,8 +6,9 @@ using OnlineStore.Application.Dtos;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Handlers.User.Commands;
 using OnlineStore.Application.Handlers.User.Queries;
+using OnlineStore.Application.Interfaces;
 using OnlineStore.Application.Security;
-using OnlineStore.Domain.Entities;
+using OnlineStore.Infrastructure.Authorization;
 
 namespace OnlineStore.Api.Controllers.User
 {
@@ -24,8 +24,9 @@ namespace OnlineStore.Api.Controllers.User
         private readonly ActivateUserHandler _activateUserHandler;
         private readonly ChangeMyPasswordHandler _changeMyPasswordHandler;
         private readonly UpdateUserHandler _updateUserHandler;
+        private readonly ICurrentUser _currentUser;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler, UpdateUserHandler updateUserHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler, UpdateUserHandler updateUserHandler, ICurrentUser currentUser)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
@@ -35,6 +36,7 @@ namespace OnlineStore.Api.Controllers.User
             _activateUserHandler = activateUserHandler;
             _changeMyPasswordHandler = changeMyPasswordHandler;
             _updateUserHandler = updateUserHandler;
+            _currentUser = currentUser;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -146,6 +148,24 @@ namespace OnlineStore.Api.Controllers.User
             return Ok(await _updateUserHandler.ExecuteAsync(new UpdateUserCommand
             {
                 UserId = id,
+                Name = request.Name,
+                Username = request.Username
+            }));
+        }
+
+        [Authorize]
+        [HttpPatch("me")]
+        [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<UserDto>> UpdateMyInfo([FromBody] UpdateUserRequest request)
+        {
+            return Ok(await _updateUserHandler.ExecuteAsync(new UpdateUserCommand
+            {
+                UserId = _currentUser.UserId,
                 Name = request.Name,
                 Username = request.Username
             }));

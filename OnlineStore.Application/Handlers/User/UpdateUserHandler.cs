@@ -40,7 +40,7 @@ namespace OnlineStore.Application.Handlers.User
             user.ChangeUsername(command.Username);
             user.ChangeName(command.Name);
 
-            await _userRepository.UpdateUserAsync(user);
+            if (!await _userRepository.UpdateUserAsync(user)) throw new Exception("Failed to deactivate user.");
 
             return user.ToDto();
         }

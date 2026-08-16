@@ -69,6 +69,8 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IPermissionRepository, PermissionRepository>();
 
+            services.AddScoped<IAuthorizationHandler, SuperAdminAuthorizationHandler>();
+
             return services;
         }
     }

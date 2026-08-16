@@ -19,8 +19,7 @@ namespace OnlineStore.Domain.Entities
             _ValidateUsername(username);
             _ValidatePasswordHash(passwordHash);
 
-            if (role is not null && role.Id != roleId)
-                throw new DomainException("Role id mismatch.");
+            if (role is not null && role.Id != roleId) throw new DomainException("Role id mismatch.");
 
             Id = id;
             Name = name;
@@ -116,10 +115,11 @@ namespace OnlineStore.Domain.Entities
 
         public void ChangeRole(Role role)
         {
-            if (role is null)
-            {
-                throw new DomainException("Role cannot be null");
-            }
+            ArgumentNullException.ThrowIfNull(role);
+
+            if (RoleId == role.Id)
+                return;
+
             Role = role;
             RoleId = role.Id;
         }

@@ -162,6 +162,17 @@ namespace OnlineStore.Api
                     .AddRequirements(new ActiveUserRequirement())
                     .Build();
 
+                options.AddPolicy(Policies.SuperAdmin, policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+
+                    policy.AddRequirements
+                    (
+                        new ActiveUserRequirement(),
+                        new SuperAdminRequirement()
+                    );
+                });
+
                 options.AddPolicy(Policies.ShippingView, policy =>
                 {
                     policy.RequireAuthenticatedUser();
