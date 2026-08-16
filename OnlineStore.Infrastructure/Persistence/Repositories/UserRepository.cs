@@ -7,7 +7,6 @@ using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
 using OnlineStore.Domain.Enums;
-using static OnlineStore.Application.Security.Permissions;
 
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
@@ -104,41 +103,6 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             }
 
             return user;
-        }
-
-        private static void AddPermissionIfExists(SqlDataReader reader, User? user)
-        {
-            if (user is null)
-                return;
-
-            if (reader["PermissionId"] == DBNull.Value)
-                return;
-
-            user.AddPermission
-            (
-                Permission.Load
-                (
-                    id: (int)reader["PermissionId"],
-                    code: (string)reader["Code"],
-                    name: (string)reader["PermissionName"]
-                )
-            );
-        }
-
-        private static void AddPermissionIfExists(SqlDataReader reader, UserDto user, int permissionIdOrdinal, int permissionCodeOrdinal, int permissionNameOrdinal)
-        {
-            if (reader.IsDBNull(permissionIdOrdinal)) return;
-
-            int permissionId = reader.GetInt32(permissionIdOrdinal);
-
-            if (user.Permissions.Any(p => p.Id == permissionId)) return;
-
-            user.Permissions.Add(new PermissionDto
-            {
-                Id = permissionId,
-                Code = reader.GetString(permissionCodeOrdinal),
-                Name = reader.GetString(permissionNameOrdinal)
-            });
         }
 
         public async Task<int> CreateUserAsync(User user)
@@ -253,20 +217,6 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             };
         }
 
-        private static void AddPermissionIdsParameter(IReadOnlyCollection<Permission> permissions, SqlCommand command)
-        {
-            var table = new DataTable();
-
-            table.Columns.Add("PermissionId", typeof(int));
-
-            foreach (var permission in permissions) table.Rows.Add(permission.Id);
-
-            var parameter = command.Parameters.Add("@PermissionIds", SqlDbType.Structured);
-
-            parameter.TypeName = "dbo.PermissionIdTable";
-            parameter.Value = table;
-        }
-
         public async Task<bool> DeactivateUserAsync(int id)
         {
             using SqlConnection connection = _connectionFactory.CreateConnection();
@@ -337,5 +287,74 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             return affectedRows > 0;
         }
+
+        public async Task<bool> UpdateUserPermissionsAsync(User user)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("UpdateUserPermissions", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@UserId", user.Id);
+
+            AddPermissionIdsParameter(user.Permissions, command);
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
+
+        private static void AddPermissionIdsParameter(IReadOnlyCollection<Permission> permissions, SqlCommand command)
+        {
+            var table = new DataTable();
+
+            table.Columns.Add("PermissionId", typeof(int));
+
+            foreach (var permission in permissions) table.Rows.Add(permission.Id);
+
+            var parameter = command.Parameters.Add("@PermissionIds", SqlDbType.Structured);
+
+            parameter.TypeName = "dbo.PermissionIdTable";
+            parameter.Value = table;
+        }
+
+        private static void AddPermissionIfExists(SqlDataReader reader, User? user)
+        {
+            if (user is null)
+                return;
+
+            if (reader["PermissionId"] == DBNull.Value)
+                return;
+
+            user.AddPermission
+            (
+                Permission.Load
+                (
+                    id: (int)reader["PermissionId"],
+                    code: (string)reader["Code"],
+                    name: (string)reader["PermissionName"]
+                )
+            );
+        }
+
+        private static void AddPermissionIfExists(SqlDataReader reader, UserDto user, int permissionIdOrdinal, int permissionCodeOrdinal, int permissionNameOrdinal)
+        {
+            if (reader.IsDBNull(permissionIdOrdinal)) return;
+
+            int permissionId = reader.GetInt32(permissionIdOrdinal);
+
+            if (user.Permissions.Any(p => p.Id == permissionId)) return;
+
+            user.Permissions.Add(new PermissionDto
+            {
+                Id = permissionId,
+                Code = reader.GetString(permissionCodeOrdinal),
+                Name = reader.GetString(permissionNameOrdinal)
+            });
+        }
+
     }
 }

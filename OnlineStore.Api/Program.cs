@@ -112,6 +112,8 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<UpdateUserHandler>();
 
+            builder.Services.AddScoped<UpdateUserPermissionsHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

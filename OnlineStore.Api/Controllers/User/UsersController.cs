@@ -25,8 +25,9 @@ namespace OnlineStore.Api.Controllers.User
         private readonly ChangeMyPasswordHandler _changeMyPasswordHandler;
         private readonly UpdateUserHandler _updateUserHandler;
         private readonly ICurrentUser _currentUser;
+        private readonly UpdateUserPermissionsHandler _updateUserPermissionsHandler;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler, UpdateUserHandler updateUserHandler, ICurrentUser currentUser)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler, UpdateUserHandler updateUserHandler, ICurrentUser currentUser, UpdateUserPermissionsHandler updateUserPermissionsHandler)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
@@ -37,6 +38,7 @@ namespace OnlineStore.Api.Controllers.User
             _changeMyPasswordHandler = changeMyPasswordHandler;
             _updateUserHandler = updateUserHandler;
             _currentUser = currentUser;
+            _updateUserPermissionsHandler = updateUserPermissionsHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -169,6 +171,18 @@ namespace OnlineStore.Api.Controllers.User
                 Name = request.Name,
                 Username = request.Username
             }));
+        }
+
+        [Authorize(Policy = Policies.SuperAdmin)]
+        [HttpPatch("{id:int}/permissions")]
+        [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<UserDto>> UpdatePermissions(int id, [FromBody] UpdateUserPermissionsRequest request)
+        {
+            return Ok(await _updateUserPermissionsHandler.ExecuteAsync(new UpdateUserPermissionsCommand(id, request.PermissionIds)));
         }
     }
 }
