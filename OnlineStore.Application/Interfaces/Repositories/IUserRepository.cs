@@ -14,5 +14,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<bool> DeactivateUserAsync(int id);
         Task<bool> ActivateUserAsync(int id);
         Task<bool> ChangeMyPasswordAsync(int userId, string passwordHash);
+        Task<bool> UpdateUserAsync(User user);
     }
 }

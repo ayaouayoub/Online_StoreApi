@@ -8,6 +8,7 @@ using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Handlers.User.Commands;
 using OnlineStore.Application.Handlers.User.Queries;
 using OnlineStore.Application.Security;
+using OnlineStore.Domain.Entities;
 
 namespace OnlineStore.Api.Controllers.User
 {
@@ -22,8 +23,9 @@ namespace OnlineStore.Api.Controllers.User
         private readonly DeactivateUserHandler _deactivateUserHandler;
         private readonly ActivateUserHandler _activateUserHandler;
         private readonly ChangeMyPasswordHandler _changeMyPasswordHandler;
+        private readonly UpdateUserHandler _updateUserHandler;
 
-        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler)
+        public UsersController(GetUserHandler getUserHandler, GetCurrentUserHandler getCurrentUserHandler, CreateUserHandler createUserHandler, GetUsersHandler getUsersHandler, DeactivateUserHandler deactivateUserHandler, ActivateUserHandler activateUserHandler, ChangeMyPasswordHandler changeMyPasswordHandler, UpdateUserHandler updateUserHandler)
         {
             _getUserHandler = getUserHandler;
             _getCurrentUserHandler = getCurrentUserHandler;
@@ -32,6 +34,7 @@ namespace OnlineStore.Api.Controllers.User
             _deactivateUserHandler = deactivateUserHandler;
             _activateUserHandler = activateUserHandler;
             _changeMyPasswordHandler = changeMyPasswordHandler;
+            _updateUserHandler = updateUserHandler;
         }
 
         [Authorize(Policy = Permissions.Users.View)]
@@ -127,6 +130,25 @@ namespace OnlineStore.Api.Controllers.User
         {
             await _changeMyPasswordHandler.ExecuteAsync(new ChangeMyPasswordCommand(request.CurrentPassword, request.NewPassword));
             return NoContent();
+        }
+
+        [Authorize(Policy = Permissions.Users.Update)]
+        [HttpPatch("{id:int}")]
+        [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<UserDto>> UpdateUser(int id, [FromBody] UpdateUserRequest request)
+        {
+            return Ok(await _updateUserHandler.ExecuteAsync(new UpdateUserCommand
+            {
+                UserId = id,
+                Name = request.Name,
+                Username = request.Username
+            }));
         }
     }
 }
