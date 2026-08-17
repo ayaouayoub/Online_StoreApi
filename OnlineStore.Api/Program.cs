@@ -8,6 +8,8 @@ using OnlineStore.Api.Services;
 using OnlineStore.Application.Handlers.Category;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Order;
+using OnlineStore.Application.Handlers.PaymentMethod;
+using OnlineStore.Application.Handlers.PaymentMethod.Commands;
 using OnlineStore.Application.Handlers.Permission;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.Role;
@@ -133,6 +135,18 @@ namespace OnlineStore.Api
             builder.Services.AddScoped<GetPermissionsHandler>();
 
             builder.Services.AddScoped<CreatePermissionHandler>();
+
+            builder.Services.AddScoped<GetPaymentMethodHandler>();
+
+            builder.Services.AddScoped<GetPaymentMethodsHandler>();
+
+            builder.Services.AddScoped<DeactivatePaymentMethodHandler>();
+
+            builder.Services.AddScoped<CreatePaymentMethodHandler>();
+
+            builder.Services.AddScoped<UpdatePaymentMethodHandler>();
+
+            builder.Services.AddScoped<ActivatePaymentMethodHandler>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

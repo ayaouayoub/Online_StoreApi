@@ -327,3 +327,136 @@ System.IndexOutOfRangeException: OrderItemId
 2026-08-17 15:57:47.980 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 18.5645ms
 2026-08-17 15:57:47.989 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
 2026-08-17 15:57:47.994 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 108.9353ms
+2026-08-17 17:31:13.894 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 17:31:14.952 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-17 17:31:14.960 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-17 17:31:16.779 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 17:31:17.249 +02:00 [INF] Hosting environment: Development
+2026-08-17 17:31:18.534 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-17 17:31:19.620 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-17 17:31:21.028 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 2578.906ms
+2026-08-17 17:31:21.475 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-17 17:31:21.475 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-17 17:31:21.703 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 228.7414ms
+2026-08-17 17:31:22.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1076.558ms
+2026-08-17 17:31:22.694 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-17 17:31:23.979 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1284.7905ms
+2026-08-17 17:31:40.082 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-17 17:31:40.379 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:31:40.555 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 17:31:43.703 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-17 17:31:43.783 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 3210.6964ms
+2026-08-17 17:31:43.789 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:31:43.800 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3718.5116ms
+2026-08-17 17:32:28.541 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 68
+2026-08-17 17:32:28.881 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:28.932 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 17:32:28.990 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 17:32:29.057 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 115.332ms
+2026-08-17 17:32:29.077 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:29.082 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 541.4531ms
+2026-08-17 17:32:38.505 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 72
+2026-08-17 17:32:38.615 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:38.624 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 17:32:38.645 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 17:32:38.649 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 15.7655ms
+2026-08-17 17:32:38.661 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:38.665 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 160.6636ms
+2026-08-17 17:32:46.501 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 72
+2026-08-17 17:32:46.666 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:46.683 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 17:32:46.716 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 17:32:46.723 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 29.0769ms
+2026-08-17 17:32:46.729 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:46.761 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 259.7302ms
+2026-08-17 17:32:56.327 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 72
+2026-08-17 17:32:56.354 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:56.362 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 17:32:56.384 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 17:32:56.388 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 17.7373ms
+2026-08-17 17:32:56.399 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 17:32:56.403 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 76.0316ms
+2026-08-17 17:33:11.871 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payment-methods - null null
+2026-08-17 17:33:11.933 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetAll (OnlineStore.Api)'
+2026-08-17 17:33:11.947 +02:00 [INF] Route matched with {action = "GetAll", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyCollection`1[OnlineStore.Application.Dtos.PaymentMethodDto]]] GetAll() on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:33:11.983 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.PaymentMethodDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 17:33:11.995 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetAll (OnlineStore.Api) in 41.9601ms
+2026-08-17 17:33:12.001 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetAll (OnlineStore.Api)'
+2026-08-17 17:33:12.007 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payment-methods - 200 null application/json; charset=utf-8 135.2294ms
+2026-08-17 17:33:30.253 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payment-methods/1 - null null
+2026-08-17 17:33:30.353 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api)'
+2026-08-17 17:33:30.386 +02:00 [INF] Route matched with {action = "GetById", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentMethodDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:33:30.715 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api) in 310.6566ms
+2026-08-17 17:33:30.724 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api)'
+2026-08-17 17:33:31.183 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payment-methods/1 - 404 null application/json; charset=utf-8 930.8627ms
+2026-08-17 17:33:35.001 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payment-methods/3 - null null
+2026-08-17 17:33:35.038 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api)'
+2026-08-17 17:33:35.043 +02:00 [INF] Route matched with {action = "GetById", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentMethodDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:33:35.101 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PaymentMethodDto'.
+2026-08-17 17:33:35.122 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api) in 51.7426ms
+2026-08-17 17:33:35.137 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.GetById (OnlineStore.Api)'
+2026-08-17 17:33:35.151 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payment-methods/3 - 200 null application/json; charset=utf-8 149.4792ms
+2026-08-17 17:33:49.527 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/payment-methods - application/json 46
+2026-08-17 17:33:49.563 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Create (OnlineStore.Api)'
+2026-08-17 17:33:49.582 +02:00 [INF] Route matched with {action = "Create", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentMethodDto]] Create(OnlineStore.Api.Controllers.PaymentMethod.Requests.CreatePaymentMethodRequest) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:33:49.624 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PaymentMethodDto'.
+2026-08-17 17:33:49.629 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Create (OnlineStore.Api) in 33.7944ms
+2026-08-17 17:33:49.639 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Create (OnlineStore.Api)'
+2026-08-17 17:33:49.645 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/payment-methods - 201 null application/json; charset=utf-8 118.2856ms
+2026-08-17 17:34:32.747 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7 - application/json 27
+2026-08-17 17:34:32.788 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api)'
+2026-08-17 17:34:32.817 +02:00 [INF] Route matched with {action = "Update", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentMethodDto]] Update(Int32, OnlineStore.Api.Controllers.PaymentMethod.Requests.UpdatePaymentMethodRequest) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:34:33.081 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api) in 239.9202ms
+2026-08-17 17:34:33.088 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api)'
+2026-08-17 17:34:33.342 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7 - 400 null application/json; charset=utf-8 594.8478ms
+2026-08-17 17:35:42.613 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7 - application/json 33
+2026-08-17 17:35:42.644 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api)'
+2026-08-17 17:35:42.649 +02:00 [INF] Route matched with {action = "Update", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentMethodDto]] Update(Int32, OnlineStore.Api.Controllers.PaymentMethod.Requests.UpdatePaymentMethodRequest) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:35:42.683 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PaymentMethodDto'.
+2026-08-17 17:35:42.689 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api) in 28.1583ms
+2026-08-17 17:35:42.708 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Update (OnlineStore.Api)'
+2026-08-17 17:35:42.715 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7 - 200 null application/json; charset=utf-8 102.5101ms
+2026-08-17 17:36:20.211 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/deactivate - null null
+2026-08-17 17:36:20.386 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api)'
+2026-08-17 17:36:20.409 +02:00 [INF] Route matched with {action = "Deactivate", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deactivate(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:36:20.487 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-17 17:36:20.489 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api) in 73.883ms
+2026-08-17 17:36:20.493 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api)'
+2026-08-17 17:36:20.504 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/deactivate - 204 null null 293.2267ms
+2026-08-17 17:36:28.470 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/deactivate - null null
+2026-08-17 17:36:28.521 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api)'
+2026-08-17 17:36:28.526 +02:00 [INF] Route matched with {action = "Deactivate", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deactivate(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:36:28.679 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api) in 135.2241ms
+2026-08-17 17:36:28.685 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.Deactivate (OnlineStore.Api)'
+2026-08-17 17:36:28.919 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/deactivate - 400 null application/json; charset=utf-8 449.2577ms
+2026-08-17 17:36:42.630 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/activate - null null
+2026-08-17 17:36:42.654 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api)'
+2026-08-17 17:36:42.676 +02:00 [INF] Route matched with {action = "ActivatePaymentMethod", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ActivatePaymentMethod(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:36:42.725 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-17 17:36:42.729 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api) in 42.6888ms
+2026-08-17 17:36:42.737 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api)'
+2026-08-17 17:36:42.745 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/activate - 204 null null 115.9329ms
+2026-08-17 17:36:45.262 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/activate - null null
+2026-08-17 17:36:45.344 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api)'
+2026-08-17 17:36:45.352 +02:00 [INF] Route matched with {action = "ActivatePaymentMethod", controller = "PaymentMethods"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ActivatePaymentMethod(Int32) on controller OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController (OnlineStore.Api).
+2026-08-17 17:36:45.553 +02:00 [INF] Executed action OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api) in 192.5886ms
+2026-08-17 17:36:45.558 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.PaymentMethod.PaymentMethodsController.ActivatePaymentMethod (OnlineStore.Api)'
+2026-08-17 17:36:45.799 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/payment-methods/7/activate - 400 null application/json; charset=utf-8 538.5933ms
+2026-08-17 17:37:18.268 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 49
+2026-08-17 17:37:18.310 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:37:18.313 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 17:37:18.976 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 625.5789ms
+2026-08-17 17:37:18.987 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:37:19.243 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 401 null application/json; charset=utf-8 975.1916ms
+2026-08-17 17:37:25.665 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 48
+2026-08-17 17:37:25.700 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:37:25.834 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 17:37:26.322 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-17 17:37:26.328 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 478.8872ms
+2026-08-17 17:37:26.334 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 17:37:26.341 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 677.2189ms
+2026-08-17 17:37:46.671 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payment-methods - null null
+2026-08-17 17:37:46.707 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-17 17:37:46.736 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-17 17:37:46.751 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payment-methods - 403 0 null 81.3599ms

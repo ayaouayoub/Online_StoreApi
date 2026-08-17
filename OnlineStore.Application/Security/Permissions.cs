@@ -44,6 +44,14 @@ namespace OnlineStore.Application.Security
             public const string Delete = "UserPermissions.Delete";
         }
 
+        public static class PaymentMethods
+        {
+            public const string View = "PaymentMethods.View";
+            public const string Create = "PaymentMethods.Create";
+            public const string Update = "PaymentMethods.Update";
+            public const string Delete = "PaymentMethods.Delete";
+        }
+
         public static class Products
         {
             public const string View = "Products.View";

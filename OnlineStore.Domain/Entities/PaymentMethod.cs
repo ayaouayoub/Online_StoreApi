@@ -38,16 +38,16 @@ namespace OnlineStore.Domain.Entities
 
         public void Deactivate()
         {
-            if (!IsActive) return;
+            if (!IsActive) throw new DomainException("Payment method is already inactive.");
             IsActive = false;
         }
         public void Activate()
         {
-            if (IsActive) return;
+            if (IsActive) throw new DomainException("Payment method is already active.");
             IsActive = true;
         }
 
-        public void ChangeDescription(string description)
+        public void ChangeDescription(string? description)
         {
             if (Description == description) return;
             Description = description;
