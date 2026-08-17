@@ -10,5 +10,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
     public interface IRoleRepository
     {
         Task<Role?> GetByIdAsync(int id);
+        Task<IReadOnlyCollection<Role>> GetAllAsync();
+        Task<Role> CreateAsync(Role role);
     }
 }

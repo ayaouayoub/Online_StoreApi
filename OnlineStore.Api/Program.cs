@@ -9,6 +9,7 @@ using OnlineStore.Application.Handlers.Category;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Product;
+using OnlineStore.Application.Handlers.Role;
 using OnlineStore.Application.Handlers.Shipping;
 using OnlineStore.Application.Handlers.User;
 using OnlineStore.Application.Security;
@@ -119,6 +120,12 @@ namespace OnlineStore.Api
             builder.Services.AddScoped<GetOrdersHandler>();
 
             builder.Services.AddScoped<GetShippingHander>();
+
+            builder.Services.AddScoped<GetRoleHandler>();
+
+            builder.Services.AddScoped<GetRolesHandler>();
+
+            builder.Services.AddScoped<CreateRoleHandler>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
