@@ -36,6 +36,14 @@ namespace OnlineStore.Application.Security
             public const string Delete = "Categories.Delete";
         }
 
+        public static class UserPermissions
+        {
+            public const string View = "UserPermissions.View";
+            public const string Create = "UserPermissions.Create";
+            public const string Update = "UserPermissions.Update";
+            public const string Delete = "UserPermissions.Delete";
+        }
+
         public static class Products
         {
             public const string View = "Products.View";

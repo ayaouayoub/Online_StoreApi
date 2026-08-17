@@ -15,7 +15,7 @@ namespace OnlineStore.Application.Handlers.Role
             _roleRepository = roleRepository;
         }
 
-        public async Task<IReadOnlyCollection<RoleDto>> ExecuteAsync(GetRolesQuery query)
+        public async Task<IEnumerable<RoleDto>> ExecuteAsync(GetRolesQuery query)
         {
             var role = await _roleRepository.GetAllAsync();
             return [.. role.Select(r => r.ToDto())];

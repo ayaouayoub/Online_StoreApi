@@ -191,3 +191,139 @@ System.IndexOutOfRangeException: OrderItemId
 2026-08-17 12:40:59.865 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api) in 59.9639ms
 2026-08-17 12:40:59.871 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api)'
 2026-08-17 12:40:59.875 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/shippings/1 - 200 null application/json; charset=utf-8 179.5845ms
+2026-08-17 14:23:33.139 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 14:23:34.214 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-17 14:23:34.598 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-17 14:23:34.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-17 14:23:35.291 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 14:23:35.743 +02:00 [INF] Hosting environment: Development
+2026-08-17 14:23:35.866 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-17 14:23:36.691 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1764.0767ms
+2026-08-17 14:23:36.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-17 14:23:36.752 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-17 14:23:36.975 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 245.962ms
+2026-08-17 14:23:37.725 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 973.4965ms
+2026-08-17 14:23:38.073 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-17 14:23:39.803 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1730.3893ms
+2026-08-17 14:23:57.259 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 51
+2026-08-17 14:23:57.630 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 14:23:57.736 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 14:24:00.446 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2690.6417ms
+2026-08-17 14:24:00.452 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 14:24:00.830 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 401 null application/json; charset=utf-8 3571.2666ms
+2026-08-17 14:24:07.232 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-17 14:24:07.251 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 14:24:07.265 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 14:24:07.984 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-17 14:24:08.057 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 769.5158ms
+2026-08-17 14:24:08.066 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 14:24:08.070 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 839.5125ms
+2026-08-17 14:24:26.888 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/roles/1 - null null
+2026-08-17 14:24:27.204 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:27.228 +02:00 [INF] Route matched with {action = "GetById", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.RoleDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Role.RolesController (OnlineStore.Api).
+2026-08-17 14:24:27.256 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.RoleDto'.
+2026-08-17 14:24:27.264 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api) in 28.8934ms
+2026-08-17 14:24:27.271 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:27.276 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/roles/1 - 200 null application/json; charset=utf-8 387.7416ms
+2026-08-17 14:24:32.008 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/roles/3 - null null
+2026-08-17 14:24:32.059 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:32.067 +02:00 [INF] Route matched with {action = "GetById", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.RoleDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Role.RolesController (OnlineStore.Api).
+2026-08-17 14:24:32.086 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.RoleDto'.
+2026-08-17 14:24:32.089 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api) in 13.8121ms
+2026-08-17 14:24:32.099 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:32.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/roles/3 - 200 null application/json; charset=utf-8 96.6503ms
+2026-08-17 14:24:35.662 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/roles/12 - null null
+2026-08-17 14:24:35.710 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:35.723 +02:00 [INF] Route matched with {action = "GetById", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.RoleDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Role.RolesController (OnlineStore.Api).
+2026-08-17 14:24:35.965 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api) in 221.5069ms
+2026-08-17 14:24:35.971 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetById (OnlineStore.Api)'
+2026-08-17 14:24:36.283 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/roles/12 - 404 null application/json; charset=utf-8 621.4263ms
+2026-08-17 14:24:45.900 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/roles - null null
+2026-08-17 14:24:45.944 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetRoles (OnlineStore.Api)'
+2026-08-17 14:24:45.958 +02:00 [INF] Route matched with {action = "GetRoles", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[OnlineStore.Application.Dtos.RoleDto]]] GetRoles() on controller OnlineStore.Api.Controllers.Role.RolesController (OnlineStore.Api).
+2026-08-17 14:24:46.024 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.RoleDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 14:24:46.033 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Role.RolesController.GetRoles (OnlineStore.Api) in 55.1375ms
+2026-08-17 14:24:46.038 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Role.RolesController.GetRoles (OnlineStore.Api)'
+2026-08-17 14:24:46.042 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/roles - 200 null application/json; charset=utf-8 142.1507ms
+2026-08-17 14:25:09.185 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/roles - application/json 27
+2026-08-17 14:25:09.228 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Role.RolesController.CreateRole (OnlineStore.Api)'
+2026-08-17 14:25:09.242 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.RoleDto]] CreateRole(OnlineStore.Api.Controllers.Role.Requests.CreateRoleRequest) on controller OnlineStore.Api.Controllers.Role.RolesController (OnlineStore.Api).
+2026-08-17 14:25:09.336 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.RoleDto'.
+2026-08-17 14:25:09.388 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Role.RolesController.CreateRole (OnlineStore.Api) in 133.1615ms
+2026-08-17 14:25:09.395 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Role.RolesController.CreateRole (OnlineStore.Api)'
+2026-08-17 14:25:09.399 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/roles - 201 null application/json; charset=utf-8 213.9051ms
+2026-08-17 15:54:50.834 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 15:54:52.291 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-17 15:54:52.296 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-17 15:54:52.831 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 15:54:53.818 +02:00 [INF] Hosting environment: Development
+2026-08-17 15:54:53.838 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-17 15:54:54.121 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-17 15:54:55.756 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1655.7549ms
+2026-08-17 15:54:55.817 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-17 15:54:55.818 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-17 15:54:55.876 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 56.6036ms
+2026-08-17 15:54:56.051 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 232.9593ms
+2026-08-17 15:54:56.192 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-17 15:54:56.987 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 796.089ms
+2026-08-17 15:55:30.400 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-17 15:55:30.707 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 15:55:30.784 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 15:55:33.038 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-17 15:55:33.087 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2282.8449ms
+2026-08-17 15:55:33.094 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 15:55:33.101 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 2700.2979ms
+2026-08-17 15:56:05.188 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/permissions/1 - null null
+2026-08-17 15:56:05.490 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:05.523 +02:00 [INF] Route matched with {action = "GetById", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:56:05.563 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 15:56:05.581 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api) in 53.6979ms
+2026-08-17 15:56:05.598 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:05.612 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/permissions/1 - 200 null application/json; charset=utf-8 424.2234ms
+2026-08-17 15:56:10.308 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/permissions/0 - null null
+2026-08-17 15:56:10.381 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:10.392 +02:00 [INF] Route matched with {action = "GetById", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:56:10.729 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api) in 321.3673ms
+2026-08-17 15:56:10.736 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:11.203 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/permissions/0 - 404 null application/json; charset=utf-8 895.1471ms
+2026-08-17 15:56:15.166 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/permissions/-1 - null null
+2026-08-17 15:56:15.216 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:15.221 +02:00 [INF] Route matched with {action = "GetById", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:56:15.415 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api) in 175.3634ms
+2026-08-17 15:56:15.420 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetById (OnlineStore.Api)'
+2026-08-17 15:56:15.656 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/permissions/-1 - 404 null application/json; charset=utf-8 490.2952ms
+2026-08-17 15:56:32.614 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/permissions - null null
+2026-08-17 15:56:32.653 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetPermissions (OnlineStore.Api)'
+2026-08-17 15:56:32.670 +02:00 [INF] Route matched with {action = "GetPermissions", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[OnlineStore.Application.Dtos.PermissionDto]]] GetPermissions() on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:56:32.777 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.PermissionDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 15:56:32.784 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.GetPermissions (OnlineStore.Api) in 100.7075ms
+2026-08-17 15:56:32.790 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.GetPermissions (OnlineStore.Api)'
+2026-08-17 15:56:32.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/permissions - 200 null application/json; charset=utf-8 181.2469ms
+2026-08-17 15:57:18.661 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 70
+2026-08-17 15:57:18.775 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:18.791 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:57:18.851 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 15:57:18.911 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 110.1506ms
+2026-08-17 15:57:18.920 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:18.926 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 265.3813ms
+2026-08-17 15:57:30.586 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 74
+2026-08-17 15:57:30.680 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:30.685 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:57:30.699 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 15:57:30.703 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 12.8702ms
+2026-08-17 15:57:30.709 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:30.714 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 127.8906ms
+2026-08-17 15:57:38.920 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 74
+2026-08-17 15:57:38.949 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:38.958 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:57:38.975 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 15:57:38.979 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 13.9761ms
+2026-08-17 15:57:38.986 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:38.989 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 69.8286ms
+2026-08-17 15:57:47.886 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/permissions - application/json 74
+2026-08-17 15:57:47.930 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:47.950 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PermissionDto]] CreateRole(OnlineStore.Api.Controllers.Permission.Requests.CreatePermissionRequest) on controller OnlineStore.Api.Controllers.Permission.PermissionsController (OnlineStore.Api).
+2026-08-17 15:57:47.974 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.PermissionDto'.
+2026-08-17 15:57:47.980 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api) in 18.5645ms
+2026-08-17 15:57:47.989 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Permission.PermissionsController.CreateRole (OnlineStore.Api)'
+2026-08-17 15:57:47.994 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/permissions - 201 null application/json; charset=utf-8 108.9353ms

@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
+using static OnlineStore.Application.Security.Permissions;
 
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
@@ -62,6 +63,77 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             parameter.TypeName = "dbo.PermissionIdTable";
             parameter.Value = table;
+        }
+
+        public async Task<Permission?> GetByIdAsync(int id)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_GetPermissionById", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@PermissioId", SqlDbType.Int).Value = id;
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync(CommandBehavior.SingleRow);
+
+            if (!await reader.ReadAsync()) return null;
+
+            return Permission.Load
+            (
+                id: reader.GetInt32(reader.GetOrdinal("PermissionId")),
+                name: reader.GetString(reader.GetOrdinal("Name")),
+                code: reader.GetString(reader.GetOrdinal("Code"))
+            );
+        }
+
+        public async Task<IReadOnlyCollection<Permission>> GetAllAsync()
+        {
+            List<Permission> permissions = [];
+
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_GetPermissions", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
+            {
+                permissions.Add
+                (
+                    Permission.Load
+                    (
+                        id: reader.GetInt32(reader.GetOrdinal("PermissionId")),
+                        name: reader.GetString(reader.GetOrdinal("Name")),
+                        code: reader.GetString(reader.GetOrdinal("code"))
+                    )
+                );
+            }
+
+            return permissions.AsReadOnly();
+        }
+
+        public async Task<Permission> CreateAsync(Permission permission)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_CreatePermission", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@PermissionName", permission.Name);
+            command.Parameters.AddWithValue("@PermissionCode", permission.Code);
+
+            await connection.OpenAsync();
+
+            int permissionId = Convert.ToInt32(await command.ExecuteScalarAsync());
+
+            return Permission.Load(permissionId, permission.Code, permission.Name);
         }
     }
 }
