@@ -288,23 +288,22 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             return affectedRows > 0;
         }
 
-        public async Task<bool> UpdateUserPermissionsAsync(User user)
+        public async Task UpdateUserPermissionsAsync(User user)
         {
             using SqlConnection connection = _connectionFactory.CreateConnection();
 
-            using SqlCommand command = new("UpdateUserPermissions", connection);
+            using SqlCommand command = new("UpdateUserPermissions", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
 
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.AddWithValue("@UserId", user.Id);
+            command.Parameters.Add("@UserId", SqlDbType.Int).Value = user.Id;
 
             AddPermissionIdsParameter(user.Permissions, command);
 
             await connection.OpenAsync();
 
-            int affectedRows = await command.ExecuteNonQueryAsync();
-
-            return affectedRows > 0;
+            await command.ExecuteNonQueryAsync();
         }
 
         private static void AddPermissionIdsParameter(IReadOnlyCollection<Permission> permissions, SqlCommand command)

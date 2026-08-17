@@ -10,6 +10,7 @@ using OnlineStore.Application.Handlers.Shipping.Commands;
 using OnlineStore.Application.Handlers.Shipping;
 using OnlineStore.Application.Handlers.Shipping.Queries;
 using OnlineStore.Infrastructure.Authorization;
+using OnlineStore.Application.Common.Models;
 
 namespace OnlineStore.Api.Controllers.Order
 {
@@ -24,8 +25,9 @@ namespace OnlineStore.Api.Controllers.Order
         private readonly GetOrderShippingHandler _getOrderShippingHandler;
         private readonly ShipOrderHandler _shipOrderHandler;
         private readonly DeliverOrderHandler _deliverOrderHandler;
+        private readonly GetOrdersHandler _getOrdersHandler;
 
-        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler, ShipOrderHandler shipOrderHandler, DeliverOrderHandler deliverOrderHandler)
+        public OrdersController(CreateOrderHandler createOrderHandler, GetOrderHandler getOrderHandler, PayOrderHandler payOrderHandler, CreateShippingHandler createShippingHandler, GetOrderShippingHandler getOrderShippingHandler, ShipOrderHandler shipOrderHandler, DeliverOrderHandler deliverOrderHandler, GetOrdersHandler getOrdersHandler)
         {
             _createOrderHandler = createOrderHandler;
             _getOrderHandler = getOrderHandler;
@@ -34,6 +36,7 @@ namespace OnlineStore.Api.Controllers.Order
             _getOrderShippingHandler = getOrderShippingHandler;
             _shipOrderHandler = shipOrderHandler;
             _deliverOrderHandler = deliverOrderHandler;
+            _getOrdersHandler = getOrdersHandler;
         }
 
         [HttpPost]
@@ -153,6 +156,18 @@ namespace OnlineStore.Api.Controllers.Order
         public async Task<ActionResult<ShippingDto>> GetOrderShipping(int orderId)
         {
             return Ok(await _getOrderShippingHandler.ExecuteAsync(new GetOrderShippingQuery(orderId)));
-        } 
+        }
+
+        [Authorize(Policy = Permissions.Orders.View)]
+        [HttpGet]
+        [ProducesResponseType(typeof(PagedResult<OrderDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<PagedResult<OrderDto>>> GetOrders([FromQuery] GetOrdersQuery query)
+        {
+            return Ok(await _getOrdersHandler.ExecuteAsync(query));
+        }
     }
 }

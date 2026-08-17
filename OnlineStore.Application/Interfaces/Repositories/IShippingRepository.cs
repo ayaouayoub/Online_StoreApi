@@ -1,4 +1,6 @@
-﻿using OnlineStore.Domain.Entities;
+﻿using OnlineStore.Application.Common.Models;
+using OnlineStore.Application.Handlers.Shipping.Queries;
+using OnlineStore.Domain.Entities;
 
 namespace OnlineStore.Application.Interfaces.Repositories
 {
@@ -6,5 +8,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
     {
         Task<Shipping?> CreateAsync(Shipping shipping);
         Task<Shipping?> GetByOrderIdAsync(int orderId);
+        Task<PagedResult<Shipping>> GetAllAsync(GetShippingsQuery query);
     }
 }

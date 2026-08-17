@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using OnlineStore.Domain.Enums;
+﻿using OnlineStore.Domain.Enums;
 using OnlineStore.Domain.Exceptions;
 
 namespace OnlineStore.Domain.Entities
@@ -18,10 +11,10 @@ namespace OnlineStore.Domain.Entities
         public Customer? Customer { get; }
         public DateTime CreatedAt { get; }
         public OrderStatus Status { get; set; }
-        public decimal TotalAmount => _items.Sum(i => i.TotalPrice);
+        public decimal TotalAmount { get; }
         public IReadOnlyCollection<OrderItem> Items => _items;
 
-        private Order(int id, int customerId, Customer? customer, OrderStatus status, DateTime? createdAt = null)
+        private Order(int id, int customerId, Customer? customer, OrderStatus status, decimal? totalAmount = null, DateTime? createdAt = null)
         {
             if (id < 0) throw new DomainException("Invalid order id.");
             if (customer is not null && customerId != customer.Id) throw new DomainException("Customer id mismatch");
@@ -30,6 +23,7 @@ namespace OnlineStore.Domain.Entities
             Customer = customer;
             CreatedAt = createdAt ?? DateTime.UtcNow;
             Status = status;
+            TotalAmount = totalAmount ?? _items.Sum(i => i.TotalPrice);
         }
 
         public static Order Create(Customer customer, IEnumerable<OrderItem> Items)
@@ -40,9 +34,9 @@ namespace OnlineStore.Domain.Entities
             return order;
         }
 
-        public static Order Load(int id, OrderStatus status, DateTime createdAt, int customerId, Customer? customer = null)
+        public static Order Load(int id, OrderStatus status, decimal totalAmount, DateTime createdAt, int customerId, Customer? customer = null)
         {
-            return new Order(id, customerId, customer, status, createdAt);
+            return new Order(id, customerId, customer, status, totalAmount, createdAt);
         }
 
         public void AddItem(OrderItem item)

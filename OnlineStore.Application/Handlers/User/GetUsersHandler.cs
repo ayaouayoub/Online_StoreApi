@@ -7,6 +7,7 @@ using OnlineStore.Application.Common.Models;
 using OnlineStore.Application.Dtos;
 using OnlineStore.Application.Handlers.User.Queries;
 using OnlineStore.Application.Interfaces.Repositories;
+using OnlineStore.Domain.Exceptions;
 
 namespace OnlineStore.Application.Handlers.User
 {
@@ -21,6 +22,10 @@ namespace OnlineStore.Application.Handlers.User
 
         public async Task<PagedResult<UserDto>> ExecuteAsync(GetUsersQuery query)
         {
+            if (query.Page < 1) throw new DomainException("Page number must be greater than 0.");
+
+            if (query.PageSize < 1 || query.PageSize > 100) throw new DomainException("Page size must be between 1 and 100.");
+
             return await _userRepository.GetUsersAsync(query);
         }
     }

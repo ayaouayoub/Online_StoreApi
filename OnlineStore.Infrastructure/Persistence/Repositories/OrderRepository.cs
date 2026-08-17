@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using OnlineStore.Application.Common.Models;
+using OnlineStore.Application.Handlers.Order.Queries;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
@@ -96,6 +98,8 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             int customerId = reader.GetInt32(reader.GetOrdinal("CustomerId"));
 
+            decimal totalAmount = reader.GetDecimal(reader.GetOrdinal("TotalAmount"));
+
             DateTime createdAt = reader.GetDateTime(reader.GetOrdinal("OrderDate"));
 
             OrderStatus status = (OrderStatus)reader.GetByte(reader.GetOrdinal("Status"));
@@ -104,6 +108,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             (
                 id,
                 status,
+                totalAmount,
                 createdAt,
                 customerId
             );
@@ -229,6 +234,88 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             await connection.OpenAsync();
 
             await command.ExecuteNonQueryAsync();
+        }
+
+        public async Task<PagedResult<Order>> GetPagedAsync(GetOrdersQuery query)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_GetOrdersPaged", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CustomerId", SqlDbType.Int).Value = (object?)query.CustomerId ?? DBNull.Value;
+
+            command.Parameters.Add("@Status", SqlDbType.TinyInt).Value = query.Status.HasValue ? (byte)query.Status.Value : DBNull.Value;
+
+            command.Parameters.Add("@PageNumber", SqlDbType.Int).Value = query.PageNumber;
+
+            command.Parameters.Add("@PageSize", SqlDbType.Int).Value = query.PageSize;
+
+            await connection.OpenAsync();
+
+            await using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            if (!await reader.ReadAsync()) throw new Exception("Failed to read total count.");
+
+            int totalCount = reader.GetInt32(0);
+
+            await reader.NextResultAsync();
+
+            Dictionary<int, Order> orders = [];
+
+            int orderIdOrdinal = reader.GetOrdinal("OrderId");
+            int customerIdOrdinal = reader.GetOrdinal("CustomerId");
+            int orderDateOrdinal = reader.GetOrdinal("OrderDate");
+            int totalAmountOrdinal = reader.GetOrdinal("TotalAmount");
+            int statusOrdinal = reader.GetOrdinal("Status");
+
+            int productIdOrdinal = reader.GetOrdinal("ProductId");
+            int productNameOrdinal = reader.GetOrdinal("ProductName");
+            int quantityOrdinal = reader.GetOrdinal("Quantity");
+            int priceOrdinal = reader.GetOrdinal("Price");
+
+            while (await reader.ReadAsync())
+            {
+                int orderId = reader.GetInt32(orderIdOrdinal);
+
+                if (!orders.TryGetValue(orderId, out Order? order))
+                {
+                    order = Order.Load
+                    (
+                        id: orderId,
+                        status: (OrderStatus)reader.GetByte(statusOrdinal),
+                        createdAt: reader.GetDateTime(orderDateOrdinal),
+                        customerId: reader.GetInt32(customerIdOrdinal),
+                        totalAmount: reader.GetDecimal(totalAmountOrdinal)
+                    );
+
+                    orders.Add(orderId, order);
+                }
+
+                if (reader.IsDBNull(productIdOrdinal))
+                    continue;
+
+                var item = OrderItem.Load
+                (
+                    id: orderId,
+                    productId: reader.GetInt32(productIdOrdinal),
+                    quantity: reader.GetInt32(quantityOrdinal),
+                    unitPrice: reader.GetDecimal(priceOrdinal),
+                    productName: reader.GetString(productNameOrdinal)
+                );
+
+                order.AddItem(item);
+            }
+
+            return new PagedResult<Order>
+            {
+                Items = [.. orders.Values],
+                Page = query.PageNumber,
+                PageSize = query.PageSize,
+                TotalCount = totalCount
+            };
         }
     }
 }

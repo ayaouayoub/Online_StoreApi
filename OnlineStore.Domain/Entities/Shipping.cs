@@ -31,8 +31,6 @@ namespace OnlineStore.Domain.Entities
 
             if (trackingNumber.Length > 50) throw new DomainException("Tracking number cannot exceed 50 characters.");
 
-            if (estimatedDeliveryDate <= DateTime.UtcNow) throw new DomainException("Estimated delivery date must be in the future.");
-
             if (status == ShippingStatus.Delivered && actualDeliveryDate is null) throw new DomainException("Delivered shipping must have an actual delivery date.");
 
             Id = id;
@@ -47,6 +45,8 @@ namespace OnlineStore.Domain.Entities
 
         public static Shipping Create(Order order, string carrierName, string trackingNumber, DateTime estimatedDeliveryDate)
         {
+            if (estimatedDeliveryDate <= DateTime.UtcNow) throw new DomainException("Estimated delivery date must be in the future.");
+
             return new Shipping
             (
                 id: -1,

@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using OnlineStore.Application.Common.Models;
+using OnlineStore.Application.Handlers.Shipping.Queries;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
@@ -62,6 +64,51 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             return MapShipping(reader);
         }
 
+        public async Task<PagedResult<Shipping>> GetAllAsync(GetShippingsQuery query)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_GetShippings", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@ShippingStatus", SqlDbType.SmallInt).Value = (object?)(int?)query.ShippingStatus ?? DBNull.Value;
+
+            command.Parameters.Add("@CarrierName", SqlDbType.NVarChar, 100).Value = (object?)query.CarrierName ?? DBNull.Value;
+
+            command.Parameters.Add("@TrackingNumber", SqlDbType.NVarChar, 50).Value = (object?)query.TrackingNumber ?? DBNull.Value;
+
+            command.Parameters.Add("@OrderId", SqlDbType.Int).Value = (object?)query.OrderId ?? DBNull.Value;
+
+            command.Parameters.Add("@PageNumber", SqlDbType.Int).Value = query.PageNumber;
+
+            command.Parameters.Add("@PageSize", SqlDbType.Int).Value = query.PageSize;
+
+            await connection.OpenAsync();
+
+            await using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            List<Shipping> shippings = [];
+
+            int totalCount = 0;
+
+            while (await reader.ReadAsync())
+            {
+                totalCount = reader.GetInt32(reader.GetOrdinal("TotalCount"));
+
+                shippings.Add(MapShipping(reader));
+            }
+
+            return new PagedResult<Shipping>
+            {
+                Items = shippings,
+                PageSize = query.PageSize,
+                TotalCount = totalCount,
+                Page = query.PageNumber
+            };
+        }
+
         private static Shipping MapShipping(SqlDataReader reader)
         {
             int shippingId = reader.GetOrdinal("ShippingId");
@@ -89,5 +136,6 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                 actualDeliveryDate: reader.IsDBNull(actualDate) ? null : reader.GetDateTime(actualDate)
             );
         }
+
     }
 }
