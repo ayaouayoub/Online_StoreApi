@@ -6,6 +6,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
 {
     public interface IShippingRepository
     {
+        Task<Shipping?> GetByIdAsync(int id);
         Task<Shipping?> CreateAsync(Shipping shipping);
         Task<Shipping?> GetByOrderIdAsync(int orderId);
         Task<PagedResult<Shipping>> GetAllAsync(GetShippingsQuery query);

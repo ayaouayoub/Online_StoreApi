@@ -118,6 +118,8 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<GetOrdersHandler>();
 
+            builder.Services.AddScoped<GetShippingHander>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

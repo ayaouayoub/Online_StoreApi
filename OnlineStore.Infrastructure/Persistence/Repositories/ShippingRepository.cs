@@ -109,6 +109,27 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             };
         }
 
+        public async Task<Shipping?> GetByIdAsync(int id)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_GetShippingByID", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ShippingId", id);
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                return MapShipping(reader);
+            }
+
+            return null;
+        }
+
         private static Shipping MapShipping(SqlDataReader reader)
         {
             int shippingId = reader.GetOrdinal("ShippingId");

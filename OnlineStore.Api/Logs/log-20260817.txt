@@ -124,3 +124,70 @@ System.IndexOutOfRangeException: OrderItemId
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
 2026-08-17 12:25:04.806 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/orders?Status=Delivered - 500 null application/json; charset=utf-8 947.0837ms
+2026-08-17 12:29:36.295 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 12:29:38.137 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-17 12:29:38.901 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-17 12:29:39.315 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-17 12:29:39.619 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 12:29:39.623 +02:00 [INF] Hosting environment: Development
+2026-08-17 12:29:39.626 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-17 12:29:40.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-17 12:29:40.730 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-17 12:29:40.733 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1372.9741ms
+2026-08-17 12:29:40.938 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 209.4791ms
+2026-08-17 12:29:41.470 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 735.8884ms
+2026-08-17 12:29:42.379 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/orders?Status=Delivered - null null
+2026-08-17 12:29:46.281 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:46.464 +02:00 [INF] Route matched with {action = "GetOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Common.Models.PagedResult`1[OnlineStore.Application.Dtos.OrderDto]]] GetOrders(OnlineStore.Application.Handlers.Order.Queries.GetOrdersQuery) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-17 12:29:46.926 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Common.Models.PagedResult`1[[OnlineStore.Application.Dtos.OrderDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 12:29:47.051 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api) in 555.0489ms
+2026-08-17 12:29:47.131 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:47.183 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/orders?Status=Delivered - 200 null application/json; charset=utf-8 4803.8671ms
+2026-08-17 12:29:51.787 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/orders?Status=Cancelled - null null
+2026-08-17 12:29:51.921 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:51.926 +02:00 [INF] Route matched with {action = "GetOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Common.Models.PagedResult`1[OnlineStore.Application.Dtos.OrderDto]]] GetOrders(OnlineStore.Application.Handlers.Order.Queries.GetOrdersQuery) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-17 12:29:51.957 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Common.Models.PagedResult`1[[OnlineStore.Application.Dtos.OrderDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 12:29:51.976 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api) in 42.7923ms
+2026-08-17 12:29:51.991 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:51.996 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/orders?Status=Cancelled - 200 null application/json; charset=utf-8 209.4154ms
+2026-08-17 12:29:56.709 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/orders?Status=Paid - null null
+2026-08-17 12:29:57.000 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:57.005 +02:00 [INF] Route matched with {action = "GetOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Common.Models.PagedResult`1[OnlineStore.Application.Dtos.OrderDto]]] GetOrders(OnlineStore.Application.Handlers.Order.Queries.GetOrdersQuery) on controller OnlineStore.Api.Controllers.Order.OrdersController (OnlineStore.Api).
+2026-08-17 12:29:57.135 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Common.Models.PagedResult`1[[OnlineStore.Application.Dtos.OrderDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-17 12:29:57.204 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api) in 169.2078ms
+2026-08-17 12:29:57.246 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Order.OrdersController.GetOrders (OnlineStore.Api)'
+2026-08-17 12:29:57.256 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/orders?Status=Paid - 200 null application/json; charset=utf-8 546.6102ms
+2026-08-17 12:39:58.977 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 12:40:02.582 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-17 12:40:02.597 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-17 12:40:03.814 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 12:40:04.066 +02:00 [INF] Hosting environment: Development
+2026-08-17 12:40:04.262 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-17 12:40:04.307 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-17 12:40:06.382 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 2114.0354ms
+2026-08-17 12:40:06.485 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-17 12:40:06.485 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-17 12:40:06.595 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 110.4832ms
+2026-08-17 12:40:07.281 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 796.9724ms
+2026-08-17 12:40:07.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-17 12:40:08.324 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 781.8276ms
+2026-08-17 12:40:30.852 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-17 12:40:31.160 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 12:40:31.277 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-17 12:40:34.018 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-17 12:40:34.091 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2796.0678ms
+2026-08-17 12:40:34.103 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-17 12:40:34.116 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3264.4195ms
+2026-08-17 12:40:54.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/shippings/2 - null null
+2026-08-17 12:40:54.997 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api)'
+2026-08-17 12:40:55.023 +02:00 [INF] Route matched with {action = "GetShipping", controller = "Shippings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ShippingDto]] GetShipping(Int32) on controller OnlineStore.Api.Controllers.Shipping.ShippingsController (OnlineStore.Api).
+2026-08-17 12:40:55.408 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api) in 373.536ms
+2026-08-17 12:40:55.417 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api)'
+2026-08-17 12:40:55.853 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/shippings/2 - 404 null application/json; charset=utf-8 1220.5554ms
+2026-08-17 12:40:59.696 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/shippings/1 - null null
+2026-08-17 12:40:59.789 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api)'
+2026-08-17 12:40:59.793 +02:00 [INF] Route matched with {action = "GetShipping", controller = "Shippings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ShippingDto]] GetShipping(Int32) on controller OnlineStore.Api.Controllers.Shipping.ShippingsController (OnlineStore.Api).
+2026-08-17 12:40:59.824 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ShippingDto'.
+2026-08-17 12:40:59.865 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api) in 59.9639ms
+2026-08-17 12:40:59.871 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Shipping.ShippingsController.GetShipping (OnlineStore.Api)'
+2026-08-17 12:40:59.875 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/shippings/1 - 200 null application/json; charset=utf-8 179.5845ms
