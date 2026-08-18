@@ -16,7 +16,7 @@ namespace OnlineStore.Application.Handlers.Customer
             _customerRepository = customerRepository;
         }
 
-        public async Task<PagedResult<CustomerDto>> ExecuteAsync(GetCustomersQuery query)
+        public async Task<PagedResultDto<CustomerDto>> ExecuteAsync(GetCustomersQuery query)
         {
             if (query.PageNumber < 1) throw new DomainException("Page number must be greater than zero.");
 
@@ -24,7 +24,7 @@ namespace OnlineStore.Application.Handlers.Customer
 
             var result = await _customerRepository.GetPagedAsync(query);
 
-            return new PagedResult<CustomerDto>
+            return new PagedResultDto<CustomerDto>
             {
                 Items = [.. result.Items.Select(x => x.ToDto())],
                 Page = result.Page,

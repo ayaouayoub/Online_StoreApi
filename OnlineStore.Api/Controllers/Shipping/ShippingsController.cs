@@ -30,7 +30,7 @@ namespace OnlineStore.Api.Controllers.Shipping
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<PagedResult<ShippingDto>>> GetShippings([FromQuery] GetShippingsQuery query)
+        public async Task<ActionResult<PagedResultDto<ShippingDto>>> GetShippings([FromQuery] GetShippingsQuery query)
         {
             return Ok(await _getShippingsHandler.ExecuteAsync(query));
         }

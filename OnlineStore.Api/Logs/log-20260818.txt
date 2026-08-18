@@ -269,3 +269,124 @@ System.IndexOutOfRangeException: Name
 2026-08-18 13:56:38.939 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.Update (OnlineStore.Api) in 243.1547ms
 2026-08-18 13:56:38.968 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.Update (OnlineStore.Api)'
 2026-08-18 13:56:39.297 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/customers/1002 - 409 null application/json; charset=utf-8 696.7229ms
+2026-08-18 15:03:04.932 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-18 15:03:06.131 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-18 15:03:06.346 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-18 15:03:07.521 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-18 15:03:07.530 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-18 15:03:08.013 +02:00 [INF] Hosting environment: Development
+2026-08-18 15:03:08.027 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-18 15:03:09.415 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 2038.144ms
+2026-08-18 15:03:09.938 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-18 15:03:10.061 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-18 15:03:11.181 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 1243.7441ms
+2026-08-18 15:03:11.445 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1383.88ms
+2026-08-18 15:03:15.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-18 15:03:16.325 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1311.7843ms
+2026-08-18 15:03:48.009 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-18 15:03:48.338 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-18 15:03:48.450 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-18 15:03:50.951 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-18 15:03:51.010 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2543.3767ms
+2026-08-18 15:03:51.017 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-18 15:03:51.023 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3025.6615ms
+2026-08-18 15:04:14.239 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments/1 - null null
+2026-08-18 15:04:14.625 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:04:14.653 +02:00 [INF] Route matched with {action = "GetById", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:04:15.031 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api) in 359.1081ms
+2026-08-18 15:04:15.042 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:04:15.358 +02:00 [ERR] Unhandled exception while processing GET /api/payments/1
+Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.usp_GetPaymentById'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteReaderAsync>b__283_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.PaymentRepository.GetByIdAsync(Int32 id) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\PaymentRepository.cs:line 82
+   at OnlineStore.Infrastructure.Persistence.Repositories.PaymentRepository.GetByIdAsync(Int32 id) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\PaymentRepository.cs:line 86
+   at OnlineStore.Infrastructure.Persistence.Repositories.PaymentRepository.GetByIdAsync(Int32 id) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\PaymentRepository.cs:line 86
+   at OnlineStore.Application.Handlers.Payment.GetPaymentHandler.ExecuteAsync(GetPaymentQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Payment\GetPaymentByIdHandler.cs:line 20
+   at OnlineStore.Api.Controllers.Payment.PaymentsController.GetById(Int32 id) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Payment\PaymentsController.cs:line 43
+   at lambda_method15(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:5f72741c-9ac4-4a99-8c04-4e07c1319066
+Error Number:2812,State:62,Class:16
+2026-08-18 15:04:15.643 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments/1 - 500 null application/json; charset=utf-8 1403.3051ms
+2026-08-18 15:05:50.809 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments/1 - null null
+2026-08-18 15:05:51.001 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:05:51.010 +02:00 [INF] Route matched with {action = "GetById", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:05:51.229 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api) in 206.8944ms
+2026-08-18 15:05:51.236 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:05:51.500 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments/1 - 404 null application/json; charset=utf-8 690.7004ms
+2026-08-18 15:05:57.796 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments/2 - null null
+2026-08-18 15:05:57.854 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:05:57.859 +02:00 [INF] Route matched with {action = "GetById", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:05:57.906 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PaymentDto'.
+2026-08-18 15:05:57.945 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api) in 78.8964ms
+2026-08-18 15:05:57.971 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:05:57.977 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments/2 - 200 null application/json; charset=utf-8 181.7403ms
+2026-08-18 15:06:06.782 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments/3 - null null
+2026-08-18 15:06:06.813 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:06:06.818 +02:00 [INF] Route matched with {action = "GetById", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PaymentDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:06.842 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PaymentDto'.
+2026-08-18 15:06:06.845 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api) in 8.2303ms
+2026-08-18 15:06:06.854 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetById (OnlineStore.Api)'
+2026-08-18 15:06:06.863 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments/3 - 200 null application/json; charset=utf-8 81.7954ms
+2026-08-18 15:06:19.968 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments - null null
+2026-08-18 15:06:20.005 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:20.032 +02:00 [INF] Route matched with {action = "GetAll", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.PaymentDto]]] GetAll(OnlineStore.Application.Handlers.Payment.Queries.GetPaymentsQuery) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:20.134 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.PaymentDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-18 15:06:20.148 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api) in 102.6677ms
+2026-08-18 15:06:20.156 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:20.163 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments - 200 null application/json; charset=utf-8 195.9681ms
+2026-08-18 15:06:30.070 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments?Status=Failed - null null
+2026-08-18 15:06:30.163 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:30.167 +02:00 [INF] Route matched with {action = "GetAll", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.PaymentDto]]] GetAll(OnlineStore.Application.Handlers.Payment.Queries.GetPaymentsQuery) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:30.208 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.PaymentDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-18 15:06:30.219 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api) in 37.4579ms
+2026-08-18 15:06:30.229 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:30.236 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments?Status=Failed - 200 null application/json; charset=utf-8 164.4807ms
+2026-08-18 15:06:35.752 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments?Status=Succeeded - null null
+2026-08-18 15:06:35.771 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:35.781 +02:00 [INF] Route matched with {action = "GetAll", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.PaymentDto]]] GetAll(OnlineStore.Application.Handlers.Payment.Queries.GetPaymentsQuery) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:35.802 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.PaymentDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-18 15:06:35.822 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api) in 25.8674ms
+2026-08-18 15:06:35.827 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:35.832 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments?Status=Succeeded - 200 null application/json; charset=utf-8 79.9385ms
+2026-08-18 15:06:40.845 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments?Status=Pending - null null
+2026-08-18 15:06:40.910 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:40.926 +02:00 [INF] Route matched with {action = "GetAll", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.PaymentDto]]] GetAll(OnlineStore.Application.Handlers.Payment.Queries.GetPaymentsQuery) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:40.943 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.PaymentDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-18 15:06:40.970 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api) in 31.5472ms
+2026-08-18 15:06:40.988 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:40.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments?Status=Pending - 200 null application/json; charset=utf-8 151.1463ms
+2026-08-18 15:06:49.268 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/payments?Currency=USD - null null
+2026-08-18 15:06:49.290 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:49.302 +02:00 [INF] Route matched with {action = "GetAll", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.PaymentDto]]] GetAll(OnlineStore.Application.Handlers.Payment.Queries.GetPaymentsQuery) on controller OnlineStore.Api.Controllers.Payment.PaymentsController (OnlineStore.Api).
+2026-08-18 15:06:49.326 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.PaymentDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-18 15:06:49.333 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api) in 11.6026ms
+2026-08-18 15:06:49.338 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Payment.PaymentsController.GetAll (OnlineStore.Api)'
+2026-08-18 15:06:49.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/payments?Currency=USD - 200 null application/json; charset=utf-8 76.1262ms

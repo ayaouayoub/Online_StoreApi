@@ -160,12 +160,12 @@ namespace OnlineStore.Api.Controllers.Order
 
         [Authorize(Policy = Permissions.Orders.View)]
         [HttpGet]
-        [ProducesResponseType(typeof(PagedResult<OrderDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PagedResultDto<OrderDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<PagedResult<OrderDto>>> GetOrders([FromQuery] GetOrdersQuery query)
+        public async Task<ActionResult<PagedResultDto<OrderDto>>> GetOrders([FromQuery] GetOrdersQuery query)
         {
             return Ok(await _getOrdersHandler.ExecuteAsync(query));
         }

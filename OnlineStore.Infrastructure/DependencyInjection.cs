@@ -71,6 +71,8 @@ namespace OnlineStore.Infrastructure
 
             services.AddScoped<IAuthorizationHandler, SuperAdminAuthorizationHandler>();
 
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
+
             return services;
         }
     }

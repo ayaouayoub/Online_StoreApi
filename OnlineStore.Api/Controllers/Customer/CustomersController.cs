@@ -5,7 +5,6 @@ using OnlineStore.Application.Security;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Customer.Queries;
 using OnlineStore.Infrastructure.Authorization;
-using OnlineStore.Application.Common.Models;
 using OnlineStore.Api.Controllers.Customer.Requests;
 using OnlineStore.Application.Handlers.Customer.Commands;
 
@@ -41,12 +40,12 @@ namespace OnlineStore.Api.Controllers.Customer
 
         [Authorize(Policy = Permissions.Customers.View)]
         [HttpGet]
-        [ProducesResponseType(typeof(PagedResult<CustomerDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PagedResultDto<CustomerDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<PagedResult<CustomerDto>>> GetAll([FromQuery] GetCustomersQuery query)
+        public async Task<ActionResult<PagedResultDto<CustomerDto>>> GetAll([FromQuery] GetCustomersQuery query)
         {
             return Ok(await _getCustomersHandler.ExecuteAsync(query));
         }

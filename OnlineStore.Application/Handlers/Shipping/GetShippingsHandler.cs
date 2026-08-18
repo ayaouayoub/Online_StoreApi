@@ -21,7 +21,7 @@ namespace OnlineStore.Application.Handlers.Shipping
             _shippingRepository = shippingRepository;
         }
 
-        public async Task<PagedResult<ShippingDto>> ExecuteAsync(GetShippingsQuery query)
+        public async Task<PagedResultDto<ShippingDto>> ExecuteAsync(GetShippingsQuery query)
         {
             if (query.PageNumber < 1) throw new DomainException("Page number must be greater than 0.");
 
@@ -29,7 +29,7 @@ namespace OnlineStore.Application.Handlers.Shipping
 
             var result = await _shippingRepository.GetAllAsync(query);
 
-            return new PagedResult<ShippingDto>
+            return new PagedResultDto<ShippingDto>
             {
                 Items = result.Items.Select(s => s.ToDto()).ToList(),
                 Page = result.Page,

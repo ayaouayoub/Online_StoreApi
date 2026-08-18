@@ -52,7 +52,7 @@ public sealed class PayOrderHandler
             throw new DomainException("The selected payment method does not match the payment provider.");
         }
 
-        var payment = Payment.Create
+        var payment = Domain.Entities.Payment.Create
         (
             orderId: order.Id,
             money: new Money(order.TotalAmount, new Currency("USD")),

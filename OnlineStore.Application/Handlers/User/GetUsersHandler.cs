@@ -20,13 +20,21 @@ namespace OnlineStore.Application.Handlers.User
             _userRepository = userRepository;
         }
 
-        public async Task<PagedResult<UserDto>> ExecuteAsync(GetUsersQuery query)
+        public async Task<PagedResultDto<UserDto>> ExecuteAsync(GetUsersQuery query)
         {
             if (query.Page < 1) throw new DomainException("Page number must be greater than 0.");
 
             if (query.PageSize < 1 || query.PageSize > 100) throw new DomainException("Page size must be between 1 and 100.");
 
-            return await _userRepository.GetUsersAsync(query);
+            var result = await _userRepository.GetUsersAsync(query);
+
+            return new PagedResultDto<UserDto>
+            {
+                Items = result.Items,
+                Page = result.Page,
+                PageSize = result.PageSize,
+                TotalCount = result.TotalCount
+            };
         }
     }
 }
