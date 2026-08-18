@@ -92,7 +92,7 @@ namespace OnlineStore.Api.Controllers.User
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<PagedResult<UserDto>>> GetUsers([FromQuery] GetUsersQuery query)
+        public async Task<ActionResult<PagedResultDto<UserDto>>> GetUsers([FromQuery] GetUsersQuery query)
         {
             return Ok(await _getUsersHandler.ExecuteAsync(query));
         }

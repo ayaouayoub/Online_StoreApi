@@ -3,9 +3,6 @@ using System.Data;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
-using OnlineStore.Domain.Enums;
-using static OnlineStore.Application.Security.Permissions;
-
 namespace OnlineStore.Infrastructure.Persistence.Repositories
 {
     public sealed class PaymentMethodRepository : IPaymentMethodRepository
