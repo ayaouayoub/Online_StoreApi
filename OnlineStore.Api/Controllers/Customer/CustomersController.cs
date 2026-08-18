@@ -5,6 +5,9 @@ using OnlineStore.Application.Security;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Customer.Queries;
 using OnlineStore.Infrastructure.Authorization;
+using OnlineStore.Application.Common.Models;
+using OnlineStore.Api.Controllers.Customer.Requests;
+using OnlineStore.Application.Handlers.Customer.Commands;
 
 namespace OnlineStore.Api.Controllers.Customer
 {
@@ -13,10 +16,14 @@ namespace OnlineStore.Api.Controllers.Customer
     public class CustomersController : ControllerBase
     {
         private readonly GetCustomerHandler _getCustomerHandler;
+        private readonly GetCustomersHandler _getCustomersHandler;
+        private readonly UpdateCustomerHandler _updateCustomerHandler;
 
-        public CustomersController(GetCustomerHandler getCustomerHandler)
+        public CustomersController(GetCustomerHandler getCustomerHandler, GetCustomersHandler getCustomersHandler, UpdateCustomerHandler updateCustomerHandler)
         {
             _getCustomerHandler = getCustomerHandler;
+            _getCustomersHandler = getCustomersHandler;
+            _updateCustomerHandler = updateCustomerHandler;
         }
 
         [Authorize(Policy = Policies.CustomerView)]
@@ -30,6 +37,38 @@ namespace OnlineStore.Api.Controllers.Customer
         public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
         {
             return Ok(await _getCustomerHandler.ExecuteAsync(new GetCustomerQuery(id)));
+        }
+
+        [Authorize(Policy = Permissions.Customers.View)]
+        [HttpGet]
+        [ProducesResponseType(typeof(PagedResult<CustomerDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<PagedResult<CustomerDto>>> GetAll([FromQuery] GetCustomersQuery query)
+        {
+            return Ok(await _getCustomersHandler.ExecuteAsync(query));
+        }
+
+        [Authorize(Policy = Permissions.Customers.Update)]
+        [HttpPatch("{id:int}")]
+        [ProducesResponseType(typeof(CustomerDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<CustomerDto>> Update(int id, [FromBody] UpdateCustomerRequest request)
+        {
+            return Ok(await _updateCustomerHandler.ExecuteAsync(new UpdateCustomerCommand
+            {
+                CustomerId = id,
+                Email = request.Email,
+                Phone = request.Phone,
+                Address = request.Address
+            }));
         }
     }
 }

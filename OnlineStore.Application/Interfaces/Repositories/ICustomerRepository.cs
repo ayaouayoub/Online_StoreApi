@@ -1,4 +1,6 @@
-﻿using OnlineStore.Application.Handlers.Customer.Models;
+﻿using OnlineStore.Application.Common.Models;
+using OnlineStore.Application.Handlers.Customer.Models;
+using OnlineStore.Application.Handlers.Customer.Queries;
 using OnlineStore.Domain.Entities;
 
 namespace OnlineStore.Application.Interfaces.Repositories
@@ -9,5 +11,7 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<CustomerDetails?> GetByUserIdAsync(int id);
         Task<CustomerDetails> RegisterAsync(User user, Customer customer);
         Task<Customer?> GetByEmailAsync(string email);
+        Task<PagedResult<CustomerDetails>> GetPagedAsync(GetCustomersQuery query);
+        Task<bool> UpdateAsync(Customer customer);
     }
 }

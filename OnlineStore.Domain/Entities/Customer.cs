@@ -41,7 +41,7 @@ namespace OnlineStore.Domain.Entities
             Email = new Email(email);
         }
 
-        public void ChangePhone(string phone)
+        public void ChangePhone(string? phone)
         {
             if (Phone == phone) return;
             Phone = phone;

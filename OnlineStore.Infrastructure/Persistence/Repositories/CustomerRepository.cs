@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using OnlineStore.Application.Common.Models;
 using OnlineStore.Application.Handlers.Customer.Models;
+using OnlineStore.Application.Handlers.Customer.Queries;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
 using OnlineStore.Domain.Entities;
@@ -129,6 +131,77 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
                 Name = reader.GetString(reader.GetOrdinal("Username")),
                 IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive"))
             };
+        }
+
+        public async Task<PagedResult<CustomerDetails>> GetPagedAsync(GetCustomersQuery query)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("usp_GetCustomersPaged", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@Email", SqlDbType.NVarChar, 100).Value = (object?)query.Email ?? DBNull.Value;
+
+            command.Parameters.Add("@Phone", SqlDbType.NVarChar, 20).Value = (object?)query.Phone ?? DBNull.Value;
+
+            command.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = (object?)query.Name ?? DBNull.Value;
+
+            command.Parameters.Add("@Username", SqlDbType.NVarChar, 100).Value = (object?)query.Username ?? DBNull.Value;
+
+            command.Parameters.Add("@PageNumber", SqlDbType.Int).Value = query.PageNumber;
+
+            command.Parameters.Add("@PageSize", SqlDbType.Int).Value = query.PageSize;
+
+            await connection.OpenAsync();
+
+            await using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            if (!await reader.ReadAsync()) throw new Exception("Failed to read total count.");
+
+            int totalCount = reader.GetInt32(0);
+
+            await reader.NextResultAsync();
+
+            List<CustomerDetails> customers = [];
+
+            while (await reader.ReadAsync())
+            {
+                customers.Add(MapCustomerDetails(reader));
+            }
+
+            return new PagedResult<CustomerDetails>
+            {
+                Items = customers,
+                Page = query.PageNumber,
+                PageSize = query.PageSize,
+                TotalCount = totalCount
+            };
+        }
+
+        public async Task<bool> UpdateAsync(Customer customer)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("usp_UpdateCustomer", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CustomerId", SqlDbType.Int).Value = customer.Id;
+
+            command.Parameters.Add("@Email", SqlDbType.NVarChar, 100).Value = customer.Email.ToString();
+
+            command.Parameters.Add("@Phone", SqlDbType.NVarChar, 20).Value = (object?)customer.Phone ?? DBNull.Value;
+
+            command.Parameters.Add("@Address", SqlDbType.NVarChar, 200).Value = customer.Address;
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
         }
     }
 }
