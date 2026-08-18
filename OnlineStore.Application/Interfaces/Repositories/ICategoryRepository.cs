@@ -12,5 +12,10 @@ namespace OnlineStore.Application.Interfaces.Repositories
     {
         Task<Category?> GetByIdAsync(int id);
         Task<IReadOnlyList<CategorySummaryDto>> GetCategoriesAsync();
+        Task<Category> CreateAsync(Category category);
+        Task<bool> UpdateAsync(Category category);
+        Task<bool> ActivateAsync(int id);
+        Task<bool> DeactivateAsync(int id);
+        Task<bool> HasActiveChildrenAsync(int categoryId);
     }
 }

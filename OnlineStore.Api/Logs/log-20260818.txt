@@ -1,0 +1,157 @@
+2026-08-18 11:35:43.235 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-18 11:35:44.606 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-18 11:35:44.637 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-18 11:35:45.352 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-18 11:35:45.828 +02:00 [INF] Hosting environment: Development
+2026-08-18 11:35:46.029 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-18 11:35:53.183 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger - null null
+2026-08-18 11:35:53.771 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger - 301 0 null 608.2016ms
+2026-08-18 11:35:53.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-18 11:35:53.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 169.4396ms
+2026-08-18 11:35:54.058 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - null null
+2026-08-18 11:35:54.059 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - null null
+2026-08-18 11:35:54.060 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-18 11:35:54.060 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-18 11:35:54.132 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-18 11:35:54.219 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 158.5423ms
+2026-08-18 11:35:54.241 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-08-18 11:35:54.241 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-08-18 11:35:54.324 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - 200 152034 text/css 265.7396ms
+2026-08-18 11:35:54.492 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 432.4579ms
+2026-08-18 11:35:54.465 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-08-18 11:35:54.553 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 494.8911ms
+2026-08-18 11:35:54.616 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 484.3097ms
+2026-08-18 11:35:55.127 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-18 11:35:55.879 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 752.3619ms
+2026-08-18 11:36:15.693 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-18 11:36:16.026 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-18 11:36:16.148 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-18 11:36:18.809 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-18 11:36:18.875 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2703.2834ms
+2026-08-18 11:36:18.887 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-18 11:36:18.894 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3202.1025ms
+2026-08-18 11:38:26.968 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/categories - application/json 114
+2026-08-18 11:38:27.417 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:38:27.437 +02:00 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Create(OnlineStore.Api.Controllers.Category.Requests.CreateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:38:27.768 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api) in 319.7796ms
+2026-08-18 11:38:27.778 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:38:28.267 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/categories - 404 null application/json; charset=utf-8 1299.1067ms
+2026-08-18 11:38:55.931 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/categories - application/json 112
+2026-08-18 11:38:56.093 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:38:56.099 +02:00 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Create(OnlineStore.Api.Controllers.Category.Requests.CreateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:38:56.271 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api) in 162.5318ms
+2026-08-18 11:38:56.276 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:38:56.496 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/categories - 400 null application/json; charset=utf-8 565.2546ms
+2026-08-18 11:39:07.488 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/categories - application/json 111
+2026-08-18 11:39:07.559 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:39:07.565 +02:00 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Create(OnlineStore.Api.Controllers.Category.Requests.CreateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:39:08.077 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api) in 408.4427ms
+2026-08-18 11:39:08.088 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:39:08.388 +02:00 [ERR] Unhandled exception while processing POST /api/categories
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY SAME TABLE constraint "FK_ProductCategories_ParentCategory". The conflict occurred in database "OnlineStoreDB", table "dbo.ProductCategories", column 'CategoryId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteReaderAsync>b__283_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.CategoryRepository.CreateAsync(Category category) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\CategoryRepository.cs:line 102
+   at OnlineStore.Infrastructure.Persistence.Repositories.CategoryRepository.CreateAsync(Category category) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\CategoryRepository.cs:line 104
+   at OnlineStore.Infrastructure.Persistence.Repositories.CategoryRepository.CreateAsync(Category category) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\CategoryRepository.cs:line 104
+   at OnlineStore.Application.Handlers.Category.CreateCategoryHandler.ExecuteAsync(CreateCategoryCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Category\CreateCategoryHandler.cs:line 37
+   at OnlineStore.Api.Controllers.Category.CategoriesController.Create(CreateCategoryRequest request) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Category\CategoriesController.cs:line 68
+   at lambda_method15(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:b1957a48-66fa-44b6-8811-e4e7ae8930a7
+Error Number:547,State:0,Class:16
+2026-08-18 11:39:08.674 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/categories - 500 null application/json; charset=utf-8 1185.821ms
+2026-08-18 11:40:05.020 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/53/deactivate - null null
+2026-08-18 11:40:05.142 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api)'
+2026-08-18 11:40:05.213 +02:00 [INF] Route matched with {action = "Deactivate", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deactivate(Int32) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:40:05.315 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-18 11:40:05.317 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api) in 99.2518ms
+2026-08-18 11:40:05.320 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api)'
+2026-08-18 11:40:05.322 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/53/deactivate - 204 null null 302.9502ms
+2026-08-18 11:40:23.149 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/53/activate - null null
+2026-08-18 11:40:23.176 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api)'
+2026-08-18 11:40:23.198 +02:00 [INF] Route matched with {action = "Activate", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Activate(Int32) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:40:23.259 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-18 11:40:23.264 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api) in 40.1262ms
+2026-08-18 11:40:23.266 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api)'
+2026-08-18 11:40:23.269 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/53/activate - 204 null null 120.5674ms
+2026-08-18 11:41:26.502 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/54 - application/json 107
+2026-08-18 11:41:26.539 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:41:26.552 +02:00 [INF] Route matched with {action = "Update", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Update(Int32, OnlineStore.Api.Controllers.Category.Requests.UpdateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:41:26.745 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api) in 188.3239ms
+2026-08-18 11:41:26.751 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:41:27.004 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/54 - 404 null application/json; charset=utf-8 506.6969ms
+2026-08-18 11:41:38.281 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/53 - application/json 107
+2026-08-18 11:41:38.302 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:41:38.377 +02:00 [INF] Route matched with {action = "Update", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Update(Int32, OnlineStore.Api.Controllers.Category.Requests.UpdateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:41:38.431 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.CategoryDto'.
+2026-08-18 11:41:38.465 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api) in 67.9576ms
+2026-08-18 11:41:38.469 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:41:38.472 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/53 - 200 null application/json; charset=utf-8 191.0901ms
+2026-08-18 11:50:15.211 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-18 11:50:16.063 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-18 11:50:16.067 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-18 11:50:16.848 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-18 11:50:17.169 +02:00 [INF] Hosting environment: Development
+2026-08-18 11:50:17.181 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-18 11:50:17.402 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-18 11:50:18.623 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1272.8758ms
+2026-08-18 11:50:18.778 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-18 11:50:18.817 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-18 11:50:18.903 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 125.5488ms
+2026-08-18 11:50:19.585 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 768.4995ms
+2026-08-18 11:50:19.821 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-18 11:50:21.275 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1454.0578ms
+2026-08-18 11:50:36.226 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/53 - application/json 101
+2026-08-18 11:50:38.354 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:50:38.482 +02:00 [INF] Route matched with {action = "Update", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Update(Int32, OnlineStore.Api.Controllers.Category.Requests.UpdateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:50:38.749 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.CategoryDto'.
+2026-08-18 11:50:38.825 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api) in 312.876ms
+2026-08-18 11:50:38.837 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Update (OnlineStore.Api)'
+2026-08-18 11:50:38.842 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/53 - 200 null application/json; charset=utf-8 2615.7472ms
+2026-08-18 11:51:05.012 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/categories - application/json 111
+2026-08-18 11:51:05.114 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:51:05.139 +02:00 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.CategoryDto]] Create(OnlineStore.Api.Controllers.Category.Requests.CreateCategoryRequest) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:51:05.239 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.CategoryDto'.
+2026-08-18 11:51:05.329 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api) in 177.0437ms
+2026-08-18 11:51:05.336 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Create (OnlineStore.Api)'
+2026-08-18 11:51:05.340 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/categories - 201 null application/json; charset=utf-8 335.0886ms
+2026-08-18 11:51:25.780 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/1/deactivate - null null
+2026-08-18 11:51:25.961 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api)'
+2026-08-18 11:51:25.984 +02:00 [INF] Route matched with {action = "Deactivate", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deactivate(Int32) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:51:26.317 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api) in 320.7948ms
+2026-08-18 11:51:26.328 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Deactivate (OnlineStore.Api)'
+2026-08-18 11:51:26.739 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/1/deactivate - 400 null application/json; charset=utf-8 959.1782ms
+2026-08-18 11:51:37.598 +02:00 [INF] Request starting HTTP/2 PATCH https://localhost:7277/api/categories/1/activate - null null
+2026-08-18 11:51:37.693 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api)'
+2026-08-18 11:51:37.715 +02:00 [INF] Route matched with {action = "Activate", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Activate(Int32) on controller OnlineStore.Api.Controllers.Category.CategoriesController (OnlineStore.Api).
+2026-08-18 11:51:37.953 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api) in 226.3589ms
+2026-08-18 11:51:37.962 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Category.CategoriesController.Activate (OnlineStore.Api)'
+2026-08-18 11:51:38.281 +02:00 [INF] Request finished HTTP/2 PATCH https://localhost:7277/api/categories/1/activate - 400 null application/json; charset=utf-8 683.7892ms

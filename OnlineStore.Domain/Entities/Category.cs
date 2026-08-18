@@ -45,17 +45,17 @@ namespace OnlineStore.Domain.Entities
             Name = name;
         }
 
-        public void ChangeDescription(string description)
+        public void ChangeDescription(string? description)
         {
             if (Description == description) return;
             Description = description;
         }
 
-        public void ChangeParent(Category parent)
+        public void ChangeParent(Category? parent)
         {
             _ValidateParent(parent);
             Parent = parent;
-            ParentId = parent.Id;
+            ParentId = parent?.Id;
         }
 
         public void ChangeDisplayOrder(int order)
@@ -89,9 +89,9 @@ namespace OnlineStore.Domain.Entities
             if (order < 0) throw new DomainException("display order number cannot be negative.");
         }
 
-        private void _ValidateParent(Category parent)
+        private void _ValidateParent(Category? parent)
         {
-            if (parent.Id == Id) throw new DomainException("The category cannot be the parent of itself.");
+            if (parent is not null && parent.Id == Id) throw new DomainException("A category cannot be its own parent.");
         }
     }
 }

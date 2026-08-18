@@ -79,5 +79,113 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             return categories;
         }
+
+        public async Task<Category> CreateAsync(Category category)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("usp_CreateCategory", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CategoryName", SqlDbType.NVarChar, 100).Value = category.Name;
+
+            command.Parameters.Add("@Description", SqlDbType.NVarChar, 500).Value = (object?)category.Description ?? DBNull.Value;
+
+            command.Parameters.Add("@ParentCategoryId", SqlDbType.Int).Value = (object?)category.ParentId ?? DBNull.Value;
+
+            command.Parameters.Add("@DisplayOrder", SqlDbType.Int).Value = category.DisplayOrder;
+
+            await connection.OpenAsync();
+
+            object? result = await command.ExecuteScalarAsync();
+
+            return Category.Load(Convert.ToInt32(result), category.Name, category.Description, category.ParentId, category.DisplayOrder, category.IsActive, category.CreatedAt);
+        }
+
+        public async Task<bool> UpdateAsync(Category category)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_UpdateCategory", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = category.Id;
+
+            command.Parameters.Add("@CategoryName", SqlDbType.NVarChar, 100).Value = category.Name;
+
+            command.Parameters.Add("@Description", SqlDbType.NVarChar, 500).Value = (object?)category.Description ?? DBNull.Value;
+
+            command.Parameters.Add("@ParentCategoryId", SqlDbType.Int).Value = (object?)category.ParentId ?? DBNull.Value;
+
+            command.Parameters.Add("@DisplayOrder", SqlDbType.Int).Value = category.DisplayOrder;
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
+
+        public async Task<bool> ActivateAsync(int id)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_ActivateCategory", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = id;
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
+
+        public async Task<bool> DeactivateAsync(int id)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("dbo.usp_DeactivateCategory", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = id;
+
+            await connection.OpenAsync();
+
+            int affectedRows = await command.ExecuteNonQueryAsync();
+
+            return affectedRows > 0;
+        }
+
+        public async Task<bool> HasActiveChildrenAsync(int categoryId)
+        {
+            await using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            await using SqlCommand command = new("usp_DoesCategoryHaveActiveChildren", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = categoryId;
+
+            SqlParameter returnParameter = command.Parameters.Add("@ReturnValue", SqlDbType.Int);
+
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            await connection.OpenAsync();
+
+            await command.ExecuteNonQueryAsync();
+
+            return Convert.ToInt32(returnParameter.Value) == 1;
+        }
     }
 }

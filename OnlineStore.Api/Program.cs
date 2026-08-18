@@ -148,6 +148,14 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<ActivatePaymentMethodHandler>();
 
+            builder.Services.AddScoped<CreateCategoryHandler>();
+
+            builder.Services.AddScoped<UpdateCategoryHandler>();
+
+            builder.Services.AddScoped<ActivateCategoryHandler>();
+
+            builder.Services.AddScoped<DeactivateCategoryHandler>();
+            
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
