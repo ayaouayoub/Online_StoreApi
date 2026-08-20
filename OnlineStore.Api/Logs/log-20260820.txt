@@ -1,0 +1,596 @@
+2026-08-20 11:14:06.467 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 11:14:07.753 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 11:14:07.775 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 11:14:08.477 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 11:14:08.779 +02:00 [INF] Hosting environment: Development
+2026-08-20 11:14:08.784 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 11:14:24.646 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger - null null
+2026-08-20 11:14:25.635 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger - 301 0 null 1012.1007ms
+2026-08-20 11:14:25.678 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 11:14:26.289 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 610.9994ms
+2026-08-20 11:14:26.470 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - null null
+2026-08-20 11:14:26.471 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - null null
+2026-08-20 11:14:26.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-20 11:14:26.670 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-08-20 11:14:26.671 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-08-20 11:14:26.722 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 11:14:26.733 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - 200 152034 text/css 263.1891ms
+2026-08-20 11:14:26.836 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-08-20 11:14:26.684 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 212.7373ms
+2026-08-20 11:14:26.794 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 11:14:26.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 118.6442ms
+2026-08-20 11:14:26.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 400.1403ms
+2026-08-20 11:14:27.803 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1009.3583ms
+2026-08-20 11:14:28.236 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 11:14:29.727 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1490.7947ms
+2026-08-20 11:14:45.668 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 11:14:46.130 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:14:46.279 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 11:14:49.254 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 11:14:49.363 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 3044.342ms
+2026-08-20 11:14:49.373 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:14:49.380 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3711.9241ms
+2026-08-20 11:16:31.986 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/products/1/review - application/json 60
+2026-08-20 11:16:32.341 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.CustomerOnlyRequirement
+2026-08-20 11:16:32.360 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-20 11:16:32.378 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/products/1/review - 403 0 null 392.2232ms
+2026-08-20 11:16:48.187 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 49
+2026-08-20 11:16:48.213 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:16:48.232 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 11:16:49.051 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 786.8279ms
+2026-08-20 11:16:49.057 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:16:49.536 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 401 null application/json; charset=utf-8 1349.4453ms
+2026-08-20 11:17:10.818 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 48
+2026-08-20 11:17:10.877 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:17:10.889 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 11:17:11.323 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 11:17:11.331 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 428.0412ms
+2026-08-20 11:17:11.337 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:17:11.341 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 522.9217ms
+2026-08-20 11:17:25.103 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/products/1/review - application/json 60
+2026-08-20 11:17:25.317 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api)'
+2026-08-20 11:17:25.341 +02:00 [INF] Route matched with {action = "CreateReview", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] CreateReview(Int32, OnlineStore.Api.Controllers.Product.Requests.CreateReviewRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 11:17:25.641 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api) in 287.9357ms
+2026-08-20 11:17:25.647 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api)'
+2026-08-20 11:17:25.907 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/products/1/review - 400 null application/json; charset=utf-8 805.6161ms
+2026-08-20 11:17:31.440 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/products/1/review - application/json 59
+2026-08-20 11:17:31.554 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api)'
+2026-08-20 11:17:31.560 +02:00 [INF] Route matched with {action = "CreateReview", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] CreateReview(Int32, OnlineStore.Api.Controllers.Product.Requests.CreateReviewRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 11:17:31.655 +02:00 [INF] Executing CreatedAtRouteResult, writing value of type 'OnlineStore.Application.Dtos.ReviewDto'.
+2026-08-20 11:17:31.743 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api) in 172.4096ms
+2026-08-20 11:17:31.754 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateReview (OnlineStore.Api)'
+2026-08-20 11:17:32.029 +02:00 [ERR] Unhandled exception while processing POST /api/products/1/review
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtRouteResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:17:32.187 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/products/1/review - 500 null application/json; charset=utf-8 747.435ms
+2026-08-20 11:21:23.496 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1/reviews - null null
+2026-08-20 11:21:23.515 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:21:23.536 +02:00 [INF] Route matched with {action = "GetProductReviews", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] GetProductReviews(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 11:21:24.022 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api) in 481.7865ms
+2026-08-20 11:21:24.029 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:21:24.289 +02:00 [ERR] Unhandled exception while processing GET /api/products/1/reviews
+System.IndexOutOfRangeException: CustomerIsActive
+   at Microsoft.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.MapReview(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 269
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetByProductIdAsync(Int32 productId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 123
+   at OnlineStore.Application.Handlers.Review.GetReviewsByProductIdHandler.ExecuteAsync(GetReviewsByProductIdQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\GetReviewsByProductIdHandler.cs:line 24
+   at OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews(Int32 productId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Product\ProductsController.cs:line 157
+   at lambda_method23(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:21:24.396 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1/reviews - 500 null application/json; charset=utf-8 899.9125ms
+2026-08-20 11:25:38.895 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 11:25:40.389 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 11:25:40.398 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 11:25:41.418 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 11:25:41.440 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 11:25:41.501 +02:00 [INF] Hosting environment: Development
+2026-08-20 11:25:41.551 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 11:25:42.404 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1032.9501ms
+2026-08-20 11:25:42.602 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 11:25:42.623 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 11:25:43.277 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 673.3773ms
+2026-08-20 11:25:43.800 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1177.2702ms
+2026-08-20 11:25:45.950 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1/reviews - null null
+2026-08-20 11:25:46.807 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:25:46.899 +02:00 [INF] Route matched with {action = "GetProductReviews", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] GetProductReviews(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 11:25:48.467 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api) in 1551.069ms
+2026-08-20 11:25:48.474 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:25:48.859 +02:00 [ERR] Unhandled exception while processing GET /api/products/1/reviews
+System.IndexOutOfRangeException: DeletedByUserId
+   at Microsoft.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.MapReview(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 294
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetByProductIdAsync(Int32 productId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 123
+   at OnlineStore.Application.Handlers.Review.GetReviewsByProductIdHandler.ExecuteAsync(GetReviewsByProductIdQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\GetReviewsByProductIdHandler.cs:line 24
+   at OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews(Int32 productId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Product\ProductsController.cs:line 157
+   at lambda_method7(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:25:49.051 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1/reviews - 500 null application/json; charset=utf-8 3101.3765ms
+2026-08-20 11:40:18.797 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 11:40:19.470 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 11:40:19.482 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 11:40:20.140 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 11:40:20.149 +02:00 [INF] Hosting environment: Development
+2026-08-20 11:40:20.152 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 11:40:20.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 11:40:22.179 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1910.0934ms
+2026-08-20 11:40:22.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 11:40:22.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 11:40:22.550 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 83.3543ms
+2026-08-20 11:40:22.973 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 500.9075ms
+2026-08-20 11:40:23.181 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 11:40:23.304 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - null null
+2026-08-20 11:40:23.596 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-08-20 11:40:23.600 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - 200 628 image/png 296.3353ms
+2026-08-20 11:40:24.823 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1641.1762ms
+2026-08-20 11:40:38.618 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1/reviews - null null
+2026-08-20 11:40:38.917 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:40:38.994 +02:00 [INF] Route matched with {action = "GetProductReviews", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] GetProductReviews(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 11:40:40.261 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.ReviewDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 11:40:40.384 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api) in 1372.6223ms
+2026-08-20 11:40:40.390 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 11:40:40.397 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1/reviews - 200 null application/json; charset=utf-8 1779.6069ms
+2026-08-20 11:41:02.647 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 11:41:02.799 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+OnlineStore.Infrastructure.Authorization.ActiveUserRequirement
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-20 11:41:02.818 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-20 11:41:02.822 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 401 0 null 175.6112ms
+2026-08-20 11:41:20.943 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 48
+2026-08-20 11:41:20.952 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:41:20.966 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 11:41:21.876 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 11:41:21.909 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 919.8495ms
+2026-08-20 11:41:21.914 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 11:41:21.919 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 975.7517ms
+2026-08-20 11:41:41.848 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 11:41:42.204 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-20 11:41:42.216 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-20 11:41:42.219 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 403 0 null 370.8244ms
+2026-08-20 11:41:50.839 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/customers/me/reviews - null null
+2026-08-20 11:41:50.925 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api)'
+2026-08-20 11:41:50.937 +02:00 [INF] Route matched with {action = "MyReviews", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] MyReviews() on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:41:51.001 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.ReviewDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 11:41:51.007 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api) in 60.8203ms
+2026-08-20 11:41:51.015 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api)'
+2026-08-20 11:41:51.018 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/customers/me/reviews - 200 null application/json; charset=utf-8 179.4894ms
+2026-08-20 11:42:15.543 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/1 - application/json 57
+2026-08-20 11:42:15.652 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:42:15.668 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:42:16.009 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 333.7741ms
+2026-08-20 11:42:16.030 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:42:16.394 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/1 - 400 null application/json; charset=utf-8 858.5423ms
+2026-08-20 11:42:28.913 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/1 - application/json 55
+2026-08-20 11:42:28.937 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:42:28.944 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:42:29.071 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-20 11:42:29.074 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 119.6898ms
+2026-08-20 11:42:29.078 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:42:29.081 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/1 - 204 null null 168.6137ms
+2026-08-20 11:44:21.314 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - application/json 55
+2026-08-20 11:44:21.402 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:44:21.411 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:44:21.615 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 189.183ms
+2026-08-20 11:44:21.629 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:44:21.879 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - 404 null application/json; charset=utf-8 565.6506ms
+2026-08-20 11:44:54.029 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - application/json 55
+2026-08-20 11:44:54.058 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:44:54.177 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:44:54.350 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 127.3233ms
+2026-08-20 11:44:54.356 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:44:54.571 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - 404 null application/json; charset=utf-8 544.016ms
+2026-08-20 11:47:21.980 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - application/json 55
+2026-08-20 11:47:22.180 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:47:22.197 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:47:22.485 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 251.4433ms
+2026-08-20 11:47:22.494 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:47:22.716 +02:00 [ERR] Unhandled exception while processing PUT /api/customers/me/reviews/6
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_DateTime()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDateTime(Int32 i)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.MapReview(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 304
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetByIdAsync(Int32 reviewId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 104
+   at OnlineStore.Application.Handlers.Review.UpdateReviewHandler.ExecuteAsync(UpdateReviewCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\UpdateReviewHandler.cs:line 31
+   at OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview(Int32 reviewId, UpdateReviewRequest request) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Customer\CustomersController.cs:line 115
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:47:22.901 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - 500 null application/json; charset=utf-8 920.9884ms
+2026-08-20 11:51:44.309 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 11:51:45.054 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 11:51:45.058 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 11:51:45.444 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 11:51:45.447 +02:00 [INF] Hosting environment: Development
+2026-08-20 11:51:45.449 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 11:51:46.637 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 11:51:48.301 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1687.6262ms
+2026-08-20 11:51:48.433 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 11:51:48.433 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 11:51:48.504 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 70.7758ms
+2026-08-20 11:51:49.364 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 931.0721ms
+2026-08-20 11:51:54.586 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - application/json 55
+2026-08-20 11:51:56.768 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:51:56.941 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:51:57.655 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 695.2582ms
+2026-08-20 11:51:57.665 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:51:58.153 +02:00 [ERR] Unhandled exception while processing PUT /api/customers/me/reviews/6
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_DateTime()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDateTime(Int32 i)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.MapReview(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 304
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetByIdAsync(Int32 reviewId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 104
+   at OnlineStore.Application.Handlers.Review.UpdateReviewHandler.ExecuteAsync(UpdateReviewCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\UpdateReviewHandler.cs:line 31
+   at OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview(Int32 reviewId, UpdateReviewRequest request) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Customer\CustomersController.cs:line 115
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:51:58.366 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - 500 null application/json; charset=utf-8 3781.0909ms
+2026-08-20 11:53:37.356 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - application/json 55
+2026-08-20 11:53:37.505 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:53:37.508 +02:00 [INF] Route matched with {action = "UpdateReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.UpdateReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:53:37.757 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api) in 242.6083ms
+2026-08-20 11:53:37.764 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.UpdateReview (OnlineStore.Api)'
+2026-08-20 11:53:38.067 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7277/api/customers/me/reviews/6 - 403 null application/json; charset=utf-8 758.8426ms
+2026-08-20 11:54:06.423 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/6 - application/json 24
+2026-08-20 11:54:06.529 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:54:06.554 +02:00 [INF] Route matched with {action = "DeleteMyReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteMyReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.DeleteMyReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:54:06.816 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api) in 253.3975ms
+2026-08-20 11:54:06.823 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:54:07.100 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/6 - 403 null application/json; charset=utf-8 677.3808ms
+2026-08-20 11:54:13.579 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/1 - application/json 24
+2026-08-20 11:54:13.659 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:54:13.662 +02:00 [INF] Route matched with {action = "DeleteMyReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteMyReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.DeleteMyReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:54:14.060 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api) in 393.5509ms
+2026-08-20 11:54:14.065 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:54:14.325 +02:00 [ERR] Unhandled exception while processing DELETE /api/customers/me/reviews/1
+System.InvalidOperationException: Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.DeleteAsync(Review review) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 210
+   at OnlineStore.Application.Handlers.Review.DeleteMyReviewHandler.ExecuteAsync(DeleteMyReviewCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\DeleteMyReviewHandler.cs:line 38
+   at OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview(Int32 reviewId, DeleteMyReviewRequest request) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Customer\CustomersController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 11:54:14.342 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/1 - 500 null application/json; charset=utf-8 764.1142ms
+2026-08-20 11:59:08.570 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 11:59:13.344 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 11:59:13.350 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 11:59:13.847 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 11:59:14.005 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 11:59:14.252 +02:00 [INF] Hosting environment: Development
+2026-08-20 11:59:14.303 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 11:59:15.686 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1436.2373ms
+2026-08-20 11:59:21.712 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/1 - application/json 24
+2026-08-20 11:59:24.150 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:59:24.281 +02:00 [INF] Route matched with {action = "DeleteMyReview", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteMyReview(Int32, OnlineStore.Api.Controllers.Customer.Requests.DeleteMyReviewRequest) on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 11:59:24.547 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-20 11:59:24.563 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api) in 265.0221ms
+2026-08-20 11:59:24.568 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.DeleteMyReview (OnlineStore.Api)'
+2026-08-20 11:59:24.573 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/customers/me/reviews/1 - 204 null null 2861.1728ms
+2026-08-20 12:00:02.267 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/customers/me/reviews - null null
+2026-08-20 12:00:02.380 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api)'
+2026-08-20 12:00:02.397 +02:00 [INF] Route matched with {action = "MyReviews", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] MyReviews() on controller OnlineStore.Api.Controllers.Customer.CustomersController (OnlineStore.Api).
+2026-08-20 12:00:02.496 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.ReviewDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 12:00:02.557 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api) in 149.4337ms
+2026-08-20 12:00:02.572 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Customer.CustomersController.MyReviews (OnlineStore.Api)'
+2026-08-20 12:00:02.580 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/customers/me/reviews - 200 null application/json; charset=utf-8 315.0484ms
+2026-08-20 12:00:17.724 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 12:00:17.888 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-20 12:00:17.899 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-20 12:00:17.906 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 403 0 null 181.2378ms
+2026-08-20 12:00:32.934 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 12:00:32.973 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 12:00:33.000 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 12:00:34.709 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 12:00:34.784 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 1763.3488ms
+2026-08-20 12:00:34.796 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 12:00:34.800 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 1866.196ms
+2026-08-20 12:00:56.730 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1/reviews - null null
+2026-08-20 12:00:56.758 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 12:00:56.858 +02:00 [INF] Route matched with {action = "GetProductReviews", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] GetProductReviews(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 12:00:57.017 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.ReviewDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 12:00:57.040 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api) in 81.3314ms
+2026-08-20 12:00:57.053 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 12:00:57.068 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1/reviews - 200 null application/json; charset=utf-8 337.0643ms
+2026-08-20 12:01:05.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 12:01:06.073 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:01:06.206 +02:00 [INF] Route matched with {action = "GetReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ReviewAdminDto]]] GetReviews(OnlineStore.Application.Handlers.Review.Queries.GetReviewsQuery) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:01:06.684 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api) in 461.3234ms
+2026-08-20 12:01:06.692 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:01:07.107 +02:00 [ERR] Unhandled exception while processing GET /api/reviews
+Microsoft.Data.SqlClient.SqlException (0x80131904): The number of rows provided for a FETCH clause must be greater then zero.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetAllAsync(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 73
+   at OnlineStore.Application.Handlers.Review.GetReviewsHandler.ExecuteAsync(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\GetReviewsHandler.cs:line 20
+   at OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Review\ReviewsController.cs:line 38
+   at lambda_method39(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:bbf0a486-f70e-499c-a09f-7b1fb5a11427
+Error Number:10744,State:1,Class:15
+2026-08-20 12:01:07.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 500 null application/json; charset=utf-8 1446.9266ms
+2026-08-20 12:01:27.975 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - null null
+2026-08-20 12:01:28.043 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:28.076 +02:00 [INF] Route matched with {action = "GetById", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:01:28.332 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api) in 245.0143ms
+2026-08-20 12:01:28.349 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:28.588 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - 404 null application/json; charset=utf-8 613.1608ms
+2026-08-20 12:01:37.228 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews/reviews/6 - null null
+2026-08-20 12:01:37.245 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:37.250 +02:00 [INF] Route matched with {action = "GetById", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:01:37.303 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ReviewDto'.
+2026-08-20 12:01:37.308 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api) in 42.4476ms
+2026-08-20 12:01:37.313 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:37.316 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews/reviews/6 - 200 null application/json; charset=utf-8 89.3052ms
+2026-08-20 12:01:42.229 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - null null
+2026-08-20 12:01:42.245 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:42.272 +02:00 [INF] Route matched with {action = "GetById", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:01:42.446 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api) in 154.5619ms
+2026-08-20 12:01:42.457 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:01:42.757 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - 404 null application/json; charset=utf-8 528.3696ms
+2026-08-20 12:01:54.127 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/1 - application/json 24
+2026-08-20 12:01:54.211 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:01:54.227 +02:00 [INF] Route matched with {action = "DeleteReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteReview(Int32, OnlineStore.Api.Controllers.Review.Requests.DeleteReviewRequest) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:01:54.449 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api) in 179.9547ms
+2026-08-20 12:01:54.479 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:01:54.715 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/1 - 404 null application/json; charset=utf-8 589.6179ms
+2026-08-20 12:02:00.726 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/6 - application/json 24
+2026-08-20 12:02:00.831 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:02:00.838 +02:00 [INF] Route matched with {action = "DeleteReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteReview(Int32, OnlineStore.Api.Controllers.Review.Requests.DeleteReviewRequest) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:02:01.119 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api) in 255.5921ms
+2026-08-20 12:02:01.131 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:02:01.413 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/6 - 400 null application/json; charset=utf-8 686.6202ms
+2026-08-20 12:02:18.768 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/6 - application/json 47
+2026-08-20 12:02:18.838 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:02:18.842 +02:00 [INF] Route matched with {action = "DeleteReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteReview(Int32, OnlineStore.Api.Controllers.Review.Requests.DeleteReviewRequest) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:02:18.883 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-20 12:02:18.887 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api) in 28.4515ms
+2026-08-20 12:02:18.894 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.DeleteReview (OnlineStore.Api)'
+2026-08-20 12:02:18.898 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7277/api/reviews/reviews/6 - 204 null null 131.6644ms
+2026-08-20 12:02:33.090 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/reviews/1/restore - null 0
+2026-08-20 12:02:33.200 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:02:33.223 +02:00 [INF] Route matched with {action = "RestoreReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RestoreReview(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:02:33.662 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api) in 391.9446ms
+2026-08-20 12:02:33.671 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:02:33.943 +02:00 [ERR] Unhandled exception while processing POST /api/reviews/1/restore
+System.IndexOutOfRangeException: DeletedByIsActive
+   at Microsoft.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.MapReview(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 291
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetByIdAsyncIncludingDeleted(Int32 reviewId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 249
+   at OnlineStore.Application.Handlers.Review.RestoreReviewHandler.ExecuteAsync(RestoreReviewCommand command) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\RestoreReviewHandler.cs:line 19
+   at OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview(Int32 reviewId) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Review\ReviewsController.cs:line 76
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 12:02:34.036 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/reviews/1/restore - 500 null application/json; charset=utf-8 946.1522ms
+2026-08-20 12:05:45.379 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/reviews/1/restore - null 0
+2026-08-20 12:05:45.576 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:05:45.643 +02:00 [INF] Route matched with {action = "RestoreReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RestoreReview(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:05:45.701 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-08-20 12:05:45.707 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api) in 54.472ms
+2026-08-20 12:05:45.712 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:05:45.723 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/reviews/1/restore - 204 null null 346.5796ms
+2026-08-20 12:06:00.548 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/reviews/1/restore - null 0
+2026-08-20 12:06:00.762 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:06:00.778 +02:00 [INF] Route matched with {action = "RestoreReview", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RestoreReview(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:06:00.957 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api) in 148.9657ms
+2026-08-20 12:06:00.963 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.RestoreReview (OnlineStore.Api)'
+2026-08-20 12:06:01.183 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/reviews/1/restore - 400 null application/json; charset=utf-8 635.744ms
+2026-08-20 12:06:08.537 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - null null
+2026-08-20 12:06:08.744 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:06:08.881 +02:00 [INF] Route matched with {action = "GetById", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:06:08.918 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ReviewDto'.
+2026-08-20 12:06:08.925 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api) in 30.4864ms
+2026-08-20 12:06:08.931 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:06:08.940 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews/reviews/1 - 200 null application/json; charset=utf-8 402.2668ms
+2026-08-20 12:06:14.549 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews/reviews/6 - null null
+2026-08-20 12:06:14.679 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:06:14.719 +02:00 [INF] Route matched with {action = "GetById", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ReviewDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:06:14.948 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api) in 211.7494ms
+2026-08-20 12:06:14.956 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetById (OnlineStore.Api)'
+2026-08-20 12:06:15.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews/reviews/6 - 404 null application/json; charset=utf-8 804.4611ms
+2026-08-20 12:06:30.435 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1/reviews - null null
+2026-08-20 12:06:30.454 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 12:06:30.497 +02:00 [INF] Route matched with {action = "GetProductReviews", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[OnlineStore.Application.Dtos.ReviewDto]]] GetProductReviews(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 12:06:30.561 +02:00 [INF] Executing OkObjectResult, writing value of type '<>z__ReadOnlyList`1[[OnlineStore.Application.Dtos.ReviewDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 12:06:30.570 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api) in 53.4078ms
+2026-08-20 12:06:30.589 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProductReviews (OnlineStore.Api)'
+2026-08-20 12:06:30.620 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1/reviews - 200 null application/json; charset=utf-8 185.4677ms
+2026-08-20 12:06:45.388 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/products/1/review - application/json 43
+2026-08-20 12:06:45.499 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.CustomerOnlyRequirement
+2026-08-20 12:06:45.508 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-20 12:06:45.515 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/products/1/review - 403 0 null 128.253ms
+2026-08-20 12:06:54.363 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 12:06:54.381 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:06:54.384 +02:00 [INF] Route matched with {action = "GetReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ReviewAdminDto]]] GetReviews(OnlineStore.Application.Handlers.Review.Queries.GetReviewsQuery) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:06:54.690 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api) in 276.4296ms
+2026-08-20 12:06:54.709 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:06:54.975 +02:00 [ERR] Unhandled exception while processing GET /api/reviews
+Microsoft.Data.SqlClient.SqlException (0x80131904): The number of rows provided for a FETCH clause must be greater then zero.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at OnlineStore.Infrastructure.Persistence.Repositories.ReviewRepository.GetAllAsync(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ReviewRepository.cs:line 73
+   at OnlineStore.Application.Handlers.Review.GetReviewsHandler.ExecuteAsync(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Review\GetReviewsHandler.cs:line 20
+   at OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews(GetReviewsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Review\ReviewsController.cs:line 38
+   at lambda_method39(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+ClientConnectionId:bbf0a486-f70e-499c-a09f-7b1fb5a11427
+Error Number:10744,State:1,Class:15
+2026-08-20 12:06:55.095 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 500 null application/json; charset=utf-8 732.0611ms
+2026-08-20 12:08:54.669 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 12:08:56.120 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 12:08:56.205 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 12:08:57.505 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 12:08:58.341 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 12:09:02.556 +02:00 [INF] Hosting environment: Development
+2026-08-20 12:09:02.566 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 12:09:04.249 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 6810.9625ms
+2026-08-20 12:09:05.655 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews - null null
+2026-08-20 12:09:08.194 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:09:08.334 +02:00 [INF] Route matched with {action = "GetReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ReviewAdminDto]]] GetReviews(OnlineStore.Application.Handlers.Review.Queries.GetReviewsQuery) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:09:08.650 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.ReviewAdminDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 12:09:08.829 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api) in 454.5335ms
+2026-08-20 12:09:08.843 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:09:08.856 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews - 200 null application/json; charset=utf-8 3200.7958ms
+2026-08-20 12:09:37.028 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews?IsDeleted=true - null null
+2026-08-20 12:09:37.256 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:09:37.272 +02:00 [INF] Route matched with {action = "GetReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ReviewAdminDto]]] GetReviews(OnlineStore.Application.Handlers.Review.Queries.GetReviewsQuery) on controller OnlineStore.Api.Controllers.Review.ReviewsController (OnlineStore.Api).
+2026-08-20 12:09:37.350 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.ReviewAdminDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 12:09:37.357 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api) in 69.6104ms
+2026-08-20 12:09:37.372 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Review.ReviewsController.GetReviews (OnlineStore.Api)'
+2026-08-20 12:09:37.382 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews?IsDeleted=true - 200 null application/json; charset=utf-8 354.4081ms
+2026-08-20 12:09:57.142 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 48
+2026-08-20 12:09:57.176 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 12:09:57.219 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 12:09:58.468 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 12:09:58.510 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 1282.7846ms
+2026-08-20 12:09:58.528 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 12:09:58.543 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 1400.7993ms
+2026-08-20 12:10:29.832 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/reviews?IsDeleted=true - null null
+2026-08-20 12:10:29.934 +02:00 [INF] Authorization failed. These requirements were not met:
+OnlineStore.Infrastructure.Authorization.PermissionRequirement
+2026-08-20 12:10:29.961 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-08-20 12:10:29.982 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews?IsDeleted=true - 403 0 null 150.0332ms

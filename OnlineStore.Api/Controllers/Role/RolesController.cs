@@ -1,14 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using OnlineStore.Api.Controllers.Order.Requests;
-using OnlineStore.Application.Common.Models;
 using OnlineStore.Application.Dtos;
-using OnlineStore.Application.Handlers.Order.Queries;
 using OnlineStore.Application.Handlers.Role;
 using OnlineStore.Application.Handlers.Role.Queries;
-using OnlineStore.Application.Handlers.Shipping.Commands;
-using OnlineStore.Application.Handlers.Shipping;
 using OnlineStore.Application.Security;
 using OnlineStore.Api.Controllers.Role.Requests;
 using OnlineStore.Application.Handlers.Role.Commands;

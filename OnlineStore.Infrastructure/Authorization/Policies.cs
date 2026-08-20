@@ -12,5 +12,6 @@ namespace OnlineStore.Infrastructure.Authorization
         public const string ShippingView = "ShippingView";
         public const string CustomerView = "CustomerView";
         public const string SuperAdmin = "SuperAdmin";
+        public const string CustomerOnly = "CustomerOnly";
     }
 }

@@ -13,6 +13,7 @@ using OnlineStore.Application.Handlers.PaymentMethod;
 using OnlineStore.Application.Handlers.PaymentMethod.Commands;
 using OnlineStore.Application.Handlers.Permission;
 using OnlineStore.Application.Handlers.Product;
+using OnlineStore.Application.Handlers.Review;
 using OnlineStore.Application.Handlers.Role;
 using OnlineStore.Application.Handlers.Shipping;
 using OnlineStore.Application.Handlers.User;
@@ -165,6 +166,24 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<GetPaymentsHandler>();
 
+            builder.Services.AddScoped<GetReviewsHandler>();
+
+            builder.Services.AddScoped<GetReviewHandler>();
+
+            builder.Services.AddScoped<GetReviewsByProductIdHandler>();
+
+            builder.Services.AddScoped<GetReviewsByCustomerIdHandler>();
+
+            builder.Services.AddScoped<CreateReviewHandler>();
+
+            builder.Services.AddScoped<UpdateReviewHandler>();
+
+            builder.Services.AddScoped<DeleteMyReviewHandler>();
+
+            builder.Services.AddScoped<DeleteReviewHandler>();
+
+            builder.Services.AddScoped<RestoreReviewHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -214,6 +233,16 @@ namespace OnlineStore.Api
                     .RequireAuthenticatedUser()
                     .AddRequirements(new ActiveUserRequirement())
                     .Build();
+
+                options.AddPolicy(Policies.CustomerOnly, policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+                    policy.AddRequirements
+                    (
+                        new ActiveUserRequirement(), 
+                        new CustomerOnlyRequirement()
+                    );
+                });
 
                 options.AddPolicy(Policies.SuperAdmin, policy =>
                 {

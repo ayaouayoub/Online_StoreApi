@@ -64,6 +64,7 @@ namespace OnlineStore.Application.Security
         {
             public const string View = "Reviews.View";
             public const string Delete = "Reviews.Delete";
+            public const string Restore = "Reviews.Restore";
         }
 
         public static class Orders

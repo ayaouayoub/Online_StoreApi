@@ -12,6 +12,7 @@ using OnlineStore.Infrastructure.Services.Storage;
 using OnlineStore.Application.Interfaces.Services.Images;
 using OnlineStore.Application.Interfaces.Services.Payments;
 using OnlineStore.Infrastructure.Services.Payments;
+using OnlineStore.Application.Authorization;
 
 namespace OnlineStore.Infrastructure
 {
@@ -72,6 +73,10 @@ namespace OnlineStore.Infrastructure
             services.AddScoped<IAuthorizationHandler, SuperAdminAuthorizationHandler>();
 
             services.AddScoped<IPaymentRepository, PaymentRepository>();
+
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+
+            services.AddScoped<IAuthorizationHandler, CustomerOnlyAuthorizationHandler>();
 
             return services;
         }

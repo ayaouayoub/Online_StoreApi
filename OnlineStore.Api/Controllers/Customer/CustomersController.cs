@@ -7,6 +7,11 @@ using OnlineStore.Application.Handlers.Customer.Queries;
 using OnlineStore.Infrastructure.Authorization;
 using OnlineStore.Api.Controllers.Customer.Requests;
 using OnlineStore.Application.Handlers.Customer.Commands;
+using OnlineStore.Application.Handlers.Review.Queries;
+using OnlineStore.Application.Handlers.Review;
+using OnlineStore.Application.Interfaces;
+using OnlineStore.Application.Handlers.Review.Commands;
+using OnlineStore.Api.Controllers.Review.Requests;
 
 namespace OnlineStore.Api.Controllers.Customer
 {
@@ -17,12 +22,20 @@ namespace OnlineStore.Api.Controllers.Customer
         private readonly GetCustomerHandler _getCustomerHandler;
         private readonly GetCustomersHandler _getCustomersHandler;
         private readonly UpdateCustomerHandler _updateCustomerHandler;
+        private readonly GetReviewsByCustomerIdHandler _getReviewsByCustomerIdHandler;
+        private readonly ICurrentUser _currentUser;
+        private readonly UpdateReviewHandler _updateReviewHandler;
+        private readonly DeleteMyReviewHandler _deleteMyReviewHandler;
 
-        public CustomersController(GetCustomerHandler getCustomerHandler, GetCustomersHandler getCustomersHandler, UpdateCustomerHandler updateCustomerHandler)
+        public CustomersController(GetCustomerHandler getCustomerHandler, GetCustomersHandler getCustomersHandler, UpdateCustomerHandler updateCustomerHandler, GetReviewsByCustomerIdHandler getReviewsByCustomerIdHandler, ICurrentUser currentUser, UpdateReviewHandler updateReviewHandler, DeleteMyReviewHandler deleteMyReviewHandler = null)
         {
             _getCustomerHandler = getCustomerHandler;
             _getCustomersHandler = getCustomersHandler;
             _updateCustomerHandler = updateCustomerHandler;
+            _getReviewsByCustomerIdHandler = getReviewsByCustomerIdHandler;
+            _currentUser = currentUser;
+            _updateReviewHandler = updateReviewHandler;
+            _deleteMyReviewHandler = deleteMyReviewHandler;
         }
 
         [Authorize(Policy = Policies.CustomerView)]
@@ -68,6 +81,57 @@ namespace OnlineStore.Api.Controllers.Customer
                 Phone = request.Phone,
                 Address = request.Address
             }));
+        }
+
+        [HttpGet("{customerId:int}/reviews")]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IReadOnlyList<ReviewDto>>> GetCustomerReviews(int customerId)
+        {
+            return Ok(await _getReviewsByCustomerIdHandler.ExecuteAsync(new GetReviewsByCustomerIdQuery(customerId)));
+        }
+
+        [HttpGet("me/reviews")]
+        [Authorize(Policy = Policies.CustomerOnly)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IReadOnlyList<ReviewDto>>> MyReviews()
+        {
+            return Ok(await _getReviewsByCustomerIdHandler.ExecuteAsync(new GetReviewsByCustomerIdQuery(_currentUser.UserId)));
+        }
+
+        [HttpPut("me/reviews/{reviewId:int}")]
+        [Authorize(Policy = Policies.CustomerOnly)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateReview(int reviewId,[FromBody] UpdateReviewRequest request)
+        {
+            await _updateReviewHandler.ExecuteAsync(new UpdateReviewCommand
+            (
+                ReviewId: reviewId,
+                Rating: request.Rating,
+                ReviewText: request.ReviewText
+            ));
+            return NoContent();
+        }
+
+        [HttpDelete("me/reviews/{reviewId:int}")]
+        [Authorize(Policy = Policies.CustomerOnly)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteMyReview(int reviewId, [FromBody] DeleteMyReviewRequest request)
+        {
+            await _deleteMyReviewHandler.ExecuteAsync(new DeleteMyReviewCommand(ReviewId: reviewId, DeleteReason: request.DeleteReason));
+            return NoContent();
         }
     }
 }
