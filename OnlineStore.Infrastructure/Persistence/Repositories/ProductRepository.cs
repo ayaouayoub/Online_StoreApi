@@ -17,7 +17,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<int> CreateProductAsync(Product product)
+        public async Task<Product> CreateProductAsync(Product product)
         {
             using SqlConnection connection = _connectionFactory.CreateConnection();
 
@@ -34,7 +34,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             command.Parameters.AddWithValue("@MainImageURL", (object?)product.MainImageUrl ?? DBNull.Value);
             command.Parameters.AddWithValue("@CategoryId", product.CategoryId);
 
-            DataTable imagesTable = _CreateImagesTable(product.Images);
+            DataTable imagesTable = CreateImagesTable(product.Images);
 
             SqlParameter imagesParameter = command.Parameters.AddWithValue("@Images", imagesTable);
             imagesParameter.SqlDbType = SqlDbType.Structured;
@@ -42,22 +42,12 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             await connection.OpenAsync();
 
-            return Convert.ToInt32(await command.ExecuteScalarAsync());
-        }
+            int productId = Convert.ToInt32(await command.ExecuteScalarAsync());
 
-        private static DataTable _CreateImagesTable(IEnumerable<ProductImage> images)
-        {
-            DataTable table = new();
+            var createdProducte = Product.Load(productId, product.Name, product.Description, product.Price, product.QuantityInStock, product.MainImageUrl, product.CategoryId, product.Category);
+            createdProducte.SetImages(product.Images);
 
-            table.Columns.Add("ImageURL", typeof(string));
-            table.Columns.Add("ImageOrder", typeof(int));
-
-            foreach (ProductImage image in images)
-            {
-                table.Rows.Add(image.Url, image.ImageOrder);
-            }
-
-            return table;
+            return createdProducte;
         }
 
         public async Task<Product?> GetByIdAsync(int id)
@@ -117,6 +107,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
         public async Task<PagedResult<Product>> GetProductsAsync(GetProductsQuery query)
         {
             List<Product> products = [];
+
             int totalCount = 0;
 
             using SqlConnection connection = _connectionFactory.CreateConnection();
@@ -133,11 +124,13 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             command.Parameters.AddWithValue("@CategoryId", (object?)query.CategoryId ?? DBNull.Value);
 
             SqlParameter minPrice = command.Parameters.Add("@MinPrice", SqlDbType.Decimal);
+
             minPrice.Precision = 18;
             minPrice.Scale = 2;
             minPrice.Value = (object?)query.MinPrice ?? DBNull.Value;
 
             SqlParameter maxPrice = command.Parameters.Add("@MaxPrice", SqlDbType.Decimal);
+
             maxPrice.Precision = 18;
             maxPrice.Scale = 2;
             maxPrice.Value = (object?)query.MaxPrice ?? DBNull.Value;
@@ -152,33 +145,32 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             while (await reader.ReadAsync())
             {
-                Category category = Category.Load
-                (
-                    (int)reader["CategoryId"],
-                    (string)reader["CategoryName"],
-                    (string)reader["CategoryDescription"],
-                    reader["ParentCategoryId"] == DBNull.Value ? null : Convert.ToInt32(reader["ParentCategoryId"]),
-                    Convert.ToInt32(reader["DisplayOrder"]),
-                    (bool)reader["IsActive"],
-                    (DateTime)reader["CreatedAt"]
-                );
-
-                Product product = Product.Load
-                (
-                    (int)reader["ProductId"],
-                    (string)reader["ProductName"],
-                    reader["Description"] == DBNull.Value ? null : (string)reader["Description"],
-                    (decimal)reader["Price"],
-                    (int)reader["QuantityInStock"],
-                    reader["ImageURL"] == DBNull.Value ? null : (string)reader["ImageURL"],
-                    category.Id,
-                    category
-                );
+                Product product = MapProduct(reader);
 
                 products.Add(product);
 
-                if (totalCount == 0)
-                    totalCount = (int)reader["TotalCount"];
+                if (totalCount == 0) totalCount = reader.GetInt32(reader.GetOrdinal("TotalCount"));
+            }
+
+
+            await reader.NextResultAsync();
+
+            while (await reader.ReadAsync())
+            {
+                int productId = reader.GetInt32(reader.GetOrdinal("ProductId"));
+
+                Product? product = products.FirstOrDefault(p => p.Id == productId);
+
+                if (product is null) continue;
+
+                ProductImage image = ProductImage.Load
+                (
+                    id: reader.GetInt32(reader.GetOrdinal("ProductImageId")),
+                    url: reader.GetString(reader.GetOrdinal("ImageURL")),
+                    imageOrder: reader.GetInt16(reader.GetOrdinal("ImageOrder"))
+                );
+
+                product.AddImage(image);
             }
 
             return new PagedResult<Product>
@@ -203,6 +195,110 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             await connection.OpenAsync();
 
             await command.ExecuteNonQueryAsync();
+        }
+
+        public async Task<Product> UpdateAsync(Product product)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+
+            using SqlCommand command = new("usp_UpdateProduct", connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = product.Id;
+
+
+            command.Parameters.Add("@ProductName", SqlDbType.NVarChar, 100).Value = product.Name;
+
+
+            command.Parameters.Add("@Description", SqlDbType.NVarChar, 500).Value = product.Description;
+
+            SqlParameter priceParameter = command.Parameters.Add("@Price", SqlDbType.Decimal);
+
+            priceParameter.Precision = 18;
+            priceParameter.Scale = 2;
+            priceParameter.Value = product.Price;
+
+            command.Parameters.Add("@ImageURL", SqlDbType.NVarChar, 200).Value = (object?)product.MainImageUrl ?? DBNull.Value;
+
+            command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = product.CategoryId;
+
+            DataTable imagesTable = CreateImagesTable(product.Images);
+
+            SqlParameter imagesParameter =command.Parameters.Add("@Images", SqlDbType.Structured);
+
+            imagesParameter.TypeName = "dbo.Images";
+
+            imagesParameter.Value = imagesTable;
+
+            await connection.OpenAsync();
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            if (!await reader.ReadAsync())
+            {
+                throw new Exception("Failed to load product");
+            }
+
+            Product result = MapProduct(reader);
+
+            await reader.NextResultAsync();
+
+            while (await reader.ReadAsync())
+            {
+                result.AddImage
+                (
+                    ProductImage.Load
+                    (
+                        id: reader.GetInt32(reader.GetOrdinal("ProductImageId")),
+                        url: reader.GetString(reader.GetOrdinal("ImageURL")),
+                        imageOrder: reader.GetInt16(reader.GetOrdinal("ImageOrder"))
+                    )
+                );
+            }
+
+            return result;
+        }
+
+        private static Product MapProduct(SqlDataReader reader)
+        {
+            var category = Category.Load
+            (
+                id: reader.GetInt32(reader.GetOrdinal("CategoryId")),
+                name: reader.GetString(reader.GetOrdinal("CategoryName")),
+                createdAt: reader.GetDateTime(reader.GetOrdinal("CategoryCreatedAt")),
+                description: reader.GetString(reader.GetOrdinal("CategoryDescription")),
+                displayOrder: reader.GetInt32(reader.GetOrdinal("CategoryDisplayOrder")),
+                isActive: reader.GetBoolean(reader.GetOrdinal("IsActive")),
+                parentId: reader["ParentCategoryId"] == DBNull.Value ? null : reader.GetInt32(reader.GetOrdinal("ParentCategoryId"))
+            );
+
+            return Product.Load
+            (
+                id: reader.GetInt32(reader.GetOrdinal("ProductId")),
+                name: reader.GetString(reader.GetOrdinal("ProductName")),
+                description: reader.GetString(reader.GetOrdinal("Description")),
+                price: reader.GetDecimal(reader.GetOrdinal("Price")),
+                quantityInStock: reader.GetInt32(reader.GetOrdinal("QuantityInStock")),
+                mainImageUrl: reader.GetString(reader.GetOrdinal("ImageURL")),
+                categoryId: reader.GetInt32(reader.GetOrdinal("CategoryId")),
+                category
+            );
+        }
+
+        private static DataTable CreateImagesTable(IEnumerable<ProductImage> images)
+        {
+            DataTable table = new();
+
+            table.Columns.Add("ImageURL", typeof(string));
+            table.Columns.Add("ImageOrder", typeof(int));
+
+            foreach (ProductImage image in images)
+            {
+                table.Rows.Add(image.Url, image.ImageOrder);
+            }
+
+            return table;
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using OnlineStore.Application.Interfaces.Services.Images;
 
@@ -35,6 +30,19 @@ namespace OnlineStore.Infrastructure.Services.Storage
             await file.CopyToAsync(stream);
 
             return $"/images/products/{fileName}";
+        }
+
+        public async Task DeleteAsync(string imageUrl)
+        {
+            if (string.IsNullOrWhiteSpace(imageUrl)) return;
+
+            string relativePath = imageUrl.TrimStart('/');
+
+            string path = Path.Combine( _environment.WebRootPath, relativePath.Replace('/', Path.DirectorySeparatorChar));
+
+            if (File.Exists(path)) File.Delete(path);
+
+            await Task.CompletedTask;
         }
     }
 }

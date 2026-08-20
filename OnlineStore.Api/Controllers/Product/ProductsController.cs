@@ -11,9 +11,7 @@ using OnlineStore.Application.Handlers.Product.Queries;
 using OnlineStore.Application.Interfaces.Services.Images;
 using OnlineStore.Application.Handlers.Review.Queries;
 using OnlineStore.Application.Handlers.Review;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using OnlineStore.Application.Handlers.Review.Commands;
-using OnlineStore.Application.Interfaces;
 using OnlineStore.Infrastructure.Authorization;
 
 namespace OnlineStore.Api.Controllers.Product
@@ -23,26 +21,24 @@ namespace OnlineStore.Api.Controllers.Product
     public class ProductsController : ControllerBase
     {
         private readonly CreateProductHandler _createProductHandler;
-        private readonly IImageStorageService _imageStorageService;
         private readonly FileUrlGenerator _fileUrlGenerator;
         private readonly GetProductHandler _getProductHandler;
         private readonly GetProductsHandler _getProductsHandler;
         private readonly UpdateStockHandler _updateStockHandler;
         private readonly GetReviewsByProductIdHandler _getReviewsByProductIdHandler;
-        private readonly ICurrentUser _currentUser;
         private readonly CreateReviewHandler _createReviewHandler;
+        private readonly UpdateProductHandler _updateProductHandler;
 
-        public ProductsController(CreateProductHandler createProductHandler, IImageStorageService imageStorageService, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler, GetProductsHandler getProductsHandler, UpdateStockHandler updateStockHandler, GetReviewsByProductIdHandler getReviewsByProductIdHandler, ICurrentUser currentUser, CreateReviewHandler createReviewHandler)
+        public ProductsController(CreateProductHandler createProductHandler, FileUrlGenerator fileUrlGenerator, GetProductHandler getProductHandler, GetProductsHandler getProductsHandler, UpdateStockHandler updateStockHandler, GetReviewsByProductIdHandler getReviewsByProductIdHandler, CreateReviewHandler createReviewHandler, UpdateProductHandler updateProductHandler)
         {
             _createProductHandler = createProductHandler;
-            _imageStorageService = imageStorageService;
             _fileUrlGenerator = fileUrlGenerator;
             _getProductHandler = getProductHandler;
             _getProductsHandler = getProductsHandler;
             _updateStockHandler = updateStockHandler;
             _getReviewsByProductIdHandler = getReviewsByProductIdHandler;
-            _currentUser = currentUser;
             _createReviewHandler = createReviewHandler;
+            _updateProductHandler = updateProductHandler;
         }
 
         [Authorize(Policy = Permissions.Products.Create)]
@@ -56,23 +52,13 @@ namespace OnlineStore.Api.Controllers.Product
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ProductDto>> CreateProduct([FromForm] CreateProductRequest request)
         {
-            string? mainImageUrl = null;
-
-            if (request.MainImage is not null)
-            {
-                mainImageUrl = await _imageStorageService.SaveAsync(request.MainImage);
-            }
-
             List<CreateProductImageCommand> images = [];
 
             short order = 1;
 
-            if (request.Images is not null)
+            foreach (IFormFile image in request.Images)
             {
-                foreach (IFormFile image in request.Images)
-                {
-                    images.Add(new CreateProductImageCommand(await _imageStorageService.SaveAsync(image), order++));
-                }
+                images.Add(new CreateProductImageCommand(image, order++));
             }
 
             CreateProductCommand command = new
@@ -81,7 +67,7 @@ namespace OnlineStore.Api.Controllers.Product
                 request.Description,
                 request.Price,
                 request.QuantityInStock,
-                mainImageUrl,
+                request.MainImage,
                 request.CategoryId,
                 images
             );
@@ -108,23 +94,18 @@ namespace OnlineStore.Api.Controllers.Product
         [ProducesResponseType(typeof(PagedResultDto<ProductDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<PagedResultDto<ProductDto>>> GetProducts([FromQuery] GetProductsRequest request)
+        public async Task<ActionResult<PagedResultDto<ProductDto>>> GetProducts([FromQuery] GetProductsQuery query)
         {
-            var resultDto = await _getProductsHandler.ExecuteAsync(new GetProductsQuery
-            {
-                CategoryId = request.CategoryId,
-                Descending = request.Descending,
-                MaxPrice = request.MaxPrice,
-                MinPrice = request.MinPrice,
-                Page = request.Page,
-                PageSize = request.PageSize,
-                Search = request.Search,
-                SortBy = request.SortBy
-            });
+            var resultDto = await _getProductsHandler.ExecuteAsync(query);
 
             foreach (ProductDto item in resultDto.Items)
             {
                 item.MainImageUrl = _fileUrlGenerator.GetUrl(item.MainImageUrl);
+
+                item.Images = [.. item.Images.Select(image => image with
+                {
+                    Url = _fileUrlGenerator.GetUrl(image.Url)
+                })];
             }
 
             return Ok(resultDto);
@@ -173,6 +154,36 @@ namespace OnlineStore.Api.Controllers.Product
                 ReviewText: request.ReviewText
             ));
             return CreatedAtRoute("GetReviewById", new { reviewId = review.Id }, review);
+        }
+
+        [HttpPut("{productId:int}")]
+        [Authorize(Policy = Permissions.Products.Update)]
+        [Consumes("multipart/form-data")]
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ProductDto>> Update(int productId, [FromForm] UpdateProductRequest request)
+        {
+            if (request.Images.Count != request.ImageOrders.Count) return BadRequest("Each image must have a corresponding image order.");
+
+            ProductDto result = await _updateProductHandler.ExecuteAsync(new UpdateProductCommand
+            {
+                ProductId = productId,
+                Name = request.Name,
+                Description = request.Description,
+                Price = request.Price,
+                MainImage = request.MainImage,
+                CategoryId = request.CategoryId,
+                Images = [.. request.Images.Select((image, index) => new UpdateProductImageCommand
+                {
+                    Image = image, ImageOrder = request.ImageOrders[index]
+                })]
+            });
+
+            return Ok(result.WithFullImageUrls(_fileUrlGenerator));
         }
     }
 }

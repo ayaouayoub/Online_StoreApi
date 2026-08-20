@@ -18,7 +18,7 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<int> CreateAsync(Order order)
+        public async Task<Order> CreateAsync(Order order)
         {
             await using var connection = _connectionFactory.CreateConnection();
 
@@ -50,7 +50,9 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             if (result is null || result == DBNull.Value) throw new InvalidOperationException("Failed to create order.");
 
-            return Convert.ToInt32(result);
+            int orderId = Convert.ToInt32(result);
+
+            return Order.Load(orderId, order.Status, order.TotalAmount, order.CreatedAt, order.CustomerId, order.Customer);
         }
 
         private static DataTable CreateItemsTable(Order order)

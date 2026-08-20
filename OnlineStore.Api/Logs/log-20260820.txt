@@ -594,3 +594,382 @@ Error Number:10744,State:1,Class:15
 OnlineStore.Infrastructure.Authorization.PermissionRequirement
 2026-08-20 12:10:29.961 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
 2026-08-20 12:10:29.982 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/reviews?IsDeleted=true - 403 0 null 150.0332ms
+2026-08-20 14:23:39.159 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 14:23:40.050 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 14:23:40.054 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 14:23:40.463 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 14:23:40.472 +02:00 [INF] Hosting environment: Development
+2026-08-20 14:23:40.482 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 14:23:41.500 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 14:23:42.573 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1068.9518ms
+2026-08-20 14:23:42.982 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 14:23:43.030 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 14:23:43.168 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 185.8843ms
+2026-08-20 14:23:45.892 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2861.4881ms
+2026-08-20 14:23:46.060 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 14:23:47.848 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1788.2943ms
+2026-08-20 14:24:03.174 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 51
+2026-08-20 14:24:03.508 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 14:24:03.640 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 14:24:06.602 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2936.8097ms
+2026-08-20 14:24:06.610 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 14:24:07.008 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 401 null application/json; charset=utf-8 3840.1561ms
+2026-08-20 14:24:13.478 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 14:24:13.505 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 14:24:13.524 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 14:24:14.290 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 14:24:14.355 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 816.1229ms
+2026-08-20 14:24:14.359 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 14:24:14.367 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 889.1639ms
+2026-08-20 14:24:42.847 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products - null null
+2026-08-20 14:24:43.049 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:24:43.079 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ProductDto]]] GetProducts(OnlineStore.Application.Handlers.Product.Queries.GetProductsQuery) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 14:24:43.216 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.ProductDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 14:24:43.304 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api) in 213.6452ms
+2026-08-20 14:24:43.319 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:24:43.323 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products - 200 null application/json; charset=utf-8 476.3772ms
+2026-08-20 14:33:42.706 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 14:33:43.961 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 14:33:43.966 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 14:33:44.590 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 14:33:45.157 +02:00 [INF] Hosting environment: Development
+2026-08-20 14:33:45.159 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 14:33:45.392 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 14:33:46.766 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1399.3226ms
+2026-08-20 14:33:46.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 14:33:46.977 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 14:33:47.094 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 122.5566ms
+2026-08-20 14:33:47.300 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 323.0114ms
+2026-08-20 14:33:52.315 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products - null null
+2026-08-20 14:33:53.432 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:33:53.662 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ProductDto]]] GetProducts(OnlineStore.Application.Handlers.Product.Queries.GetProductsQuery) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 14:33:58.154 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api) in 4366.9904ms
+2026-08-20 14:33:58.364 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:33:59.027 +02:00 [ERR] Unhandled exception while processing GET /api/products
+System.IndexOutOfRangeException: CategoryCreatedAt
+   at Microsoft.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ProductRepository.MapProduct(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ProductRepository.cs:line 260
+   at OnlineStore.Infrastructure.Persistence.Repositories.ProductRepository.GetProductsAsync(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ProductRepository.cs:line 143
+   at OnlineStore.Application.Handlers.Product.GetProductsHandler.ExecuteAsync(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Product\GetProductsHandler.cs:line 20
+   at OnlineStore.Api.Controllers.Product.ProductsController.GetProducts(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Product\ProductsController.cs:line 113
+   at lambda_method7(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 14:33:59.371 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products - 500 null application/json; charset=utf-8 7055.9ms
+2026-08-20 14:35:34.720 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products - null null
+2026-08-20 14:35:34.811 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:35:34.819 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ProductDto]]] GetProducts(OnlineStore.Application.Handlers.Product.Queries.GetProductsQuery) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 14:35:35.281 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api) in 450.485ms
+2026-08-20 14:35:35.287 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:35:35.528 +02:00 [ERR] Unhandled exception while processing GET /api/products
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at OnlineStore.Infrastructure.Persistence.Repositories.ProductRepository.MapProduct(SqlDataReader reader) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ProductRepository.cs:line 260
+   at OnlineStore.Infrastructure.Persistence.Repositories.ProductRepository.GetProductsAsync(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Infrastructure\Persistence\Repositories\ProductRepository.cs:line 143
+   at OnlineStore.Application.Handlers.Product.GetProductsHandler.ExecuteAsync(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Application\Handlers\Product\GetProductsHandler.cs:line 20
+   at OnlineStore.Api.Controllers.Product.ProductsController.GetProducts(GetProductsQuery query) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Controllers\Product\ProductsController.cs:line 113
+   at lambda_method7(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at OnlineStore.Api.Middlewares.ExceptionMiddleware.Invoke(HttpContext context) in C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\Middlewares\ExceptionMiddleware.cs:line 21
+2026-08-20 14:35:35.671 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products - 500 null application/json; charset=utf-8 960.136ms
+2026-08-20 14:38:45.978 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 14:38:46.844 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 14:38:46.850 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 14:38:47.261 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 14:38:47.324 +02:00 [INF] Hosting environment: Development
+2026-08-20 14:38:47.722 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 14:38:48.247 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 14:38:49.460 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1247.2863ms
+2026-08-20 14:38:49.657 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 14:38:49.658 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 14:38:49.905 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 247.841ms
+2026-08-20 14:38:50.171 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 512.7473ms
+2026-08-20 14:38:50.332 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 14:38:53.346 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products - null null
+2026-08-20 14:38:53.837 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 3505.3337ms
+2026-08-20 14:38:54.107 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:38:54.252 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ProductDto]]] GetProducts(OnlineStore.Application.Handlers.Product.Queries.GetProductsQuery) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 14:38:56.130 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.ProductDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 14:38:56.314 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api) in 2033.3016ms
+2026-08-20 14:38:56.325 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 14:38:56.333 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products - 200 null application/json; charset=utf-8 2986.9696ms
+2026-08-20 14:39:03.395 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/04cfc192-003c-4057-bbca-b68033f3358b.webp - null null
+2026-08-20 14:39:03.688 +02:00 [INF] Sending file. Request path: '/images/products/04cfc192-003c-4057-bbca-b68033f3358b.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\04cfc192-003c-4057-bbca-b68033f3358b.webp'
+2026-08-20 14:39:03.719 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/04cfc192-003c-4057-bbca-b68033f3358b.webp - 200 8724 image/webp 323.7875ms
+2026-08-20 14:39:03.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/favicon.ico - null null
+2026-08-20 14:39:04.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/favicon.ico - 404 0 null 428.0531ms
+2026-08-20 14:39:04.416 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7277/favicon.ico, Response status code: 404
+2026-08-20 14:39:09.301 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/de151ec4-ff5c-4718-966a-fbeca1f37e17.webp - null null
+2026-08-20 14:39:09.378 +02:00 [INF] Sending file. Request path: '/images/products/de151ec4-ff5c-4718-966a-fbeca1f37e17.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\de151ec4-ff5c-4718-966a-fbeca1f37e17.webp'
+2026-08-20 14:39:09.387 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/de151ec4-ff5c-4718-966a-fbeca1f37e17.webp - 200 17690 image/webp 86.2502ms
+2026-08-20 14:39:17.094 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/3d34dae4-438c-4012-a439-f410798c1955.webp - null null
+2026-08-20 14:39:17.195 +02:00 [INF] Sending file. Request path: '/images/products/3d34dae4-438c-4012-a439-f410798c1955.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\3d34dae4-438c-4012-a439-f410798c1955.webp'
+2026-08-20 14:39:17.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/3d34dae4-438c-4012-a439-f410798c1955.webp - 200 17122 image/webp 132.5844ms
+2026-08-20 14:40:13.137 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/products - multipart/form-data; boundary=----WebKitFormBoundarybYcBYSzlQPFrNy7Z 750
+2026-08-20 14:40:14.502 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api)'
+2026-08-20 14:40:15.635 +02:00 [INF] Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] CreateProduct(OnlineStore.Api.Controllers.Product.Requests.CreateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 14:40:30.411 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api) in 2004.5756ms
+2026-08-20 14:40:30.422 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api)'
+2026-08-20 14:40:31.742 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/products - 404 null application/json; charset=utf-8 18605.045ms
+2026-08-20 15:53:27.642 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 15:53:29.170 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 15:53:29.187 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 15:53:29.964 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 15:53:30.096 +02:00 [INF] Hosting environment: Development
+2026-08-20 15:53:30.105 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 15:53:30.170 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 15:53:31.057 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 910.3276ms
+2026-08-20 15:53:31.222 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 15:53:31.267 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 15:53:31.626 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 403.3543ms
+2026-08-20 15:53:31.755 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 487.7967ms
+2026-08-20 15:53:31.973 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 15:53:33.126 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1152.8756ms
+2026-08-20 15:56:14.727 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 15:56:15.846 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 15:56:16.352 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 15:56:16.535 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 15:56:16.535 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 15:56:17.291 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 15:56:17.471 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 15:56:17.500 +02:00 [INF] Hosting environment: Development
+2026-08-20 15:56:17.600 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 15:56:17.723 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 15:56:19.583 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 3079.4667ms
+2026-08-20 15:56:23.396 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 15:56:23.469 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 4688.9816ms
+2026-08-20 15:56:23.494 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 15:56:23.508 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 7024.2708ms
+2026-08-20 15:57:44.766 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products - multipart/form-data; boundary=--------------------------199887555127677824870125 46497
+2026-08-20 15:57:44.900 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-08-20 15:57:44.904 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-08-20 15:57:44.919 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products - 405 0 null 152.521ms
+2026-08-20 15:57:44.962 +02:00 [INF] Connection id "0HNNUOB6NF32D", Request id "0HNNUOB6NF32D:00000001": the application completed without reading the entire request body.
+2026-08-20 15:58:41.396 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products - multipart/form-data; boundary=--------------------------687081126847351972057985 46497
+2026-08-20 15:58:41.444 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-08-20 15:58:41.449 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-08-20 15:58:41.456 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products - 405 0 null 58.9402ms
+2026-08-20 15:58:41.469 +02:00 [INF] Connection id "0HNNUOB6NF32D", Request id "0HNNUOB6NF32D:00000002": the application completed without reading the entire request body.
+2026-08-20 15:59:31.490 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------594963658977347199194219 46497
+2026-08-20 15:59:31.620 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 15:59:31.676 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 15:59:32.257 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 15:59:32.366 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 678.9141ms
+2026-08-20 15:59:32.374 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 15:59:32.386 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 908.082ms
+2026-08-20 16:00:30.909 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/api/products/1 - null null
+2026-08-20 16:00:30.922 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api)'
+2026-08-20 16:00:30.987 +02:00 [INF] Route matched with {action = "GetById", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] GetById(Int32) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:00:31.101 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:00:31.106 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api) in 37.9442ms
+2026-08-20 16:00:31.115 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetById (OnlineStore.Api)'
+2026-08-20 16:00:31.120 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 210.6668ms
+2026-08-20 16:02:56.859 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------921969654410931558720195 46497
+2026-08-20 16:02:56.911 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:02:56.915 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:02:57.136 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:02:57.143 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 211.5331ms
+2026-08-20 16:02:57.148 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:02:57.152 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 294.6565ms
+2026-08-20 16:03:48.504 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------885147307815568158403405 60668
+2026-08-20 16:03:48.585 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:03:48.589 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:03:48.872 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:03:48.943 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 343.3568ms
+2026-08-20 16:03:48.975 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:03:48.982 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 477.9151ms
+2026-08-20 16:15:08.581 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 16:15:09.264 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 16:15:09.267 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 16:15:09.797 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 16:15:10.316 +02:00 [INF] Hosting environment: Development
+2026-08-20 16:15:10.323 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 16:15:10.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 16:15:11.687 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1249.7828ms
+2026-08-20 16:15:11.857 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 16:15:11.863 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 16:15:11.914 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 56.7316ms
+2026-08-20 16:15:12.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 247.5947ms
+2026-08-20 16:15:12.267 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 16:15:14.432 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2164.3721ms
+2026-08-20 16:15:22.973 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------001236882240375048835436 60668
+2026-08-20 16:15:25.985 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:15:26.123 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:15:26.807 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:15:27.049 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 894.4187ms
+2026-08-20 16:15:27.175 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:15:27.208 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 4235.846ms
+2026-08-20 16:15:52.342 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/0131d0c8-3842-491f-8b56-ddc4670d76af.webp - null null
+2026-08-20 16:15:52.663 +02:00 [INF] Sending file. Request path: '/images/products/0131d0c8-3842-491f-8b56-ddc4670d76af.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\0131d0c8-3842-491f-8b56-ddc4670d76af.webp'
+2026-08-20 16:15:52.673 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/0131d0c8-3842-491f-8b56-ddc4670d76af.webp - 200 25294 image/webp 331.2027ms
+2026-08-20 16:17:35.691 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------307879850912190468361065 60668
+2026-08-20 16:17:35.764 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:17:35.770 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:20:53.137 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 16:20:53.988 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 16:20:53.992 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 16:20:54.590 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 16:20:55.468 +02:00 [INF] Hosting environment: Development
+2026-08-20 16:20:55.478 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 16:20:55.608 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 16:20:56.784 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1204.1535ms
+2026-08-20 16:20:57.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 16:20:57.058 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 16:20:57.354 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 300.8168ms
+2026-08-20 16:20:57.530 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 471.5871ms
+2026-08-20 16:20:57.821 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 16:20:59.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1381.3762ms
+2026-08-20 16:21:24.269 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------847949015685258502079936 60926
+2026-08-20 16:21:26.419 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:21:26.572 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:21:26.924 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-20 16:21:27.077 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 425.1891ms
+2026-08-20 16:21:27.097 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:21:27.105 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 400 null application/problem+json; charset=utf-8 2835.9912ms
+2026-08-20 16:22:36.224 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------914281538318672561762605 60926
+2026-08-20 16:22:36.438 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:22:36.447 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:22:36.475 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-20 16:22:36.484 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 21.6727ms
+2026-08-20 16:22:36.489 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:22:36.498 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 400 null application/problem+json; charset=utf-8 274.1182ms
+2026-08-20 16:23:01.795 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 16:23:01.823 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 16:23:01.841 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 16:23:03.219 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 16:23:03.275 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 1420.1076ms
+2026-08-20 16:23:03.294 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 16:23:03.299 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 1505.5621ms
+2026-08-20 16:26:13.459 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------333667334271899998713935 60926
+2026-08-20 16:26:13.507 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:26:13.512 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:26:13.560 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-08-20 16:26:13.569 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 44.6865ms
+2026-08-20 16:26:13.579 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:26:13.587 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 400 null application/problem+json; charset=utf-8 128.3505ms
+2026-08-20 16:30:51.420 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 16:30:53.007 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 16:30:55.536 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 16:30:55.640 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 16:30:56.540 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 16:30:56.946 +02:00 [INF] Hosting environment: Development
+2026-08-20 16:30:56.949 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 16:30:58.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 2561.5536ms
+2026-08-20 16:30:58.507 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 16:30:58.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 16:30:58.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 275.7842ms
+2026-08-20 16:30:59.692 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 16:30:59.145 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 517.5311ms
+2026-08-20 16:31:06.193 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6500.6536ms
+2026-08-20 16:31:28.837 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------232422119532342887349380 60890
+2026-08-20 16:31:30.901 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:31:31.046 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:31:44.263 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:31:45.757 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 14608.0433ms
+2026-08-20 16:31:45.805 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:31:45.896 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 17059.2382ms
+2026-08-20 16:36:40.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/fb32fd40-b69e-4f36-a12b-eaa4294556ad.webp - null null
+2026-08-20 16:36:40.534 +02:00 [INF] Sending file. Request path: '/images/products/fb32fd40-b69e-4f36-a12b-eaa4294556ad.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\fb32fd40-b69e-4f36-a12b-eaa4294556ad.webp'
+2026-08-20 16:36:40.566 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/fb32fd40-b69e-4f36-a12b-eaa4294556ad.webp - 200 25294 image/webp 251.0235ms
+2026-08-20 16:36:50.275 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/1ac6a9c6-92f4-4c36-ace1-d521e0369f7d.webp - null null
+2026-08-20 16:36:50.324 +02:00 [INF] Sending file. Request path: '/images/products/1ac6a9c6-92f4-4c36-ace1-d521e0369f7d.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\1ac6a9c6-92f4-4c36-ace1-d521e0369f7d.webp'
+2026-08-20 16:36:50.336 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/1ac6a9c6-92f4-4c36-ace1-d521e0369f7d.webp - 200 8724 image/webp 61.3185ms
+2026-08-20 16:37:01.903 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/9a4d01a9-ef01-496e-889f-97fc2d090296.webp - null null
+2026-08-20 16:37:01.927 +02:00 [INF] Sending file. Request path: '/images/products/9a4d01a9-ef01-496e-889f-97fc2d090296.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\9a4d01a9-ef01-496e-889f-97fc2d090296.webp'
+2026-08-20 16:37:01.945 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/9a4d01a9-ef01-496e-889f-97fc2d090296.webp - 200 25294 image/webp 41.3226ms
+2026-08-20 16:38:02.365 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------861348795753882361976472 46719
+2026-08-20 16:38:02.431 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:38:02.434 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:38:02.695 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:38:02.707 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 265.3711ms
+2026-08-20 16:38:02.723 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:38:02.727 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 361.5362ms
+2026-08-20 16:38:12.543 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/d42181e8-3061-478c-85f9-dafca92b0dee.webp - null null
+2026-08-20 16:38:12.582 +02:00 [INF] Sending file. Request path: '/images/products/d42181e8-3061-478c-85f9-dafca92b0dee.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\d42181e8-3061-478c-85f9-dafca92b0dee.webp'
+2026-08-20 16:38:12.607 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/d42181e8-3061-478c-85f9-dafca92b0dee.webp - 200 8724 image/webp 67.8981ms
+2026-08-20 16:38:21.118 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web - null null
+2026-08-20 16:38:21.162 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web - 404 0 null 45.7243ms
+2026-08-20 16:38:21.183 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web, Response status code: 404
+2026-08-20 16:38:23.905 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web - null null
+2026-08-20 16:38:23.952 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web - 404 0 null 47.0559ms
+2026-08-20 16:38:23.966 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.web, Response status code: 404
+2026-08-20 16:38:57.413 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.webp - null null
+2026-08-20 16:38:57.439 +02:00 [INF] Sending file. Request path: '/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.webp'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\ac2d4327-8d11-47e2-9312-d5544dae33fa.webp'
+2026-08-20 16:38:57.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/ac2d4327-8d11-47e2-9312-d5544dae33fa.webp - 200 11186 image/webp 130.9327ms
+2026-08-20 16:39:32.812 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/products/1 - multipart/form-data; boundary=--------------------------195502934651419654145900 46719
+2026-08-20 16:39:32.864 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:39:32.869 +02:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] Update(Int32, OnlineStore.Api.Controllers.Product.Requests.UpdateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 16:39:33.032 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 16:39:33.041 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api) in 159.4297ms
+2026-08-20 16:39:33.053 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.Update (OnlineStore.Api)'
+2026-08-20 16:39:33.060 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/products/1 - 200 null application/json; charset=utf-8 249.0389ms
+2026-08-20 17:10:01.666 +02:00 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 17:10:02.545 +02:00 [INF] Now listening on: https://localhost:7277
+2026-08-20 17:10:02.548 +02:00 [INF] Now listening on: http://localhost:5241
+2026-08-20 17:10:03.343 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 17:10:03.780 +02:00 [INF] Hosting environment: Development
+2026-08-20 17:10:03.782 +02:00 [INF] Content root path: C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api
+2026-08-20 17:10:03.950 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2026-08-20 17:10:05.064 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 1170.9737ms
+2026-08-20 17:10:05.399 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-20 17:10:05.437 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2026-08-20 17:10:05.878 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 479.5489ms
+2026-08-20 17:10:06.119 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 681.9386ms
+2026-08-20 17:10:06.520 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2026-08-20 17:10:08.225 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1705.1308ms
+2026-08-20 17:11:38.457 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/auth/login - application/json 52
+2026-08-20 17:11:38.704 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 17:11:38.794 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.LoginResponseDto]] Login(OnlineStore.Api.Controllers.Authentication.Requests.LoginRequest) on controller OnlineStore.Api.Controllers.Authentication.AuthController (OnlineStore.Api).
+2026-08-20 17:11:40.913 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.LoginResponseDto'.
+2026-08-20 17:11:41.034 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api) in 2190.6252ms
+2026-08-20 17:11:41.048 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Authentication.AuthController.Login (OnlineStore.Api)'
+2026-08-20 17:11:41.058 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 2600.7288ms
+2026-08-20 17:18:34.917 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/products - multipart/form-data; boundary=--------------------------061550738264316701277025 2077847
+2026-08-20 17:18:35.145 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 17:18:35.179 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.PagedResultDto`1[OnlineStore.Application.Dtos.ProductDto]]] GetProducts(OnlineStore.Application.Handlers.Product.Queries.GetProductsQuery) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 17:18:35.622 +02:00 [INF] Executing OkObjectResult, writing value of type 'OnlineStore.Application.Dtos.PagedResultDto`1[[OnlineStore.Application.Dtos.ProductDto, OnlineStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-20 17:18:35.743 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api) in 555.6703ms
+2026-08-20 17:18:35.776 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.GetProducts (OnlineStore.Api)'
+2026-08-20 17:18:35.815 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/products - 200 null application/json; charset=utf-8 897.9417ms
+2026-08-20 17:19:13.813 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/products - multipart/form-data; boundary=--------------------------406954856164107123519933 2077847
+2026-08-20 17:19:13.956 +02:00 [INF] Executing endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api)'
+2026-08-20 17:19:13.984 +02:00 [INF] Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[OnlineStore.Application.Dtos.ProductDto]] CreateProduct(OnlineStore.Api.Controllers.Product.Requests.CreateProductRequest) on controller OnlineStore.Api.Controllers.Product.ProductsController (OnlineStore.Api).
+2026-08-20 17:19:14.546 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'OnlineStore.Application.Dtos.ProductDto'.
+2026-08-20 17:19:14.648 +02:00 [INF] Executed action OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api) in 601.0009ms
+2026-08-20 17:19:14.661 +02:00 [INF] Executed endpoint 'OnlineStore.Api.Controllers.Product.ProductsController.CreateProduct (OnlineStore.Api)'
+2026-08-20 17:19:14.667 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/products - 201 null application/json; charset=utf-8 854.15ms
+2026-08-20 17:19:26.826 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/f3da8af7-7abf-4766-b765-df99af3ac015.jpg - null null
+2026-08-20 17:19:32.215 +02:00 [INF] Sending file. Request path: '/images/products/f3da8af7-7abf-4766-b765-df99af3ac015.jpg'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\f3da8af7-7abf-4766-b765-df99af3ac015.jpg'
+2026-08-20 17:19:32.228 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/f3da8af7-7abf-4766-b765-df99af3ac015.jpg - 200 1655114 image/jpeg 5402.6315ms
+2026-08-20 17:19:54.021 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7277/images/products/456d451c-796c-4689-871b-27807bc1a730.PNG - null null
+2026-08-20 17:19:54.136 +02:00 [INF] Sending file. Request path: '/images/products/456d451c-796c-4689-871b-27807bc1a730.PNG'. Physical path: 'C:\Users\hp\Documents\My Workspace\programming-workspace\Programming_Advice_Roadmap\Restfull Api\OnlineStor.Api\OnlineStore.Api\wwwroot\images\products\456d451c-796c-4689-871b-27807bc1a730.PNG'
+2026-08-20 17:19:54.143 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7277/images/products/456d451c-796c-4689-871b-27807bc1a730.PNG - 200 421754 image/png 122.0407ms

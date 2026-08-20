@@ -184,6 +184,8 @@ namespace OnlineStore.Api
 
             builder.Services.AddScoped<RestoreReviewHandler>();
 
+            builder.Services.AddScoped<UpdateProductHandler>();
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters

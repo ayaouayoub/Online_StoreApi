@@ -83,12 +83,25 @@ namespace OnlineStore.Domain.Entities
             MainImageUrl = url;
         }
 
+        public void SetImages(IEnumerable<ProductImage> images)
+        {
+            foreach (var image in images)
+            {
+                AddImage(image);
+            }
+        }
+
         public void AddImage(ProductImage image)
         {
             ArgumentNullException.ThrowIfNull(image);
             if (_images.Any(i => i.Url == image.Url)) throw new DomainException("Image already exists.");
             if (_images.Any(i => i.ImageOrder == image.ImageOrder)) throw new DomainException("Image order already exists.");
             _images.Add(image);
+        }
+
+        public void RemveAllImages()
+        {
+            _images.Clear();
         }
 
         public void RemoveImageById(int imageId)

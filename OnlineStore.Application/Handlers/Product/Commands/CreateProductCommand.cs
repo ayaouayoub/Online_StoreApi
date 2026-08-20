@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace OnlineStore.Application.Handlers.Product.Commands
 {
@@ -12,7 +13,7 @@ namespace OnlineStore.Application.Handlers.Product.Commands
         string? Description,
         decimal Price,
         int QuantityInStock,
-        string? MainImageUrl,
+        IFormFile? MainImage,
         int CategoryId,
         IReadOnlyCollection<CreateProductImageCommand> Images
     );

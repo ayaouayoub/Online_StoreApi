@@ -41,9 +41,9 @@ namespace OnlineStore.Application.Handlers.Order
 
             var order = Domain.Entities.Order.Create(result.Customer, orderItems);
 
-            int orderId = await _orderRepository.CreateAsync(order);
+            var createdOrder = await _orderRepository.CreateAsync(order);
 
-            return order.ToDto(orderId);
+            return createdOrder.ToDto();
         }
     }
 }

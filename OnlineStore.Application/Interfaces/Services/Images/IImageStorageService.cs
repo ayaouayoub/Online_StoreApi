@@ -10,5 +10,6 @@ namespace OnlineStore.Application.Interfaces.Services.Images
     public interface IImageStorageService
     {
         Task<string> SaveAsync(IFormFile file);
+        Task DeleteAsync(string imageUrl);
     }
 }
