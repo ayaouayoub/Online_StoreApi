@@ -40,10 +40,10 @@ Examples include:
 
 The project follows **Clean Architecture** with a clear separation of concerns:
 
-* **API** — HTTP endpoints, authentication, authorization, middleware, and request/response handling.
-* **Application** — Use cases, commands, queries, handlers, DTOs, validation, and application logic.
-* **Domain** — Entities, business rules, domain logic, enums, and domain exceptions.
-* **Infrastructure** — SQL Server persistence, repositories, ADO.NET implementations, and external services.
+* **API** - HTTP endpoints, authentication, authorization, middleware, and request/response handling.
+* **Application** - Use cases, commands, queries, handlers, DTOs, validation, and application logic.
+* **Domain** - Entities, business rules, domain logic, enums, and domain exceptions.
+* **Infrastructure** - SQL Server persistence, repositories, ADO.NET implementations, and external services.
 
 This architecture keeps business logic independent from the API and infrastructure layers, making the system easier to maintain, test, and extend.
 
