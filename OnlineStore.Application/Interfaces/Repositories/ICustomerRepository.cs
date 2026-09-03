@@ -13,5 +13,6 @@ namespace OnlineStore.Application.Interfaces.Repositories
         Task<Customer?> GetByEmailAsync(string email);
         Task<PagedResult<CustomerDetails>> GetPagedAsync(GetCustomersQuery query);
         Task<bool> UpdateAsync(Customer customer);
+        Task<bool> HasPendingOrdersAsync(int customerId);
     }
 }

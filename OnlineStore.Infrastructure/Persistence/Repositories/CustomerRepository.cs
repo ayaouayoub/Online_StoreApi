@@ -203,5 +203,26 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
             return affectedRows > 0;
         }
+
+        public async Task<bool> HasPendingOrdersAsync(int customerId)
+        {
+            using SqlConnection connection = _connectionFactory.CreateConnection();
+            await connection.OpenAsync();
+
+            using SqlCommand command = new SqlCommand("usp_DoesCustomerHasPendingOrders", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@CustomerId", customerId);
+
+            SqlParameter returnParam = new SqlParameter();
+            returnParam.ParameterName = "@ReturnValue";
+            returnParam.SqlDbType = SqlDbType.Int;
+
+            returnParam.Direction = ParameterDirection.ReturnValue;
+            command.Parameters.Add(returnParam);
+
+            await command.ExecuteNonQueryAsync();
+
+            return (int)returnParam.Value == 1;
+        }
     }
 }
