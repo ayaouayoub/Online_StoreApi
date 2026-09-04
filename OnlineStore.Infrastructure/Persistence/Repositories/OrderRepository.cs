@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
 using OnlineStore.Application.Common.Models;
+using OnlineStore.Application.Exceptions;
 using OnlineStore.Application.Handlers.Order.Queries;
 using OnlineStore.Application.Interfaces.Data;
 using OnlineStore.Application.Interfaces.Repositories;
@@ -20,39 +21,47 @@ namespace OnlineStore.Infrastructure.Persistence.Repositories
 
         public async Task<Order> CreateAsync(Order order)
         {
-            await using var connection = _connectionFactory.CreateConnection();
-
-            await using var command = new SqlCommand("dbo.usp_CreateOrder", connection)
+            try
             {
-                CommandType = CommandType.StoredProcedure
-            };
+                await using var connection = _connectionFactory.CreateConnection();
 
-            command.Parameters.Add("@CustomerId", SqlDbType.Int).Value = order.CustomerId;
+                await using var command = new SqlCommand("dbo.usp_CreateOrder", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
-            var totalAmountParameter = command.Parameters.Add("@TotalAmount", SqlDbType.Decimal);
+                command.Parameters.Add("@CustomerId", SqlDbType.Int).Value = order.CustomerId;
 
-            totalAmountParameter.Precision = 18;
-            totalAmountParameter.Scale = 2;
-            totalAmountParameter.Value = order.TotalAmount;
+                var totalAmountParameter = command.Parameters.Add("@TotalAmount", SqlDbType.Decimal);
 
-            command.Parameters.Add("@Status", SqlDbType.TinyInt).Value = (byte)order.Status;
+                totalAmountParameter.Precision = 18;
+                totalAmountParameter.Scale = 2;
+                totalAmountParameter.Value = order.TotalAmount;
 
-            var itemsTable = CreateItemsTable(order);
+                command.Parameters.Add("@Status", SqlDbType.TinyInt).Value = (byte)order.Status;
 
-            var itemsParameter = command.Parameters.Add("@Items", SqlDbType.Structured);
+                var itemsTable = CreateItemsTable(order);
 
-            itemsParameter.TypeName = "dbo.OrderItemType";
-            itemsParameter.Value = itemsTable;
+                var itemsParameter = command.Parameters.Add("@Items", SqlDbType.Structured);
 
-            await connection.OpenAsync();
+                itemsParameter.TypeName = "dbo.OrderItemType";
+                itemsParameter.Value = itemsTable;
 
-            var result = await command.ExecuteScalarAsync();
+                await connection.OpenAsync();
 
-            if (result is null || result == DBNull.Value) throw new InvalidOperationException("Failed to create order.");
+                var result = await command.ExecuteScalarAsync();
 
-            int orderId = Convert.ToInt32(result);
+                if (result is null || result == DBNull.Value) throw new InvalidOperationException("Failed to create order.");
 
-            return Order.Load(orderId, order.Status, order.TotalAmount, order.CreatedAt, order.CustomerId, order.Customer);
+                int orderId = Convert.ToInt32(result);
+
+                return Order.Load(orderId, order.Status, order.TotalAmount, order.CreatedAt, order.CustomerId, order.Customer);
+
+            }
+            catch (SqlException ex) when (ex.Number == 50004)
+            {
+                throw new ConflictException(ex.Message);
+            }
         }
 
         private static DataTable CreateItemsTable(Order order)

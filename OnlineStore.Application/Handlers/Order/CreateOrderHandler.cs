@@ -35,7 +35,7 @@ namespace OnlineStore.Application.Handlers.Order
             foreach (var item in command.Items)
             {
                 var product = await _productRepository.GetByIdAsync(item.ProductId) ?? throw new NotFoundException($"Product {item.ProductId} not found.");
-                if (item.Quantity > product.QuantityInStock) throw new DomainException($"Insufficient stock for product {item.ProductId}.");
+                if (item.Quantity > product.QuantityInStock) throw new ConflictException($"Insufficient stock for product {item.ProductId}.");
                 orderItems.Add(OrderItem.Create(product, item.Quantity));
             }
 
