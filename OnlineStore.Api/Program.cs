@@ -308,6 +308,21 @@ namespace OnlineStore.Api
                 }
             });
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("OnlineStorApiCorsPolicy", policy =>
+                {
+                    policy
+                    .WithOrigins(
+                            "https://localhost:7277",
+                            "http://localhost:5241"
+                        )
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
+
             Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
 
             builder.Host.UseSerilog();
@@ -322,9 +337,11 @@ namespace OnlineStore.Api
                 app.UseSwaggerUI();
             }
 
-            app.UseStaticFiles();
-
             app.UseHttpsRedirection();
+
+            app.UseCors("OnlineStorApiCorsPolicy");
+
+            app.UseStaticFiles();
 
             app.UseAuthentication();
 

@@ -30,7 +30,7 @@ namespace OnlineStore.Application.Handlers.User
             if (user.RoleId == (int)RoleType.Customer)
             {
                 var details = await _customerRepository.GetByUserIdAsync(user.Id) ?? throw new NotFoundException("Customer profile not found.");
-                if (await _customerRepository.HasPendingOrdersAsync(details.Customer.Id)) throw new DomainException("Cannot deactivate user who has pending orders");
+                if (await _customerRepository.HasPendingOrdersAsync(details.Customer.Id)) throw new ConflictException("Cannot deactivate user who has pending orders");
             }
 
             user.Deactivate();
