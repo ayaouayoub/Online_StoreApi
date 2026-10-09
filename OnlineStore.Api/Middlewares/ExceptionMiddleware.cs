@@ -1,4 +1,5 @@
-﻿using OnlineStore.Application.Exceptions;
+﻿using OnlineStore.Api.Models;
+using OnlineStore.Application.Exceptions;
 using OnlineStore.Domain.Exceptions;
 
 namespace OnlineStore.Api.Middlewares
@@ -24,45 +25,45 @@ namespace OnlineStore.Api.Middlewares
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = ex.Message
+                    Message = ex.Message
                 });
             }
             catch (NotFoundException ex)
             {
                 context.Response.StatusCode = StatusCodes.Status404NotFound;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = ex.Message
+                    Message = ex.Message
                 });
             }
             catch (ForbiddenException ex)
             {
                 context.Response.StatusCode = StatusCodes.Status403Forbidden;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = ex.Message
+                    Message = ex.Message
                 });
             }
             catch (UnauthorizedException ex)
             {
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = ex.Message
+                    Message = ex.Message
                 });
             }
             catch (ConflictException ex)
             {
                 context.Response.StatusCode = StatusCodes.Status409Conflict;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = ex.Message
+                    Message = ex.Message
                 });
             }
             catch (Exception ex)
@@ -77,9 +78,9 @@ namespace OnlineStore.Api.Middlewares
 
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
-                await context.Response.WriteAsJsonAsync(new
+                await context.Response.WriteAsJsonAsync(new ErrorResponse
                 {
-                    message = "Internal Server Error"
+                    Message = "Internal Server Error"
                 });
 
                 return;

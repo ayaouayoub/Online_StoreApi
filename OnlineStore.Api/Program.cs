@@ -1,16 +1,17 @@
 
 using System.Text;
+using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using OnlineStore.Api.Middlewares;
+using OnlineStore.Api.Models;
 using OnlineStore.Api.Services;
 using OnlineStore.Application.Handlers.Category;
 using OnlineStore.Application.Handlers.Customer;
 using OnlineStore.Application.Handlers.Order;
 using OnlineStore.Application.Handlers.Payment;
 using OnlineStore.Application.Handlers.PaymentMethod;
-using OnlineStore.Application.Handlers.PaymentMethod.Commands;
 using OnlineStore.Application.Handlers.Permission;
 using OnlineStore.Application.Handlers.Product;
 using OnlineStore.Application.Handlers.Review;
@@ -206,27 +207,6 @@ namespace OnlineStore.Api
 
                     ClockSkew = TimeSpan.Zero
                 };
-
-                options.Events = new JwtBearerEvents
-                {
-                    OnMessageReceived = context =>
-                    {
-                        Console.WriteLine($"Authorization: {context.Request.Headers.Authorization}");
-                        return Task.CompletedTask;
-                    },
-
-                    OnAuthenticationFailed = context =>
-                    {
-                        Console.WriteLine(context.Exception);
-                        return Task.CompletedTask;
-                    },
-
-                    OnTokenValidated = context =>
-                    {
-                        Console.WriteLine("Token Valid");
-                        return Task.CompletedTask;
-                    }
-                };
             });
 
             builder.Services.AddAuthorization(options =>
@@ -322,6 +302,32 @@ namespace OnlineStore.Api
                 });
             });
 
+            builder.Services.AddRateLimiter(options =>
+            {
+                options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+                options.AddPolicy("AuthLimiter", httpContext =>
+                {
+                    var ip = httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+                    return RateLimitPartition.GetFixedWindowLimiter(
+                        partitionKey: ip,
+                        factory: _ => new FixedWindowRateLimiterOptions
+                        {
+                            PermitLimit = 5,
+                            Window = TimeSpan.FromMinutes(1),
+                            QueueLimit = 0
+                        });
+                });
+
+                options.OnRejected = async (context, cancellationToken) =>
+                {
+                    context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+
+                    await context.HttpContext.Response.WriteAsJsonAsync(new ErrorResponse { Message = "Too many login attempts. Please try again later." }, cancellationToken);
+                };
+            });
+
 
             Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
 
@@ -338,6 +344,8 @@ namespace OnlineStore.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseRateLimiter();
 
             app.UseCors("OnlineStorApiCorsPolicy");
 

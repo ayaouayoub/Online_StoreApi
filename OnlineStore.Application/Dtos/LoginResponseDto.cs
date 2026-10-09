@@ -9,7 +9,7 @@ namespace OnlineStore.Application.Dtos
     public class LoginResponseDto
     {
         public string Token { get; init; } = "";
-
+        public string RefreshToken { get; init; } = "";
         public UserDto User { get; init; } = null!;
     }
 }

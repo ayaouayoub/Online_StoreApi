@@ -8,6 +8,7 @@ using OnlineStore.Api.Controllers.Authentication.Requests;
 using OnlineStore.Application.Handlers.Customer.Commands;
 using OnlineStore.Application.Handlers.Customer.Models;
 using OnlineStore.Application.Handlers.Customer;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace OnlineStore.Api.Controllers.Authentication
 {
@@ -26,6 +27,7 @@ namespace OnlineStore.Api.Controllers.Authentication
 
         [HttpPost("login")]
         [AllowAnonymous]
+        [EnableRateLimiting("AuthLimiter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
